@@ -1,0 +1,523 @@
+
+/*QUestions for chandler: 
+
+with the various containers, should I be alternating between relative and absolute to get them to sit next to eachother? when they are not absolute
+what pushes them to the bottom? (side-bar-container, main-section, content and side-spacer
+
+how to stop things moving when scroll right on accident?
+
+If you click on a piece and then click the back button,
+I want to go back to the same spot on the page
+
+*/
+
+
+/*
+on mouse hover for the links under my name, make them highlight to the same color as the current selected item.
+
+stroll.js to make thumbnails slide in
+
+*/
+
+body{
+    position:relative;
+    height:100%;
+}
+
+html {
+    line-height: 24px;
+    height:100%;
+    background-color: #2F2932;    
+    color:#FFFFFF;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+/*    background-color: white; */
+}
+
+main{
+    width:auto;
+    padding:0;
+}
+
+footer{
+    margin-top:100px;
+    position:absolute;
+    display:block;
+    height:100px;
+    width:100vw;
+    left:-15vw;
+    top:100%;
+    background:#4A434B;
+    margin-left: -4px;
+}
+
+#side-spacer{
+    z-index: 1;
+    position: fixed;
+    width:15%;
+    height:100vh;
+    display:inline-block;
+    background-color:#2F2932;
+    top:0;
+    left:0;
+/*    background-color:white;*/
+}
+
+#main-section{
+    margin-top:30px;
+    margin-left:50px;
+    position: absolute;
+    display:inline-block;
+    width:100vw;
+    height:100vh;
+}
+
+#side-bar-container{
+    z-index:1;
+    position: fixed;
+    top:0;
+    display:inline-block;
+    width:256pxs;
+    height:100vh;
+    padding:0px 0 0 0;
+    left:0;
+    margin-left: 15%;
+}
+
+.side-bar-box{
+    display: inline-block;
+    position:relative;
+    height:86px;
+    width:100%;
+    margin:-0px 0 0 0;
+    background:#2F2932;
+/*    background:white;*/
+}
+
+.side-bar-box-long{
+    display:inline-block;
+    position:relative;
+    background:#2F2932;
+    height:100vh;
+    width:100%;
+    margin:0;
+    margin-left:0px;
+    top:-10px;
+/*    background:white;*/
+}
+
+#content{
+    margin-top: 81px;
+    top:0;
+    padding:0;
+    position: absolute;
+    left:250px;
+    margin-left: 15%;
+    display:inline-block;
+    width:640px;
+    height:100vh;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.name{
+    position:relative;
+    width:100%;
+    top: 20px;
+    
+     display:block;
+    letter-spacing: .4px;
+    font-size: 24px;
+    font-family:  'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight:light;
+    line-height:36px;
+   color:#d0d0d0;
+    text-decoration: none;
+}
+
+#name-container{
+    position:absolute;
+    width:600px;
+    height:86px;
+}
+
+h1 {
+    margin:0;
+    padding:0;
+    letter-spacing: .5px;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+    font-family: "open Sans", Arial, sans-serif;
+}
+
+h2 {
+    letter-spacing: .4px;
+
+    font-size:30px;
+    font-weight: 400;
+    
+    display:inline;
+    letter-spacing: .4px;
+    font-family:  'Open Sans', Helvetica, Arial, sans-serif;
+    color:white;
+}
+
+h3 {
+    font-size:30px;
+    font-weight:600;
+    display:block;
+    letter-spacing: .4px;
+    font-size: 24px;
+    font-family:  'Open Sans', Helvetica, Arial, sans-serif;
+    line-height:36px;
+    text-decoration: none;
+}
+
+h5 {
+    z-index:1;
+    font-size:14px;
+    font-family:'Open Sans', Helvetica, Arial, sans-serif;;
+    font-weight:100;
+    color:#D2CCD3;
+    position: relative;
+    top:-2px;
+    margin:0px 0px 0px -255px;
+}
+
+
+#tagline{
+    margin-top:0;
+    margin-bottom:50px;
+}
+
+p {
+    margin-left:0px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight:100;
+    font-size: 14px;
+    color:#D2CCD3;
+    line-height: 24px;
+    letter-spacing: .2px;
+    word-spacing: 2px;
+    width:520px;
+    margin-top:17px;  
+    
+/*    background-color:#E54C9B;*/
+}
+
+.text {
+    padding:20px 20px 50px 20px;
+}
+
+.main-nav{
+    margin-top:53px;
+    position:absolute;
+    top:323px;
+    width:204px;
+}
+
+a {
+text-decoration: none;
+}
+
+
+nav a {
+    
+    display:inline-block;
+    width:150px;
+    letter-spacing: .4px;
+    font-size: 24px;
+    font-family:  'Open Sans', Helvetica, Arial, sans-serif;
+    line-height:36px;
+    color:#d0d0d0;
+    text-decoration: none;
+}
+
+nav a:hover { 
+    /*background:#fadf14;
+    color:#2F2932;
+    */
+    color:white;
+}
+
+#content a{
+    color:#fadf14;
+}
+
+#identity-container{
+    padding:0;
+    margin:0;
+    height:400px;
+    display:inline-block;
+}
+
+#logo-container{
+    position:relative;
+    display:block;
+    height:256px;
+    padding:0;
+    background: none;
+}
+
+#logo{
+    padding:0;
+    height:230px;
+    margin: 13px 13px;
+    display:block;
+}
+
+.block{
+    position: relative;
+    display:block;
+    right:256px;
+    width:900px;
+    height:256px;
+    overflow:hidden;
+}
+
+.project-title{
+    z-index:1;
+    position:relative;
+    right:383px;
+    top:36px;
+    font-size: 36px;
+    width:700px;
+    color:white;
+    opacity:0;
+}
+
+
+
+.wide-view{
+    position:relative;
+    left:256px;
+    bottom:75px;
+    width:644px;
+    opacity: .95;
+     transition: opacity .15s ease-in-out;
+  -moz-transition: opacity .15s ease-in-out;
+  -webkit-transition: opacity .15s ease-in-out;
+}
+
+.wide-view:hover {
+    opacity:.8;
+    transition: opacity .15s ease-in-out;
+  -moz-transition: opacity .15s ease-in-out;
+  -webkit-transition: opacity .15s ease-in-out;
+}
+
+.white{
+    background-color:white;
+}
+.red{
+    background-color:#da0b6f;
+}
+
+.red .wide-view{
+    height:360px;
+    top:0px;
+}
+
+.yellow{
+    background-color:#fadf14;
+    
+}
+
+.yellow .wide-view{
+    bottom:105px;
+}
+
+.purple{
+    background-color:#f858ed;
+}
+
+.purple .wide-view{
+    bottom:45px;
+    width:825px;
+}
+
+.blue{
+    background-color:#0ffbff;
+}
+
+.blue .wide-view{
+    bottom:155px;
+    left:-80px;
+    width:800px;
+}
+
+#baby-container{
+     position: relative;
+    display:block;
+    width:644px;
+    height:256px;
+    left:256px;
+    overflow:hidden;
+}
+
+.green{
+    background-color:#5fea47 ;
+}
+
+.green .wide-view{
+    bottom:45px;
+    width:700px;
+}
+
+.large-spacer{
+    display:inline-block;
+    width:100%;
+    height:260px;
+}
+
+.faceOfRed{
+        background-color:#da0b6f;
+}
+
+.faceOfRed .wide-view{
+    height:360px;
+    top:0px;
+}
+
+.project-title{
+    margin-left:126px;
+}
+
+iframe{
+    padding:0;
+    margin:0;
+}
+
+.portfolio-content {
+    margin-left:15%;
+    left:0;
+    position: relative;
+    width:900px;
+    display:block;
+}
+
+.portfolio-content p {
+    width:500px;
+    display:inline-block;
+    margin-top:40px;
+    margin-bottom:40px;
+    margin-left:0;
+    font-size:14px; 
+}
+
+
+.portfolio-content sub{
+    display:inline-block;
+    width:550px;
+    float:right;
+}
+
+.portfolio-title{
+    position:relative;
+    display:inline-block;
+    font-size: 36px;
+    margin:0;
+}
+
+.portfolio-content h5{
+    position:relative;
+    margin:0px 0px 0px 0px;
+    top:-5px;
+    left:2px;
+    display:inline-block;
+    text-align: right;
+}
+
+.content-header {
+    display:block;
+    width:100%;
+}
+
+.portfolio-header {
+    position:relative;
+    display:inline-block;
+    margin:23px 0 0 0;
+    left:-7px;
+    width:100%;
+}
+
+.back-button{
+    background-color:#a0a0a0;
+    width:100px;
+    height:100px;
+    left:-5px;
+    top:65px;
+    position:absolute;
+    display:block;
+    margin:0px 0px 0px -102px;
+}
+
+.back-button:hover{
+    background-color:#fadf14;
+}
+
+.top-button{
+    background-color:#E54C9B;
+    width:30px;
+    height:30px;
+    z-index: 2;
+    position:relative;
+    display:block;
+    margin:33px auto;
+
+}
+
+#back-img{
+    width:100%;
+    display:block;
+    vertical-align: middle;
+    margin:auto;
+    margin-top:13%;
+}
+
+.small-image-left{
+    margin-top:10px;
+    display:inline-block;
+    width:440px;
+}
+.small-image-right{
+        margin-top:10px;
+    display:inline-block;
+    width:440px;
+    float:right;
+}
+
+.back-button:hover {
+    background-color:#E54C9B;
+
+}
+
+#back{
+    position:relative;
+    margin-left:50px;
+    bottom:10px;
+}
+
+/*
+Script 
+*/
+
+.fadeInBlock {
+    opacity:0;
+}
+
+.fade{
+    opacity:0;
+}
+
+
+/*Project content */
+
+.description{
+    margin-left:250px;
+    
+}
+
+.dance:hover {
+    background-color:#fadf14;
+}
