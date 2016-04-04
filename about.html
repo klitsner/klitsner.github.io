@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Samson Klitsner Personal Website</title>
+
+        <link rel="stylesheet" href="css/main.css" media="all" type="text/css">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/script.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <!-- use isotope library for dynamic thumbnail sorting -->
+
+    </head> 
+    <!--    Try a version where "samson klitsner" is all caps and only 18 pt
+and only visible when at top of page
+
+
+Use javascript to change logo background color at different rate -->
+
+
+    <body  ng-app="myApp" id="about">
+        <nav>
+            <a href="about.html">ABOUT </a>
+            <a href="index.html">WORK</a>
+            <a>CONTACT</a>
+        </nav>
+        <div ng-controller="InfoController" id="controller">
+            <div id = "header" >
+                <div id = "logo-container">
+
+                    <img src = "images/whitelogo.png" id="logo">
+                </div>
+                <div id = "info">
+                    <h1 class = "info-title">{{ title | uppercase}}</h1> 
+                    <h3 class = "info-content">{{ content }}</h3> 
+                </div>
+            </div>
+            <div id = "content">
+                <img src = "images/BathtubPortrait.png" class="large-image" style="margin:60px 0 36px 0">
+<p> My name is Samson Klitsner, and this is a bathtub I made from free stuff on craigslist. I am a student in the Design | Media Arts program at UCLA, and my specialization is in creative coding and 
+<br><br>I enjoy creating engaging experiences for others, both digital and physical. This is my personal website that I use to showcase work. I am always excited to meet other passionate creatives so if you want to get in touch for any reason, 
+</p>
+                <div class="side">
+                    <h1>Find me on</h1>
+                    <li><a href="https://soundcloud.com/thugsonklitsner" target="_blank">Soundcloud</a></li>
+                    <li><a href="https://vimeo.com/samklitsner" target="_blank">Vimeo</a></li>
+                    <li><a href="https://github.com/klitsner" target="_blank">Github</a></li>
+                    <li><a href="https://twitter.com/thugsonklitsner" target="_blank">Twitter</a></li>
+                    
+                </div>
+            </div>
+            <div id="side-spacer"></div>
+            <img src="images/arrow.png" id="arrow">
+        </div>
+    </body>
+</html>
+
+

@@ -1,0 +1,231 @@
+/*global angular */
+
+//add functionality where if you scroll past the bottom of the page, the content collapses
+
+
+var app = angular.module("myApp", []);
+
+
+app.controller('InfoController', ['$scope', function ($scope) { 
+    $scope.title = 'Samson klitsner'; 
+    $scope.content = 'design media arts student';  
+    $scope.body = '';
+    $scope.images = [];
+    $scope.iframe = '';
+
+    if ($("#about").length){
+        $scope.title = 'Samson klitsner'; 
+        $scope.content = 'design media arts student';  
+    }
+
+
+
+    $scope.projects = 
+        [
+        {
+            title: ' Amatuer ',
+            medium: 'dance, arduino, sound, processing',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+        {
+            title: ' Choose',
+            medium: 'processing, teensy',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+        {
+            title: 'Alexander Doggus',
+            medium: 'Unity / Installation / Sound',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:'',
+            iframe:"https://player.vimeo.com/video/157377653"
+        },
+        {
+            title: 'Martini Scorchazio',
+            medium: 'music video',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+        {
+            title: 'Timeline of the Far Future',
+            medium: 'processing',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        }
+
+    ];
+    $scope.info = function(index){
+        $scope.title = $scope.projects[index].title;
+        $scope.content = $scope.projects[index].medium;
+
+    };
+
+}]);
+
+
+
+
+var projects = [
+    {
+        title: ' Amatuer Dance Collaboration',
+        medium: 'dance, arduino, sound, processing',
+        images: '<img src="images/wac1.jpg" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/miamiperformance2.jpg" class="small-image">',
+        thumbnail:'',
+        body:'<p class="description" >Start at 3:14 (video password: what)\n\nFeatured at the International Noise Conference in Miami, Amateur is a collaboration between Samson Klitsner, Dorothy Dubrule and Barry Brannum. Using flex sensors and wearable arduinos, Amateur triggers sound samples with movement as means of exploring how performance creates a world for its audience on competing perceptual levels.\n\nAmateur has performed at the Wight Gallery, Eastside International, and Glorya Kaufman Dance Theater in Los Angeles, as well as the International Noise Conference in Miami.\n\n<img src="images/arduino2.png" class="large-image">A wireless belt is rigged with an Arduino Lilypad, Xbee module, and flex sensors attached to various joints on the body.\n\nData from the flex sensors is used to trigger sound samples, which are selected and updated through a software/midi interface written in processing.\n\nROLES:\n\nSoftware/Sound Design: Samson Klitsner\n\nCostume design: Sarah B. Lunde\n\nChoreography and dance: Dorothy Dubrule and Barry Brannum</p>',
+        press:'<div class="side"><h1>Press</h1><li><a href="https://www.youtube.com/watch?v=dnCuq7sOCyk&feature=youtu.be"target="_blank">SFBandVideos</a></li><li><a href="http://www.miaminewtimes.com/slideshow/the-people-of-international-noise-conference-2015-6283467/13"target="_blank">Miami New Times</a></li></div>',
+        iframe:'<iframe src="https://player.vimeo.com/video/121414399?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    },
+    {
+        title: ' Choose',
+        medium: 'processing, teensy',
+        description: '',
+        thumbnail:'',
+        images:'<img src="images/choose2.png" class="large-image"><img src="images/choose.png" class="large-image">',
+        iframe:'<iframe src="https://player.vimeo.com/video/119825927" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        body:'<p class="description">Choose is an interactive color and sound installation that was featured in the DMA 2015 undergraduate exhibition.\n\nUsing Teensy, Processing, and projection mapping, colored dots are randomly mapped to an all-white 16 button MIDI controller so that each button is colorized to a different hue. Each button pressed changes the background to the button\'s corresponding color, altering the contrast relationship for remaining buttons.</p>',
+        press:''
+    },
+    {
+        title: 'Alexander Doggus',
+        medium: 'unity',
+        thumbnail:'',
+        images:'<img src="images/AlexanderDoggusMain.png" class="large-image"><img src="images/DoggusSam.jpg" class="large-image">',
+        body:'<p class="description" >Alexander Doggus is a wheelchair-bound old-timer who used to be the world’s greatest show dog. Jaded by his exuberant past, Alexander now cares only about his favorite tennis ball.\n\n  The player guides Alexander through the world using a trackball to roll his in-game tennis ball, Alexander always following close behind. Complete with an original soundtrack, Alexander Doggus carefully combines 2D and 3D elements to create a richly textured world. \n\nCreated for Eddo Stern’s 171 Worldbuilding class.</p>',
+        press:"<div class='side'><h1>Press</h1><li><a href='http://games.ucla.edu/game/alexander-doggus-2/' target='_blank'>Game Lab</a></li></div>",
+        iframe:'<iframe src="https://player.vimeo.com/video/157377653" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    },
+    {
+        title: 'Martini Scorchazio',
+        medium: 'music video',
+        description: '',
+        thumbnail:'',
+        body:'',
+        press:''
+    },
+    {
+        title: 'Timeline of the Far Future',
+        medium: 'processing',
+        thumbnail:'',
+        images:'',
+        body:'<p class="description" >"PowerPoints of the far future, a collaboration between Samson Klitsner and <a href ="http://pohflepp.net/" target="_blank" style="font-weight:500">Sascha Pohflepp</a>, turns the events from Wikipedia\'s <a href =https://en.wikipedia.org/wiki/Timeline_of_the_far_future style="font-weight:500" target="_blank">Timeline of the Far Future</a> - a list of ridiculously far-off cosmological events - into a call-to-action.\n\nEach slide was algorithmically generated with software development by Sam Klitsner through an automated Google image search based on statements from the database of entries. the statement is also randomly constructed as a future, present or modal statement.\n\nBy presenting a series of increasingly distanced events such as ‘In 1000000 years Neil Armstrong’s footprint and those left by all twelve Apollo moonwalkers will have eroded’, the Powerpoint transforms a page of extinction into farce."\n\n-<em>taken from The Photographers\' Gallery</em></p>',
+        press:"<div class='side'><h1>Press</h1><li><a href='http://thephotographersgallery.org.uk/lev-manovich' target='_blank'>Photographers\' Gallery</a></li></div>",
+        iframe:'<img src="images/Timeline.png" class="large-image">',
+       
+    }
+
+]
+
+
+
+
+/*Jquery stuff*/
+$(document).ready(function(){
+    var scope = angular.element(document.getElementById('controller')).scope()
+    var index;
+    var transTime = 250;
+    var color;
+    var curr;
+    var change = false;
+    $('.thumbnail').hover(function(){
+
+        index = $(this).index()
+        $(this).find('.thumbnail-color').animate({
+            height: 0
+        }, transTime, function() {
+            // Animation complete.
+
+        });
+
+        color = $(this).find('.thumbnail-color').css( "background-color" );
+
+        $('#logo-container').append('<div class="logo-color"></div>');
+
+        $( ".logo-color" ).last().css('background-color',color).animate({
+            height: 210
+        }, transTime, function() {
+            curr = $('#info').css('color',color);
+
+            scope.$apply(function(){
+                scope.info(index);
+            });
+        });
+
+    },
+                          function(){
+        $('#info').css('color',curr);
+        $(this).find('.thumbnail-color').stop(true,true).animate({
+            height: 140
+        }, transTime, function() {
+        });
+        $('.logo-color').animate({
+            height: 0
+        }, transTime, function() {
+            $(this).remove();
+            if($('#logo-container').css('background-color')=='rgb(234,234,234)'){
+                console.log('yes');
+            }
+            if($( ".logo-color" ).length==0 && change==false){
+                scope.$apply(function(){
+                    scope.title = "";
+                    scope.content = "";
+                });
+            }
+        });
+    });
+
+
+
+    //selecting a project to view
+    $('.thumbnail').click(function(){
+                reset();
+        change = true;
+        $('#logo-container').css('background-color',color);
+
+        scope.$apply(function(){
+            scope.body= projects[index].body;
+            scope.info(index);
+        });
+        $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/arrow.png" id="arrow">');
+        $('.description').css('margin','36px 0');
+    });
+
+
+    //reset the work page
+    var reset = function(){
+        scope.$apply(function(){
+            scope.body= '';
+                                scope.title = "";
+                    scope.content = "";
+            $('#content').css('margin-top', '0').html('');
+              
+            change=false;
+        });
+    }
+
+    //reset
+    $('#logo-container').click(function(){
+        reset();
+        change=false;
+    });
+
+
+
+    //scroll to top
+    $('#content').on("click", '#arrow', function(){
+        $("html, body").animate({ scrollTop: 0 }, 400);
+        console.log('hey');
+        return false;
+    });
+
+});

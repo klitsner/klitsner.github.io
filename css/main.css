@@ -1,0 +1,318 @@
+
+/*QUestions for chandler: 
+
+with the various containers, should I be alternating between relative and absolute to get them to sit next to eachother? when they are not absolute
+what pushes them to the bottom? (side-bar-container, main-section, content and side-spacer
+
+how to stop things moving when scroll right on accident?
+
+If you click on a piece and then click the back button,
+I want to go back to the same spot on the page
+
+*/
+
+
+/*
+on mouse hover for the links under my name, make them highlight to the same color as the current selected item.
+
+stroll.js to make thumbnails slide in
+
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face{
+  font-family: 'AvenirNext';
+  src: url('AvenirNext-Regular.eot'), /* IE9 Compat Modes */
+ src: local("☺"),
+       url('fonts/AvenirNext-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/AvenirNext-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face{
+  font-family: 'AvenirLight';
+ src: local("☺"),
+       url('fonts/AvenirNext-UltraLight.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/AvenirNext-UltraLight.woff2') format('woff2'), /* super Modern Browsers */
+       url('fonts/AvenirNext-UltraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+html {
+ font-family: Avenir Next;   
+}
+
+nav {
+    font-weight: 100;
+    font-size: 24px ;
+    margin-top:36px;
+    position: relative;
+    text-align: center;
+}
+
+nav a {
+    opacity: .3;
+    margin: 0px 30px;
+}
+
+nav a:hover {
+     cursor: pointer;
+    opacity: 1;
+}
+
+h1{
+     font-size:42px;
+}
+
+h3{
+     font-size:16px;
+}
+
+
+#header{
+    top:50px;
+    position: relative;
+    text-align: center;
+}
+
+
+#info{
+    color:gray;
+    vertical-align: top;
+    height:210px;
+    width:600px;
+    display:inline-block;
+/*    background:#f8f8fb;*/
+}
+
+.info-title{
+    text-align: left;
+    margin-left:36px;
+    margin-top:16px;
+}
+
+.info-content{
+        font-size:20px;
+    font-weight:100;
+    text-align: left;
+    margin-left:36px;
+    margin-top:2px;
+}
+
+#logo-container{
+    display:inline-block;
+    position:relative;
+    height:210px;
+    width:210px;
+    background:#eaeaea;
+}
+
+#logo{
+    z-index: 10;
+    height: 190px;
+    margin-top:8px;
+    left: 5%;
+    position:absolute;
+}
+
+.logo-color{
+    height:0;
+    width:100%;
+    bottom:0;
+    position:absolute;
+}
+
+#content{
+    width:814px;
+    margin:0 auto 0 auto;
+    position:relative;
+}
+
+p{
+    font-size:16px;
+    line-height: 22px;
+    width:50%;
+    font-weight: 100;
+    margin-top: 36px;
+    display:inline-block;
+}
+
+li{
+    list-style-type: none;
+ text-transform: uppercase;
+    font-size:24px;
+    margin-top: 5px;
+}
+
+li a{
+    font-weight: 100;
+    opacity: .3;
+}
+
+li a:hover{
+     opacity: 1;
+}
+
+a{
+    text-decoration: none;
+     color:black;
+}
+
+.side{
+    position:relative;
+    top: 42px;
+    display:inline-block;
+    left:100px;
+        vertical-align: top;
+}
+
+.side h1{
+    color: gray;
+}
+
+#projects{
+    position:relative;
+    display:block;
+    width:834px;
+   
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.thumbnail{
+    color:gray;
+    display:inline-block;
+    height:144px;
+    width:144px;
+    margin:9px 9px;
+}
+.thumbnail:hover{
+     cursor: pointer;
+}
+.thumbnail-color{
+        height:140px;
+    width:140px;
+    position:absolute;
+}
+
+.large-image{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    width:100%;
+}
+.small-image{
+    margin-bottom: 6px;
+    width:402px;
+    display:inline-block;
+}
+
+
+.yellow{
+
+    background: rgb(255,255,0);
+}
+
+.red{
+    background: rgb(255,0,0);
+}
+
+.turqoise{
+    background: #52f3e9;
+}
+
+.blue{
+    background: rgb(0,0,255);
+}
+
+.purple{
+    background: rgb(120,50,180);
+}
+
+.lightBlue{
+     background: rgb(120,228,255);
+}
+
+.magenta{
+    background: rgb(255,50,255);
+}
+
+.pink{
+  background: rgb(255,172,255);  
+}
+
+.green{
+    background: rgb(0,255,0);  
+}
+
+.orange{
+    background: rgb(255,100,0);  
+}
+
+#arrow{
+    width:20px;
+    position:relative;
+    margin:0 auto;
+    display:block;
+    margin-bottom:50px;
+}
+
+#arrow{
+    cursor:pointer;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+.description{
+    margin: 0;
+    width:60%;   
+    white-space:pre-line;
+}
+
+.divider{
+    width:100%;
+    height:1px;
+    background:gray;
+    margin: 100px 0px;
+}
