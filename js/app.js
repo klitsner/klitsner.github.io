@@ -62,6 +62,46 @@ app.controller('InfoController', ['$scope', function ($scope) {
             thumbnail:'',
             body:'',
             press:''
+        },
+                {
+            title: 'Dro0Oo00ol',
+            medium: 'Exhibition',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+        {
+            title: 'Demystify',
+            medium: 'Graphic Design / Design Research',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+                {
+            title: 'Illustrations',
+            medium: 'Charcoal / Ink ',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+        {
+            title: 'LA Hacks',
+            medium: 'Identity / Promotional Design',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
+        {
+            title: 'Video / Motion Graphics',
+            medium: '',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
         }
 
     ];
@@ -122,6 +162,36 @@ var projects = [
         press:"<div class='side'><h1>Press</h1><li><a href='http://thephotographersgallery.org.uk/lev-manovich' target='_blank'>Photographers\' Gallery</a></li></div>",
         iframe:'<img src="images/Timeline.png" class="large-image">',
        
+    },
+        {
+        title: 'drool',
+        medium: '',
+        thumbnail:'',
+        images:'<img src="images/drool.jpg" class="large-image">',
+        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
+        press:"",
+        iframe:'<img src="images/droolBanner.jpg" class="large-image">',
+       
+    },
+            {
+        title: 'drool',
+        medium: '',
+        thumbnail:'',
+        images:'<img src="images/drool.jpg" class="large-image">',
+        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
+        press:"",
+        iframe:'<img src="images/droolBanner.jpg" class="large-image">',
+       
+    },
+            {
+        title: 'drool',
+        medium: '',
+        thumbnail:'',
+        images:'<img src="images/drool.jpg" class="large-image">',
+        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
+        press:"",
+        iframe:'<img src="images/droolBanner.jpg" class="large-image">',
+       
     }
 
 ]
@@ -138,7 +208,8 @@ $(document).ready(function(){
     var curr;
     var change = false;
     $('.thumbnail').hover(function(){
-
+        reset();
+        change=false;
         index = $(this).index()
         $(this).find('.thumbnail-color').animate({
             height: 0
