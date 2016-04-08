@@ -148,9 +148,9 @@ var projects = [
     {
         title: 'Martini Scorchazio',
         medium: 'Music Video',
-        description: '<p class="description">A work in progress\n\n I started working on this music as the final project for my Video class. The song, "Martini Scorchazio," was produced and recorded by myself along with my art school rap-group <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
+        description: '',
         thumbnail:'',
-        body:'',
+        body:'<p class="description">A work in progress (password: video)\n\n I started working on this music as the final project for my Video class. The song, "Martini Scorchazio," was produced and recorded by myself along with my art school rap-group <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
         press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
      iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
