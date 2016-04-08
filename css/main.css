@@ -326,6 +326,10 @@ p a{
 h5 {
     font-weight: 500;
 }
+b {
+    font-weight: 500;
+}
+
 
 .collapse{
     font-size: 12px;
