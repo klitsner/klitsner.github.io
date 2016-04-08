@@ -320,5 +320,21 @@ a{
 
 p a{
     font-weight: 500;
+
 }
+
+h5 {
+    font-weight: 500;
+}
+
+.collapse{
+    font-size: 12px;
+    font-weight: 100;
+    position:absolute;
+    height:0;
+    bottom:230px;
+    text-align: left;
+    display:none;
+    letter-spacing: .1px;
+    
 }

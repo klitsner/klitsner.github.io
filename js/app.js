@@ -199,7 +199,7 @@ var projects = [
         medium: '',
         thumbnail:'',
         images:'<img src="images/LAHAcksArena.jpg" class="large-image"><img src="images/LAHacksShirt.jpg" class="large-image"><img src="images/LAhacks-process3.png" class="large-image"><img src="images/LAhacks-process4.png" class="large-image"><img src="images/LAhacks-process5.png" class="large-image"><img src="images/LAhacks-process7.png" class="large-image">',
-        body:'<p class="description>Worked with fellow design student <a href="http://jasonspielman.com/" style="font-weight:500">Jason Spielman</a> to create logo & identity, promotional material, jumbotron/LED graphics, and print media for LA Hacks.\n\n<a href="http://lahacks.com/">LA Hacks</a> is the largest hackathon in the nation. 1,500 hackers came to compete for 36 hours building innovative applications and tech products. These products were then judged by top tech industry professionals (i.e. Sam Altman - President of Y Combinator, Chris De Wolfe - CEO of SGN and Founder of Myspace, Tomer Kagan - Co-Founder and CEO of Quixey). \n\nLA Hacks was held at UCLA\'s iconic Pauley Pavilion. We raised a quarter-million dollars through corporate sponsorships in order to put on the event! Special guests came to speak at LA Hacks including the likes of Evan Spiegel - Founder and CEO of Snapchat, Alexis Ohanian - Co-Founder of Reddit, Baiju Bhatt - Co-Founder of Robinhood. \n\n Team: Samson Klitsner Jason Spielman </p>"',
+        body:'<p class="description"> I Worked with fellow design student <a href="http://jasonspielman.com">Jason Spielman</a> to create logo & identity, promotional material, jumbotron/LED graphics, and print media for LA Hacks.\n\n<a href="http://lahacks.com/">LA Hacks</a> is the largest hackathon in the nation. 1,500 hackers came to compete for 36 hours building innovative applications and tech products. These products were then judged by top tech industry professionals (i.e. Sam Altman - President of Y Combinator, Chris De Wolfe - CEO of SGN and Founder of Myspace, Tomer Kagan - Co-Founder and CEO of Quixey). \n\nLA Hacks was held at UCLA\'s iconic Pauley Pavilion. We raised a quarter-million dollars through corporate sponsorships in order to put on the event! Special guests came to speak at LA Hacks including the likes of Evan Spiegel - Founder and CEO of Snapchat, Alexis Ohanian - Co-Founder of Reddit, Baiju Bhatt - Co-Founder of Robinhood. \n\n <h5>Team:</h5> Samson Klitsner Jason Spielman </p>"',
         press:"<div class='side'><h1>Press</h1><li><a href='http://articles.latimes.com/2014/apr/13/business/la-fi-tn-la-hacks-hackathon-20140412'>LA Times</a></li><li><a href='http://www.laweekly.com/news/ucla-hosts-biggest-hackathon-in-history-4581816'>LA Weekly</a></li><li><a href='http://dailybruin.com/2014/04/14/la-hacks-gathers-about-1300-participants-at-ucla-for-hackathon/'>Daily Bruin</a></li><li><a href='http://techzulu.com/la-hacks-making-la-tech-hub-world/'>TeckZulu</a></li></div>",
         iframe:'<iframe width="814" height="453" src="https://www.youtube.com/embed/n_PT7W2zxAs" frameborder="0" allowfullscreen></iframe>',
        
@@ -219,8 +219,7 @@ $(document).ready(function(){
     var curr;
     var change = false;
     $('.thumbnail').hover(function(){
-        reset();
-        change=false;
+       // reset();
         index = $(this).index()
         $(this).find('.thumbnail-color').animate({
             height: 0
@@ -245,6 +244,8 @@ $(document).ready(function(){
 
     },
                           function(){
+        
+        $('.collapse').hide();
         $('#info').css('color',curr);
         $(this).find('.thumbnail-color').stop(true,true).animate({
             height: 140
@@ -281,7 +282,20 @@ $(document).ready(function(){
         $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/arrow.png" id="arrow">');
         $('.description').css('margin','36px 0');
     });
-
+    
+    $('#logo-container').hover(function(){
+            if(change==true){
+        $('.collapse').show().css("color", color);
+        }
+                    if(change==false){
+       $('.collapse').hide();
+        }
+    },
+                         function(){
+        
+        $('.collapse').hide();
+                 
+    });
 
     //reset the work page
     var reset = function(){
@@ -299,6 +313,7 @@ $(document).ready(function(){
     $('#logo-container').click(function(){
         reset();
         change=false;
+        $('.collapse').hide();
     });
 
 
