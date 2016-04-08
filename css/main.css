@@ -317,3 +317,8 @@ a{
     background:gray;
     margin: 100px 0px;
 }
+
+p a{
+    font-weight: 500;
+}
+}

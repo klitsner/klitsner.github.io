@@ -88,7 +88,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
             press:''
         },
         {
-            title: 'LA Hacks',
+            title: 'LA Hacks 2015',
             medium: 'Identity / Promotional Design',
             description: '',
             thumbnail:'',
@@ -96,7 +96,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
             press:''
         },
         {
-            title: 'Video / Motion Graphics',
+            title: 'Sound Design',
             medium: '',
             description: '',
             thumbnail:'',
@@ -150,7 +150,7 @@ var projects = [
         medium: 'Music Video',
         description: '',
         thumbnail:'',
-        body:'<p class="description">A work in progress (password: video)\n\n I started working on this music as the final project for my Video class. The song, "Martini Scorchazio," was produced and recorded by myself along with my art school rap-group <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
+        body:'<p class="description">A work in progress (password: video)\n\n I started working on this music as the final project for my Video class. The song, "Martini Scorchazio," was produced and recorded by myself along with my art school rap-group <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
         press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
      iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
@@ -175,23 +175,33 @@ var projects = [
        
     },
             {
-        title: 'drool',
+        title: 'Demystify',
         medium: '',
         thumbnail:'',
         images:'<img src="images/drool.jpg" class="large-image">',
-        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
+        body:'',
         press:"",
         iframe:'<img src="images/droolBanner.jpg" class="large-image">',
        
     },
             {
-        title: 'drool',
+        title: 'illustrations',
         medium: '',
         thumbnail:'',
         images:'<img src="images/drool.jpg" class="large-image">',
-        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
+        body:'',
         press:"",
         iframe:'<img src="images/droolBanner.jpg" class="large-image">',
+       
+    },
+    {
+        title: 'LA Hacks',
+        medium: '',
+        thumbnail:'',
+        images:'<img src="images/drool.jpg" class="large-image">',
+        body:'<p class="description>Worked with fellow design student <a href="http://jasonspielman.com/><style="font-weight:500">Jason Spielman</a> to create logo & identity, promotional material, jumbotron/LED graphics, and print media for LA Hacks.\n\n<a href="http://lahacks.com/">LA Hacks</a> is the largest hackathon in the nation. 1,500 hackers came to compete for 36 hours building innovative applications and tech products. These products were then judged by top tech industry professionals (i.e. Sam Altman - President of Y Combinator, Chris De Wolfe - CEO of SGN and Founder of Myspace, Tomer Kagan - Co-Founder and CEO of Quixey). \n\nLA Hacks was held at UCLA\'s iconic Pauley Pavilion. We raised a quarter-million dollars through corporate sponsorships in order to put on the event! Special guests came to speak at LA Hacks including the likes of Evan Spiegel - Founder and CEO of Snapchat, Alexis Ohanian - Co-Founder of Reddit, Baiju Bhatt - Co-Founder of Robinhood. \n\n Team: Samson Klitsner Jason Spielman </p>"',
+        press:"<div class='side'><h1>Press</h1><li><a href='http://articles.latimes.com/2014/apr/13/business/la-fi-tn-la-hacks-hackathon-20140412'>LA Times</a></li><li><a href='http://www.laweekly.com/news/ucla-hosts-biggest-hackathon-in-history-4581816'>LA Weekly</a></li><li><a href='http://dailybruin.com/2014/04/14/la-hacks-gathers-about-1300-participants-at-ucla-for-hackathon/'>Daily Bruin</a></li><li><a href='http://techzulu.com/la-hacks-making-la-tech-hub-world/'>TeckZulu</a></li></div>",
+        iframe:'<iframe width="814" height="453" src="https://www.youtube.com/embed/n_PT7W2zxAs" frameborder="0" allowfullscreen></iframe>',
        
     }
 
