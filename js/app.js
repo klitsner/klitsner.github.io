@@ -8,7 +8,7 @@ var app = angular.module("myApp", []);
 
 app.controller('InfoController', ['$scope', function ($scope) { 
     $scope.title = 'Samson klitsner'; 
-    $scope.content = 'design media arts student';  
+    $scope.content = 'design media arts student at UCLA';  
     $scope.body = '';
     $scope.images = [];
     $scope.iframe = '';
