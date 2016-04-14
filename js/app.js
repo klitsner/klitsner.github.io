@@ -63,7 +63,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
             body:'',
             press:''
         },
-                {
+        {
             title: 'Dro0Oo00ol',
             medium: 'Exhibition',
             description: '',
@@ -79,9 +79,9 @@ app.controller('InfoController', ['$scope', function ($scope) {
             body:'',
             press:''
         },
-                {
+        {
             title: 'Illustrations',
-            medium: 'Charcoal / Ink ',
+            medium: 'Charcoal / Ink / Digital ',
             description: '',
             thumbnail:'',
             body:'',
@@ -152,7 +152,7 @@ var projects = [
         thumbnail:'',
         body:'<p class="description">A work in progress (password: video)\n\n I started working on this music as the final project for my Video class. The song, "Martini Scorchazio," was produced and recorded by myself along with my art school rap-group <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
         press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
-     iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+        iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
     {
         title: 'Timeline of the Far Future',
@@ -162,9 +162,9 @@ var projects = [
         body:'<p class="description" >"PowerPoints of the far future, a collaboration between Samson Klitsner and <a href ="http://pohflepp.net/" target="_blank" style="font-weight:500">Sascha Pohflepp</a>, turns the events from Wikipedia\'s <a href =https://en.wikipedia.org/wiki/Timeline_of_the_far_future style="font-weight:500" target="_blank">Timeline of the Far Future</a> - a list of ridiculously far-off cosmological events - into a call-to-action.\n\nEach slide was algorithmically generated with software development by Sam Klitsner through an automated Google image search based on statements from the database of entries. the statement is also randomly constructed as a future, present or modal statement.\n\nBy presenting a series of increasingly distanced events such as ‘In 1000000 years Neil Armstrong’s footprint and those left by all twelve Apollo moonwalkers will have eroded’, the Powerpoint transforms a page of extinction into farce."\n\n-<em>taken from The Photographers\' Gallery</em></p>',
         press:"<div class='side'><h1>Press</h1><li><a href='http://thephotographersgallery.org.uk/lev-manovich' target='_blank'>Photographers\' Gallery</a></li></div>",
         iframe:'<img src="images/Timeline.png" class="large-image">',
-       
+
     },
-        {
+    {
         title: 'drool',
         medium: '',
         thumbnail:'',
@@ -172,9 +172,9 @@ var projects = [
         body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
         press:"",
         iframe:'<img src="images/droolBanner.jpg" class="large-image">',
-       
+
     },
-            {
+    {
         title: 'Demystify',
         medium: '',
         thumbnail:'',
@@ -182,18 +182,20 @@ var projects = [
         body:'',
         press:"",
         iframe:'<img src="images/droolBanner.jpg" class="large-image">',
-       
+
     },
-            {
+    {
         title: 'illustrations',
         medium: '',
         thumbnail:'',
-        images:'<img src="images/drool.jpg" class="large-image">',
+        images:'<img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_1_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_2_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_3_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_4_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_5_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_6_670.jpg" class="large-image">',
         body:'',
         press:"",
-        iframe:'<img src="images/droolBanner.jpg" class="large-image">',
-       
+        iframe:'',
+
     },
+
+
     {
         title: 'LA Hacks',
         medium: '',
@@ -202,7 +204,7 @@ var projects = [
         body:'<p class="description"> I Worked with fellow design student <a href="http://jasonspielman.com">Jason Spielman</a> to create logo & identity, promotional material, jumbotron/LED graphics, and print media for LA Hacks.\n\n<a href="http://lahacks.com/">LA Hacks</a> is the largest hackathon in the nation. 1,500 hackers came to compete for 36 hours building innovative applications and tech products. These products were then judged by top tech industry professionals (i.e. Sam Altman - President of Y Combinator, Chris De Wolfe - CEO of SGN and Founder of Myspace, Tomer Kagan - Co-Founder and CEO of Quixey). \n\nLA Hacks was held at UCLA\'s iconic Pauley Pavilion. We raised a quarter-million dollars through corporate sponsorships in order to put on the event! Special guests came to speak at LA Hacks including the likes of Evan Spiegel - Founder and CEO of Snapchat, Alexis Ohanian - Co-Founder of Reddit, Baiju Bhatt - Co-Founder of Robinhood.\n\n <b>Team:</b> Samson Klitsner Jason Spielman </p>',
         press:"<div class='side'><h1>Press</h1><li><a href='http://articles.latimes.com/2014/apr/13/business/la-fi-tn-la-hacks-hackathon-20140412'>LA Times</a></li><li><a href='http://www.laweekly.com/news/ucla-hosts-biggest-hackathon-in-history-4581816'>LA Weekly</a></li><li><a href='http://dailybruin.com/2014/04/14/la-hacks-gathers-about-1300-participants-at-ucla-for-hackathon/'>Daily Bruin</a></li><li><a href='http://techzulu.com/la-hacks-making-la-tech-hub-world/'>TeckZulu</a></li></div>",
         iframe:'<iframe width="814" height="453" src="https://www.youtube.com/embed/n_PT7W2zxAs" frameborder="0" allowfullscreen></iframe>',
-       
+
     }
 
 ]
@@ -218,111 +220,131 @@ $(document).ready(function(){
     var color;
     var curr;
     var change = false;
+    var show = false;
+
+
     $('.thumbnail').hover(function(){
-       // reset();
-        index = $(this).index()
-        $(this).find('.thumbnail-color').animate({
-            height: 0
-        }, transTime, function() {
-            // Animation complete.
+        if(show==false){
+            index = $(this).index()
+            $(this).find('.thumbnail-color').animate({
+                height: 0
+            }, transTime, function() {
+                // Animation complete.
 
-        });
-
-        color = $(this).find('.thumbnail-color').css( "background-color" );
-
-        $('#logo-container').append('<div class="logo-color"></div>');
-
-        $( ".logo-color" ).last().css('background-color',color).animate({
-            height: 210
-        }, transTime, function() {
-            curr = $('#info').css('color',color);
-
-            scope.$apply(function(){
-                scope.info(index);
             });
-        });
 
+
+            //        $(this).css('background','gray');
+
+            color = $(this).find('.thumbnail-color').css( "background-color" );
+
+
+            $('#logo-container').append('<div class="logo-color"></div>');
+
+            $( ".logo-color" ).last().css('background-color',color).animate({
+                height: 210
+            }, transTime, function() {
+                curr = $('#info').css('color',color);
+
+                scope.$apply(function(){
+                    scope.info(index);
+                });
+            });
+        }
     },
                           function(){
         
-        $('.collapse').hide();
-        $('#info').css('color',curr);
-        $(this).find('.thumbnail-color').stop(true,true).animate({
-            height: 140
-        }, transTime, function() {
-        });
-        $('.logo-color').animate({
-            height: 0
-        }, transTime, function() {
-            $(this).remove();
-            if($('#logo-container').css('background-color')=='rgb(234,234,234)'){
-                console.log('yes');
-            }
-            if($( ".logo-color" ).length==0 && change==false){
-                scope.$apply(function(){
-                    scope.title = "";
-                    scope.content = "";
-                });
-            }
-        });
-    });
-
-
-
-    //selecting a project to view
-    $('.thumbnail').click(function(){
-                reset();
-        change = true;
-        $('#logo-container').css('background-color',color);
-
-        scope.$apply(function(){
-            scope.body= projects[index].body;
-            scope.info(index);
-        });
-        $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/arrow.png" id="arrow">');
-        $('.description').css('margin','36px 0');
-    });
-    
-    $('#logo-container').hover(function(){
-            if(change==true){
-        $('.collapse').show().css("color", color);
-        }
-                    if(change==false){
-       $('.collapse').hide();
-        }
-    },
-                         function(){
+            $('.collapse').hide();
+            $('#info').css('color',curr);
+            $(this).find('.thumbnail-color').stop(true,true).animate({
+                height: 140
+            }, transTime, function() {
+            });
+            $('.logo-color').animate({
+                height: 0
+            }, transTime, function() {
+                $(this).remove();
+                if($('#logo-container').css('background-color')=='rgb(234,234,234)'){
+                    console.log('yes');
+                }
+                if($( ".logo-color" ).length==0 && change==false){
+                    scope.$apply(function(){
+                        scope.title = "";
+                        scope.content = "";
+                    });
+                }
+            });
         
-        $('.collapse').hide();
-                 
     });
 
-    //reset the work page
-    var reset = function(){
-        scope.$apply(function(){
-            scope.body= '';
-                                scope.title = "";
-                    scope.content = "";
-            $('#content').css('margin-top', '0').html('');
-              
-            change=false;
-        });
-    }
 
-    //reset
-    $('#logo-container').click(function(){
+                  //selecting a project to view
+                  $('.thumbnail').click(function(){
+                      
+    if(show==true){
+         console.log("hey");
+        reset();
+        return;
+    }
+                     
+    reset();
+    change = true;
+    show = true;
+    $('#logo-container').css('background-color',color);
+    scope.$apply(function(){
+        scope.body= projects[index].body;
+        scope.info(index);
+    });
+    $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/arrow.png" id="arrow">');
+    $('.description').css('margin','36px 0');
+});
+
+$('#logo-container').hover(function(){
+    if(change==true){
+        $('.collapse').show().css("color", color);
+        $('#logo-container').css( 'cursor', 'pointer' );
+    }
+    if(change==false){
+        $('.collapse').hide();
+        $('#logo-container').css( 'cursor', 'default' );
+    }
+},
+                           function(){
+
+    $('.collapse').hide();
+
+});
+
+//reset the work page
+var reset = function(){
+    $('#logo-container').css( 'cursor', 'default' );
+    scope.$apply(function(){
+        scope.body= '';
+        scope.title = "";
+        scope.content = "";
+        $('#content').css('margin-top', '0').html('');
+        show= false;
+        change=false;
+    });
+}
+
+//reset
+$('#logo-container').click(function(){
+    if($("#about").length){
+
+
+    }else{
         reset();
         change=false;
-        $('.collapse').hide();
-    });
+        $('.collapse').hide();}
+});
 
 
 
-    //scroll to top
-    $('#content').on("click", '#arrow', function(){
-        $("html, body").animate({ scrollTop: 0 }, 400);
-        console.log('hey');
-        return false;
-    });
+//scroll to top
+$('#content').on("click", '#arrow', function(){
+    $("html, body").animate({ scrollTop: 0 }, 400);
+    return false;
+});
 
 });
