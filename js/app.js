@@ -200,7 +200,7 @@ var projects = [
         title: 'LA Hacks',
         medium: '',
         thumbnail:'',
-        images:'<img src="images/LAHAcksArena.jpg" class="large-image"><img src="images/LAHacksShirt.jpg" class="large-image"><img src="images/LAhacks-process3.png" class="large-image"><img src="images/LAhacks-process4.png" class="large-image"><img src="images/LAhacks-process5.png" class="large-image"><img src="images/LAhacks-process7.png" class="large-image">',
+        images:'<img src="images/hackarena.png" class="large-image"><img src="images/LAHacksShirt.jpg" class="large-image"><img src="images/LAhacks-process3.png" class="large-image"><img src="images/LAhacks-process4.png" class="large-image"><img src="images/LAhacks-process5.png" class="large-image"><img src="images/LAhacks-process7.png" class="large-image">',
         body:'<p class="description"> I Worked with fellow design student <a href="http://jasonspielman.com">Jason Spielman</a> to create logo & identity, promotional material, jumbotron/LED graphics, and print media for LA Hacks.\n\n<a href="http://lahacks.com/">LA Hacks</a> is the largest hackathon in the nation. 1,500 hackers came to compete for 36 hours building innovative applications and tech products. These products were then judged by top tech industry professionals (i.e. Sam Altman - President of Y Combinator, Chris De Wolfe - CEO of SGN and Founder of Myspace, Tomer Kagan - Co-Founder and CEO of Quixey). \n\nLA Hacks was held at UCLA\'s iconic Pauley Pavilion. We raised a quarter-million dollars through corporate sponsorships in order to put on the event! Special guests came to speak at LA Hacks including the likes of Evan Spiegel - Founder and CEO of Snapchat, Alexis Ohanian - Co-Founder of Reddit, Baiju Bhatt - Co-Founder of Robinhood.\n\n <b>Team:</b> Samson Klitsner, Jason Spielman </p>',
         press:"<div class='side'><h1>Press</h1><li><a href='http://articles.latimes.com/2014/apr/13/business/la-fi-tn-la-hacks-hackathon-20140412'>LA Times</a></li><li><a href='http://www.laweekly.com/news/ucla-hosts-biggest-hackathon-in-history-4581816'>LA Weekly</a></li><li><a href='http://dailybruin.com/2014/04/14/la-hacks-gathers-about-1300-participants-at-ucla-for-hackathon/'>Daily Bruin</a></li><li><a href='http://techzulu.com/la-hacks-making-la-tech-hub-world/'>TeckZulu</a></li></div>",
         iframe:'<iframe width="814" height="453" src="https://www.youtube.com/embed/n_PT7W2zxAs" frameborder="0" allowfullscreen></iframe>',
@@ -229,15 +229,10 @@ $(document).ready(function(){
             $(this).find('.thumbnail-color').animate({
                 height: 0
             }, transTime, function() {
-                // Animation complete.
-
             });
 
 
-            //        $(this).css('background','gray');
-
             color = $(this).find('.thumbnail-color').css( "background-color" );
-
 
             $('#logo-container').append('<div class="logo-color"></div>');
 
@@ -280,7 +275,6 @@ $(document).ready(function(){
 
                   //selecting a project to view
                   $('.thumbnail').click(function(){
-                      
     if(show==true){
          console.log("hey");
         reset();
@@ -290,16 +284,18 @@ $(document).ready(function(){
     reset();
     change = true;
     show = true;
+                      $('#projects').hide();
     $('#logo-container').css('background-color',color);
     scope.$apply(function(){
         scope.body= projects[index].body;
         scope.info(index);
     });
-    $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/arrow.png" id="arrow">');
+    $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/colors.png" id="arrow">');
     $('.description').css('margin','36px 0');
 });
 
 $('#logo-container').hover(function(){
+    
     if(change==true){
         $('.collapse').show().css("color", color);
         $('#logo-container').css( 'cursor', 'pointer' );
@@ -317,6 +313,7 @@ $('#logo-container').hover(function(){
 
 //reset the work page
 var reset = function(){
+    $('#projects').show();
     $('#logo-container').css( 'cursor', 'default' );
     scope.$apply(function(){
         scope.body= '';
@@ -343,7 +340,13 @@ $('#logo-container').click(function(){
 
 //scroll to top
 $('#content').on("click", '#arrow', function(){
-    $("html, body").animate({ scrollTop: 0 }, 400);
+    $("html, body").animate({ scrollTop: 0 }, 400,function(){
+         reset();
+        change=false;
+        $('.collapse').hide();
+    });
+    
+        
     return false;
 });
 

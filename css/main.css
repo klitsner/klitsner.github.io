@@ -146,6 +146,20 @@ h3{
     height:210px;
     width:210px;
     background:#eaeaea;
+
+}
+
+#about-logo{
+    display:inline-block;
+    position:relative;
+    height:210px;
+    width:210px;
+    background:#eaeaea;
+
+}
+
+#about-logo:hover{
+    background:#dbdbdb;
 }
 
 #logo{
@@ -215,7 +229,7 @@ a{
     position:relative;
     display:block;
     width:834px;
-   
+    height:200px;
     margin-top:45px;
     padding-top:15px;
     margin-left:auto;
@@ -225,8 +239,9 @@ a{
 .thumbnail{
     display:inline-block;
     height:140px;
-    width:140px;
+    width:17%;
     margin:9px 9px;
+    position:relative;
 }
 .thumbnail:hover{
      cursor: pointer;
@@ -244,8 +259,8 @@ a{
 
 
 .thumbnail-color{
-        height:140px;
-    width:140px;
+    height:100%;
+    width:100%;
     position:absolute;
 }
 
@@ -311,11 +326,28 @@ a{
 }
 
 #arrow{
-    width:20px;
+    width:100px;
     position:relative;
     margin:0 auto;
     display:block;
     margin-bottom:50px;
+    top:0px;
+    
+    -webkit-transition: 0.1s ease-out;
+        -moz-transition:  0.1s ease-out;
+        -ms-transition: 0.1s ease-out;
+        -o-transition:  0.1s ease-out;
+        transition:  0.1s ease-out;
+}
+
+#arrow:hover{
+    width:130px;
+    top:-4px;
+
+}
+
+.darken{
+    
 }
 
 #arrow{
