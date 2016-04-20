@@ -178,10 +178,10 @@ var projects = [
         title: 'Demystify',
         medium: '',
         thumbnail:'',
-        images:'<img src="images/drool.jpg" class="large-image">',
+        images:'',
         body:'',
         press:"",
-        iframe:'<img src="images/droolBanner.jpg" class="large-image">',
+        iframe:'',
 
     },
     {
