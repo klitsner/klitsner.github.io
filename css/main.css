@@ -85,7 +85,7 @@ html {
 
 nav {
     font-weight: 100;
-    font-size: 24px ;
+    font-size: 20px ;
     margin-top:36px;
     position: relative;
     text-align: center;
@@ -114,6 +114,8 @@ h3{
     top:50px;
     position: relative;
     text-align: center;
+    margin-top: 20px;
+/*    margin-top: calc(50vh - 300px);*/
 }
 
 
@@ -147,6 +149,11 @@ h3{
     width:210px;
     background:#eaeaea;
 
+}
+
+#logo-container:hover{
+        background:#dbdbdb;
+    
 }
 
 #about-logo{
@@ -314,7 +321,7 @@ a{
 }
 
 .orange{
-    background: rgb(255,100,0);  
+    background: rgb(255,140,85);  
 }
 
 .black{
@@ -392,4 +399,29 @@ b {
     display:none;
     letter-spacing: .1px;
     
+}
+
+
+/*test zone*/
+
+nav {
+    font-weight: 100;
+    font-size: 18px ;
+    word-spacing: 23px;
+    position: absolute;
+    text-align: left;
+    bottom:0;
+    bottom:214px;
+    margin:0 0;
+    z-index: 100;
+}
+
+nav a {
+    opacity: .3;
+    margin: 0px 0px;
+}
+
+nav a:hover {
+     cursor: pointer;
+    opacity: 1;
 }

@@ -225,6 +225,7 @@ $(document).ready(function(){
 
     $('.thumbnail').hover(function(){
         if(show==false){
+            $("#about-link").hide();
             index = $(this).index()
             $(this).find('.thumbnail-color').animate({
                 height: 0
@@ -248,106 +249,113 @@ $(document).ready(function(){
         }
     },
                           function(){
-        
+        if(show==true){
+         $("#about-link").hide();   
+        }else{
+        $("#about-link").show();
+        }
+        $('.collapse').hide();
+        $('#info').css('color',curr);
+        $(this).find('.thumbnail-color').stop(true,true).animate({
+            height: 140
+        }, transTime, function() {
+        });
+        $('.logo-color').animate({
+            height: 0
+        }, transTime, function() {
+            $(this).remove();
+            if($('#logo-container').css('background-color')=='rgb(234,234,234)'){
+                console.log('yes');
+            }
+            if($( ".logo-color" ).length==0 && change==false){
+                scope.$apply(function(){
+                    scope.title = "";
+                    scope.content = "";
+                });
+            }
+        });
+
+    });
+
+
+    //selecting a project to view
+    $('.thumbnail').click(function(){
+
+        if(show==true){
+            console.log("hey");
+            reset();
+            return;
+        }
+
+        reset();
+        $("#about-link").hide();
+        change = true;
+        show = true;
+        $('#projects').hide();
+        $('#logo-container').css('background-color',color);
+        scope.$apply(function(){
+            scope.body= projects[index].body;
+            scope.info(index);
+        });
+        $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/colors.png" id="arrow">');
+        $('.description').css('margin','36px 0');
+    });
+
+    $('#logo-container').hover(function(){
+
+        if(change==true){
+            $('.collapse').show().css("color", color);
+            $('#logo-container').css( 'cursor', 'pointer' );
+        }
+        if(change==false){
             $('.collapse').hide();
-            $('#info').css('color',curr);
-            $(this).find('.thumbnail-color').stop(true,true).animate({
-                height: 140
-            }, transTime, function() {
-            });
-            $('.logo-color').animate({
-                height: 0
-            }, transTime, function() {
-                $(this).remove();
-                if($('#logo-container').css('background-color')=='rgb(234,234,234)'){
-                    console.log('yes');
-                }
-                if($( ".logo-color" ).length==0 && change==false){
-                    scope.$apply(function(){
-                        scope.title = "";
-                        scope.content = "";
-                    });
-                }
-            });
-        
-    });
+            $('#logo-container').css( 'cursor', 'default' );
+        }
+    },
+                               function(){
 
-
-                  //selecting a project to view
-                  $('.thumbnail').click(function(){
-    if(show==true){
-         console.log("hey");
-        reset();
-        return;
-    }
-                     
-    reset();
-    change = true;
-    show = true;
-                      $('#projects').hide();
-    $('#logo-container').css('background-color',color);
-    scope.$apply(function(){
-        scope.body= projects[index].body;
-        scope.info(index);
-    });
-    $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/colors.png" id="arrow">');
-    $('.description').css('margin','36px 0');
-});
-
-$('#logo-container').hover(function(){
-    
-    if(change==true){
-        $('.collapse').show().css("color", color);
-        $('#logo-container').css( 'cursor', 'pointer' );
-    }
-    if(change==false){
         $('.collapse').hide();
+
+    });
+
+    //reset the work page
+    var reset = function(){
+        $('#projects').show();
+        $("#about-link").show();
         $('#logo-container').css( 'cursor', 'default' );
+        scope.$apply(function(){
+            scope.body= '';
+            scope.title = "";
+            scope.content = "";
+            $('#content').css('margin-top', '0').html('');
+            show= false;
+            change=false;
+        });
     }
-},
-                           function(){
 
-    $('.collapse').hide();
+    //reset
+    $('#logo-container').click(function(){
+        if($("#about").length){
 
-});
 
-//reset the work page
-var reset = function(){
-    $('#projects').show();
-    $('#logo-container').css( 'cursor', 'default' );
-    scope.$apply(function(){
-        scope.body= '';
-        scope.title = "";
-        scope.content = "";
-        $('#content').css('margin-top', '0').html('');
-        show= false;
-        change=false;
+        }else{
+            reset();
+            change=false;
+            $('.collapse').hide();}
     });
-}
-
-//reset
-$('#logo-container').click(function(){
-    if($("#about").length){
-
-
-    }else{
-        reset();
-        change=false;
-        $('.collapse').hide();}
-});
 
 
 
-//scroll to top
-$('#content').on("click", '#arrow', function(){
-    $("html, body").animate({ scrollTop: 0 }, 400,function(){
-         reset();
-        change=false;
-        $('.collapse').hide();
+    //scroll to top
+    $('#content').on("click", '#arrow', function(){
+        $("html, body").animate({ scrollTop: 0 }, 400,function(){
+            reset();
+            change=false;
+            $('.collapse').hide();
+        });
+
+
+        return false;
     });
-    
-        
-    return false;
-});
 
 });
