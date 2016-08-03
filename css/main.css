@@ -120,7 +120,7 @@ h3{
 
 
 #info{
-    color:gray;
+    color:#eaeaea;
     vertical-align: top;
     height:210px;
     width:600px;
@@ -424,4 +424,9 @@ nav a {
 nav a:hover {
      cursor: pointer;
     opacity: 1;
+}
+
+.spacer{
+    height:100px;
+}
 }

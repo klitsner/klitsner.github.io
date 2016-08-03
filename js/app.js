@@ -169,7 +169,7 @@ var projects = [
         medium: '',
         thumbnail:'',
         images:'<img src="images/drool.jpg" class="large-image">',
-        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14, 2016. ­ January 28</p>',
+        body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14 - 28, 2016</p>',
         press:"",
         iframe:'<img src="images/droolBanner.jpg" class="large-image">',
 
@@ -223,9 +223,21 @@ $(document).ready(function(){
     var show = false;
 
 
+    
+    $('#projects').hover(function(){
+        $("#about-link").fadeOut(200);
+        
+    },
+                        function(){
+        if(show!=true){
+        $("#about-link").fadeIn(200);
+        }
+                        });
+
+
     $('.thumbnail').hover(function(){
+        
         if(show==false){
-            $("#about-link").hide();
             index = $(this).index()
             $(this).find('.thumbnail-color').animate({
                 height: 0
@@ -241,7 +253,6 @@ $(document).ready(function(){
                 height: 210
             }, transTime, function() {
                 curr = $('#info').css('color',color);
-
                 scope.$apply(function(){
                     scope.info(index);
                 });
@@ -249,11 +260,6 @@ $(document).ready(function(){
         }
     },
                           function(){
-        if(show==true){
-         $("#about-link").hide();   
-        }else{
-        $("#about-link").show();
-        }
         $('.collapse').hide();
         $('#info').css('color',curr);
         $(this).find('.thumbnail-color').stop(true,true).animate({
@@ -269,9 +275,10 @@ $(document).ready(function(){
             }
             if($( ".logo-color" ).length==0 && change==false){
                 scope.$apply(function(){
-                    scope.title = "";
-                    scope.content = "";
+                    scope.title = 'Samson klitsner'; 
+                    scope.content = 'Design Media Arts Student';  
                 });
+                $('#info').css('color','#eaeaea');
             }
         });
 
@@ -280,13 +287,6 @@ $(document).ready(function(){
 
     //selecting a project to view
     $('.thumbnail').click(function(){
-
-        if(show==true){
-            console.log("hey");
-            reset();
-            return;
-        }
-
         reset();
         $("#about-link").hide();
         change = true;
@@ -321,12 +321,15 @@ $(document).ready(function(){
     //reset the work page
     var reset = function(){
         $('#projects').show();
-        $("#about-link").show();
         $('#logo-container').css( 'cursor', 'default' );
+        $('#logo-container').css('background-color','#eaeaea');
+        if(change==true){
+         $('#info').css('color','#dbdbdb');
+        }
         scope.$apply(function(){
             scope.body= '';
-            scope.title = "";
-            scope.content = "";
+            scope.title = "Samson Klitsner";
+            scope.content = "Design Media Arts Student at UCLA";
             $('#content').css('margin-top', '0').html('');
             show= false;
             change=false;
@@ -335,10 +338,8 @@ $(document).ready(function(){
 
     //reset
     $('#logo-container').click(function(){
-        if($("#about").length){
+        if(!$("#about").length){
 
-
-        }else{
             reset();
             change=false;
             $('.collapse').hide();}
@@ -357,5 +358,21 @@ $(document).ready(function(){
 
         return false;
     });
+    
+    //hover over logo
+    $('#logo-container').hover(function(){
+        console.log("tried");
+        if(change==false){
+        $("#about-link").fadeTo(0,.5);
+         $('#info').css('color','#dbdbdb');
+                    }
+    },
+                              function(){
+        if(change==false){
+     $("#about-link").fadeTo(0,.3);   
+             $('#info').css('color','#eaeaea');
+        }
+    });
+    
 
 });
