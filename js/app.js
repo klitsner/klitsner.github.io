@@ -7,8 +7,8 @@ var app = angular.module("myApp", []);
 
 
 app.controller('InfoController', ['$scope', function ($scope) { 
-    $scope.title = 'Samson klitsner'; 
-    $scope.content = 'Design Media Arts Student at UCLA';  
+    $scope.title = 'samson klitsner'; 
+    $scope.content = 'Design Media Arts Student';  
     $scope.body = '';
     $scope.images = [];
     $scope.iframe = '';
@@ -270,18 +270,24 @@ $(document).ready(function(){
             height: 0
         }, transTime, function() {
             $(this).remove();
-            if($('#logo-container').css('background-color')=='rgb(234,234,234)'){
-                console.log('yes');
-            }
             if($( ".logo-color" ).length==0 && change==false){
                 scope.$apply(function(){
                     scope.title = 'Samson klitsner'; 
                     scope.content = 'Design Media Arts Student';  
+                    $('#info').css('color','#eaeaea');
                 });
+
+                  if($('.info-title').text()==='SAMSON KLITSNER'){
+                $('#logo-container').hover(function(){
+                $('#info').css('color','#dbdbdb');
+                },function(){
                 $('#info').css('color','#eaeaea');
+                });
+                  }
+    
             }
         });
-
+       
     });
 
 
@@ -322,14 +328,15 @@ $(document).ready(function(){
     var reset = function(){
         $('#projects').show();
         $('#logo-container').css( 'cursor', 'default' );
-        $('#logo-container').css('background-color','#eaeaea');
         if(change==true){
          $('#info').css('color','#dbdbdb');
+         $("#about-link").fadeTo(0,.3);
+         $('#logo-container').css('background-color','#dbdbdb');
         }
         scope.$apply(function(){
             scope.body= '';
             scope.title = "Samson Klitsner";
-            scope.content = "Design Media Arts Student at UCLA";
+            scope.content = "Design Media Arts Student";
             $('#content').css('margin-top', '0').html('');
             show= false;
             change=false;
@@ -339,7 +346,6 @@ $(document).ready(function(){
     //reset
     $('#logo-container').click(function(){
         if(!$("#about").length){
-
             reset();
             change=false;
             $('.collapse').hide();}
@@ -359,20 +365,26 @@ $(document).ready(function(){
         return false;
     });
     
+    $("#about-link").hover(function(){
+    $("#about-link").fadeTo(0,.6);
+    },function(){
+    $("#about-link").fadeTo(0,.3);
+    });   
+    
+    
+    //make samson correct color 
     //hover over logo
+
     $('#logo-container').hover(function(){
-        console.log("tried");
         if(change==false){
-        $("#about-link").fadeTo(0,.5);
          $('#info').css('color','#dbdbdb');
+            $('#logo-container').css('background-color','#dbdbdb');
                     }
     },
                               function(){
         if(change==false){
-     $("#about-link").fadeTo(0,.3);   
+            $('#logo-container').css('background-color','#eaeaea');
              $('#info').css('color','#eaeaea');
         }
     });
-    
-
 });
