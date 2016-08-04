@@ -124,11 +124,6 @@ h3{
     height:210px;
     width:600px;
     display:inline-block;
-/*
-    transition: color .1s linear;
-    -webkit-transition: color .1s linear;
-    -moz-transition: color .1s linear;
-*/
 }
 
 .info-title{
@@ -151,9 +146,9 @@ h3{
     height:210px;
     width:210px;
     background:#eaeaea;
-    transition: background .1s linear;
-    -webkit-transition: background .1s linear;
-    -moz-transition: background .1s linear;
+    transition: background .2s linear;
+    -webkit-transition: background .2s linear;
+    -moz-transition: background .2s linear;
 }
 
 
@@ -293,12 +288,11 @@ a{
 
 
 .yellow{
-
-    background: rgb(255,255,0);
+    background:#fffd73;
 }
 
 .red{
-    background: rgb(255,0,0);
+    background: #fd9a33;
 }
 
 .turqoise{
@@ -306,7 +300,11 @@ a{
 }
 
 .blue{
-    background: rgb(0,0,255);
+    background: #4f52ee;
+}
+
+.indigo{
+    background:#395a82;
 }
 
 .purple{
@@ -318,23 +316,23 @@ a{
 }
 
 .magenta{
-    background: rgb(255,50,255);
+    background: #ffb5df;
 }
 
 .pink{
-  background: rgb(255,172,255);  
+  background:#6fe09a ;  
 }
 
 .green{
-    background: rgb(0,255,0);  
+    background: #16d3c3;  
 }
 
 .orange{
-    background: rgb(255,140,85);  
+    background: #fc5355;  
 }
 
 .black{
-    background: rgb(0,0,0);  
+    background: #252434;  
 }
 
 .white{

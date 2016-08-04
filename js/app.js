@@ -22,6 +22,14 @@ app.controller('InfoController', ['$scope', function ($scope) {
 
     $scope.projects = 
         [
+                {
+            title: 'S.A.D. Shelter',
+            medium: 'Installation / Processing / Sound',
+            description: '',
+            thumbnail:'',
+            body:'',
+            press:''
+        },
         {
             title: ' Amatuer ',
             medium: 'Dance, Arduino, Sound, Processing',
@@ -57,7 +65,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
         },
         {
             title: 'Timeline of the Far Future',
-            medium: 'processing',
+            medium: 'Processing',
             description: '',
             thumbnail:'',
             body:'',
@@ -94,15 +102,8 @@ app.controller('InfoController', ['$scope', function ($scope) {
             thumbnail:'',
             body:'',
             press:''
-        },
-        {
-            title: 'Sound Design',
-            medium: '',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         }
+
 
     ];
     $scope.info = function(index){
@@ -118,8 +119,15 @@ app.controller('InfoController', ['$scope', function ($scope) {
 
 var projects = [
     {
+        images: '<img src="images/shelter1.jpg" class="large-image"><img src="images/shelter3.jpg" class="large-image"><img src="images/shelter4.jpg" class="large-image">',
+        thumbnail:'',
+        body:'<p class="description">A place of refuge for the overwhelmed patron, the shelter is activated by surrounding exhibition happenings. Please take off shoes before entering.\n \n\n\n\n\n</p>',
+        press:'<div class="side"><h1>Press</h1><li><a href="http://thecreatorsproject.vice.com/blog/ucla-design-media-arts-showcase-amidst-campus-shooting">CREATORS PROJECT</a></li></div>',
+        iframe:'<img src="images/shelter5.jpg" class="large-image">'
+    }, 
+ { 
         title: ' Amatuer Dance Collaboration',
-        medium: 'dance, arduino, sound, processing',
+        medium: 'dance, arduino, sound, Processing',
         images: '<img src="images/wac1.jpg" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/MiamiPerformance2.jpg" class="small-image">',
         thumbnail:'',
         body:'<p class="description" >Start at 3:14 (video password: what)\n\nFeatured at the International Noise Conference in Miami, Amateur is a collaboration between Samson Klitsner, Dorothy Dubrule and Barry Brannum. Using flex sensors and wearable arduinos, Amateur triggers sound samples with movement as means of exploring how performance creates a world for its audience on competing perceptual levels.\n\nAmateur has performed at the Wight Gallery, Eastside International, and Glorya Kaufman Dance Theater in Los Angeles, as well as the International Noise Conference in Miami.\n\n<img src="images/arduino2.png" class="large-image">A wireless belt is rigged with an Arduino Lilypad, Xbee module, and flex sensors attached to various joints on the body.\n\nData from the flex sensors is used to trigger sound samples, which are selected and updated through a software/midi interface written in processing.\n\nROLES:\n\nSoftware/Sound Design: Samson Klitsner\n\nCostume design: Sarah B. Lunde\n\nChoreography and dance: Dorothy Dubrule and Barry Brannum</p>',
@@ -221,7 +229,7 @@ $(document).ready(function(){
     var curr;
     var change = false;
     var show = false;
-
+    var safe = false;
 
     
     $('#projects').hover(function(){
@@ -276,14 +284,16 @@ $(document).ready(function(){
                     scope.content = 'Design Media Arts Student';  
                     $('#info').css('color','#eaeaea');
                 });
-
-                  if($('.info-title').text()==='SAMSON KLITSNER'){
-                $('#logo-container').hover(function(){
-                $('#info').css('color','#dbdbdb');
-                },function(){
-                $('#info').css('color','#eaeaea');
-                });
-                  }
+                
+//                  if($('.info-title').text()==='SAMSON KLITSNER'){
+//                      if(change==false){
+//                $('#logo-container').hover(function(){
+//                $('#info').css('color','#dbdbdb');
+//                },function(){
+//                $('#info').css('color','#eaeaea');
+//                });
+//                      }
+//                  }
     
             }
         });
@@ -329,9 +339,9 @@ $(document).ready(function(){
         $('#projects').show();
         $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
-         $('#info').css('color','#dbdbdb');
+         $('#info').css('color','#eaeaea');
          $("#about-link").fadeTo(0,.3);
-         $('#logo-container').css('background-color','#dbdbdb');
+         $('#logo-container').css('background-color','#eaeaea');
         }
         scope.$apply(function(){
             scope.body= '';
@@ -372,19 +382,19 @@ $(document).ready(function(){
     });   
     
     
-    //make samson correct color 
     //hover over logo
 
-    $('#logo-container').hover(function(){
-        if(change==false){
-         $('#info').css('color','#dbdbdb');
-            $('#logo-container').css('background-color','#dbdbdb');
-                    }
-    },
-                              function(){
-        if(change==false){
-            $('#logo-container').css('background-color','#eaeaea');
-             $('#info').css('color','#eaeaea');
-        }
-    });
+//    $('#logo-container').hover(function(){
+//        if(change==false){
+//         $('#info').css('color','#dbdbdb');
+//            $('#logo-container').css('background-color','#dbdbdb');
+//                    }
+//    },
+//                              function(){
+//        if(change==false){
+//            $('#logo-container').css('background-color','#eaeaea');
+//             $('#info').css('color','#eaeaea');
+//        }
+//    });
+    
 });
