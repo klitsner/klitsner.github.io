@@ -24,7 +24,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
         [
                 {
             title: 'S.A.D. Shelter',
-            medium: 'Installation / Processing / Sound',
+            medium: 'Installation, Processing, Sound',
             description: '',
             thumbnail:'',
             body:'',
@@ -48,7 +48,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
         },
         {
             title: 'Alexander Doggus',
-            medium: 'Unity / Installation / Sound',
+            medium: 'Unity, Installation, Sound',
             description: '',
             thumbnail:'',
             body:'',
@@ -80,8 +80,8 @@ app.controller('InfoController', ['$scope', function ($scope) {
             press:''
         },
         {
-            title: 'Demystify',
-            medium: 'Graphic Design / Design Research',
+            title: '25 words 25 works',
+            medium: 'Graphic Design, Bookmaking, Design Research',
             description: '',
             thumbnail:'',
             body:'',
@@ -89,7 +89,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
         },
         {
             title: 'Illustrations',
-            medium: 'Charcoal / Ink / Digital ',
+            medium: 'Charcoal, Ink, Digital ',
             description: '',
             thumbnail:'',
             body:'',
@@ -97,7 +97,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
         },
         {
             title: 'LA Hacks 2015',
-            medium: 'Identity / Promotional Design',
+            medium: 'Identity, Promotional Design',
             description: '',
             thumbnail:'',
             body:'',
@@ -121,7 +121,7 @@ var projects = [
     {
         images: '<img src="images/shelter1.jpg" class="large-image"><img src="images/shelter3.jpg" class="large-image"><img src="images/shelter4.jpg" class="large-image">',
         thumbnail:'',
-        body:'<p class="description">A place of refuge for the overwhelmed patron, the shelter is activated by surrounding exhibition happenings. Please take off shoes before entering.\n \n\n\n\n\n</p>',
+        body:'<p class="description">A place of refuge for the overwhelmed patron, the S.A.D. shelter is activated by surrounding exhibition happenings. Please take off shoes before entering.\n \n \n\n\n\n</p>',
         press:'<div class="side"><h1>Press</h1><li><a href="http://thecreatorsproject.vice.com/blog/ucla-design-media-arts-showcase-amidst-campus-shooting">CREATORS PROJECT</a></li></div>',
         iframe:'<img src="images/shelter5.jpg" class="large-image">'
     }, 
@@ -183,20 +183,20 @@ var projects = [
 
     },
     {
-        title: 'Demystify',
+        title: '25 Words 25 works',
         medium: '',
         thumbnail:'',
-        images:'',
-        body:'',
+        images:'<img src="images/wordimage2.jpg" class="large-image"><img src="images/wordimage3.jpg" class="large-image"><img src="images/wordimage4.jpg" class="large-image"><img src="images/wordimage5.jpg" class="large-image"><img src="images/wordimage6.jpg" class="large-image">',
+        body:'<p class="description" ><i>25 Words 25 Works</i> was the final product of DMA 154 Word + Image taught by Professor Rebecca Mendez. Through a process of textual analysis, research, design, and production, each student of the class produced and distributed a 20 page booklet for each classmate to be bound by hand in a single volume. \n\nThe inspiration for my edition of <i>25 Words 25 Works</i> is drawn from both the research and physical processes of production which became all too familiar to us over the course of the quarter. </p>',
         press:"",
-        iframe:'',
+        iframe:'<img src="images/wordimage1.jpg" class="large-image">',
 
     },
     {
         title: 'illustrations',
         medium: '',
         thumbnail:'',
-        images:'<img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_1_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_2_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_3_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_4_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_5_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_6_670.jpg" class="large-image">',
+        images:'<img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_1_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_2_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_3_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_4_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_5_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_6_670.jpg" class="large-image"><img src="images/wordimage2.jpg" class="large-image">',
         body:'',
         press:"",
         iframe:'',
