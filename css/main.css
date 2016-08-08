@@ -65,19 +65,29 @@ table {
 
 @font-face{
   font-family: 'AvenirNext';
-  src: url('AvenirNext-Regular.eot'), /* IE9 Compat Modes */
- src: local("☺"),
+  src: local("AvenirNext-UltraLight"),
        url('fonts/AvenirNext-Regular.woff') format('woff'), /* Pretty Modern Browsers */
        url('fonts/AvenirNext-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('AvenirNext-Regular.eot');
 }
 
 @font-face{
   font-family: 'AvenirLight';
- src: local("☺"),
+ src: local("AvenirNext-UltraLight"),
        url('fonts/AvenirNext-UltraLight.woff') format('woff'), /* Pretty Modern Browsers */
        url('fonts/AvenirNext-UltraLight.woff2') format('woff2'), /* super Modern Browsers */
-       url('fonts/AvenirNext-UltraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/AvenirNext-UltraLight.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
+
+@font-face{
+  font-family: 'Adobe Garamond';
+ src: local("AGaramondPro-Regular"),
+       url('fonts/AGaramondPro-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('AGaramondPro-Regular.woff2') format('woff2'), /* super Modern Browsers */
+       url('fonts/AGaramondPro-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+
 
 html {
  font-family: Avenir Next, 'Muli', sans-serif;   
@@ -85,15 +95,16 @@ html {
 
 nav {
     font-weight: 100;
-    font-size: 20px ;
     margin-top:36px;
     position: relative;
     text-align: center;
+    
 }
 
 nav a {
     opacity: .3;
-    margin: 0px 30px;
+    margin: 0px 0px;
+    
 }
 
 nav a:hover {
@@ -124,6 +135,7 @@ h3{
     height:210px;
     width:600px;
     display:inline-block;
+    font: 'Futura PT';
 }
 
 .info-title{
@@ -196,12 +208,14 @@ h3{
 }
 
 p{
-    font-size:16px;
-    line-height: 22px;
+    font-size:17px;
+    line-height: 27px;
     width:50%;
     font-weight: 100;
     margin-top: 36px;
     display:inline-block;
+    font-family: 'Adobe Garamond', 'avenirlight', sans-serif;
+    color:#aaa;
 }
 
 li{
@@ -420,14 +434,10 @@ nav {
     text-align: left;
     bottom:0;
     bottom:214px;
-    margin:0 0;
+    margin:0px 0px;
     z-index: 100;
 }
 
-nav a {
-    opacity: .3;
-    margin: 0px 0px;
-}
 
 nav a:hover {
      cursor: pointer;
@@ -436,4 +446,4 @@ nav a:hover {
 .spacer{
     height:100px;
 }
-}
+
