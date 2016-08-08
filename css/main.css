@@ -214,7 +214,8 @@ p{
     font-weight: 100;
     margin-top: 36px;
     display:inline-block;
-    font-family: 'Adobe Garamond', 'avenirlight', sans-serif;
+    font-family:'tk-ff-meta-serif-web-pro', 'avenirlight', sans-serif;
+
     color:#aaa;
 }
 
