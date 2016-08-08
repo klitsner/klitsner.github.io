@@ -340,7 +340,7 @@ $(document).ready(function(){
         $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
          $('#info').css('color','#eaeaea');
-         $("#about-link").fadeTo(0,.3);
+         $("#about-link").fadeTo(0,.14);
          $('#logo-container').css('background-color','#eaeaea');
         }
         scope.$apply(function(){
@@ -376,9 +376,9 @@ $(document).ready(function(){
     });
     
     $("#about-link").hover(function(){
-    $("#about-link").fadeTo(0,.6);
+    $("#about-link").fadeTo(100,.6);
     },function(){
-    $("#about-link").fadeTo(0,.3);
+    $("#about-link").fadeTo(100,.14);
     });   
     
     

@@ -79,14 +79,6 @@ table {
        url('fonts/AvenirNext-UltraLight.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
-@font-face{
-  font-family: 'Adobe Garamond';
- src: local("AGaramondPro-Regular"),
-       url('fonts/AGaramondPro-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('AGaramondPro-Regular.woff2') format('woff2'), /* super Modern Browsers */
-       url('fonts/AGaramondPro-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
 
 
 html {
@@ -102,9 +94,12 @@ nav {
 }
 
 nav a {
-    opacity: .3;
+    opacity: .14;
     margin: 0px 0px;
-    
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .4px;
+
 }
 
 nav a:hover {
@@ -214,7 +209,7 @@ p{
     font-weight: 300;
     margin-top: 36px;
     display:inline-block;
-    font-family:"ff-meta-serif-web-pro",'avenirlight', sans-serif;
+    font-family:"garamond-premier-pro-display",'avenirlight', sans-serif;
     color:#aaa;
 }
 
@@ -419,7 +414,7 @@ b {
     bottom:225px;
     text-align: left;
     display:none;
-    letter-spacing: .1px;
+    letter-spacing: .5px;
     
 }
 
