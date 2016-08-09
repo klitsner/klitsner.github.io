@@ -99,12 +99,14 @@ nav a {
     font-size: 12px;
     font-weight: 500;
     letter-spacing: .4px;
+    font-weight: 500;
+    position:absolute;
+    bottom:-1px;
 
 }
 
 nav a:hover {
      cursor: pointer;
-    opacity: 1;
 }
 
 h1{
@@ -206,11 +208,12 @@ p{
     font-size:17px;
     line-height: 27px;
     width:50%;
-    font-weight: 300;
+    font-weight: 100;
     margin-top: 36px;
+    letter-spacing: .4px;
     display:inline-block;
-    font-family:"garamond-premier-pro-display",'avenirlight', sans-serif;
-    color:#aaa;
+    font-family:"pt-serif",'avenirlight', sans-serif;
+    color:#bbb;
 }
 
 li{
