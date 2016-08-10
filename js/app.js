@@ -18,90 +18,48 @@ app.controller('InfoController', ['$scope', function ($scope) {
         $scope.content = 'Design | Media Arts Student';  
     }
 
-
-
     $scope.projects = 
         [
                 {
             title: 'S.A.D. Shelter',
             medium: 'Installation, Processing, Sound',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: ' Amatuer ',
             medium: 'Dance, Arduino, Sound, Processing',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: ' Choose',
             medium: 'Processing, Teensy',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: 'Alexander Doggus',
             medium: 'Unity, Installation, Sound',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:'',
             iframe:"https://player.vimeo.com/video/157377653"
         },
         {
             title: 'Martini Scorchazio',
             medium: 'Music Video',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: 'Timeline of the Far Future',
             medium: 'Processing',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: 'Dro0Oo00ol',
             medium: 'Exhibition',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: '25 words 25 works',
             medium: 'Graphic Design, Bookmaking, Design Research',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: 'Illustrations / Graphics',
             medium: 'Ink, Digital',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         },
         {
             title: 'LA Hacks 2015',
             medium: 'Identity, Promotional Design',
-            description: '',
-            thumbnail:'',
-            body:'',
-            press:''
         }
 
 
@@ -113,8 +71,6 @@ app.controller('InfoController', ['$scope', function ($scope) {
     };
 
 }]);
-
-
 
 
 var projects = [
@@ -337,7 +293,7 @@ $(document).ready(function(){
         scope.$apply(function(){
             scope.body= '';
             scope.title = "Samson Klitsner";
-            scope.content = "Design Media Arts Student";
+            scope.content = "Design | Media Arts Student";
             $('#content').css('margin-top', '0').html('');
             show= false;
             change=false;
