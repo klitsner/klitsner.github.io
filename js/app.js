@@ -8,14 +8,14 @@ var app = angular.module("myApp", []);
 
 app.controller('InfoController', ['$scope', function ($scope) { 
     $scope.title = 'samson klitsner'; 
-    $scope.content = 'Design Media Arts Student';  
+    $scope.content = 'Design | Media Arts Student';  
     $scope.body = '';
     $scope.images = [];
     $scope.iframe = '';
 
     if ($("#about").length){
         $scope.title = 'Samson klitsner'; 
-        $scope.content = 'Design Media Arts Student';  
+        $scope.content = 'Design | Media Arts Student';  
     }
 
 
@@ -130,7 +130,7 @@ var projects = [
         medium: 'dance, arduino, sound, Processing',
         images: '<img src="images/wac1.png" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/MiamiPerformance2.jpg" class="small-image">',
         thumbnail:'',
-        body:'<p class="description" >Start at 3:14 (video password: what)\n\nFeatured at the International Noise Conference in Miami, Amateur is a collaboration between Samson Klitsner, Dorothy Dubrule and Barry Brannum. Using flex sensors and wearable arduinos, Amateur triggers sound samples with movement as means of exploring how performance creates a world for its audience on competing perceptual levels.\n\nAmateur has performed at the Wight Gallery, Eastside International, and Glorya Kaufman Dance Theater in Los Angeles, as well as the International Noise Conference in Miami.\n\n</p><div class="side"><h1>Press</h1><li><a href="https://www.youtube.com/watch?v=dnCuq7sOCyk&feature=youtu.be"target="_blank">SFBandVideos</a></li><li><a href="http://www.miaminewtimes.com/slideshow/the-people-of-international-noise-conference-2015-6283467/13"target="_blank">Miami New Times</a></li></div><img src="images/arduino2.png" class="large-image"><p class="description" >A wireless belt is rigged with an Arduino Lilypad, Xbee module, and flex sensors attached to various joints on the body.\n\nData from the flex sensors is used to trigger sound samples, which are selected and updated through a software/midi interface written in processing.\n\nROLES:\n\nSoftware/Sound Design: Samson Klitsner\n\nCostume design: Sarah B. Lunde\n\nChoreography and dance: Dorothy Dubrule and Barry Brannum</p>',
+        body:'<div class="caption">(video password: what)</div><p class="description" >\n\nFeatured at the International Noise Conference in Miami, Amateur is a collaboration between Samson Klitsner, Dorothy Dubrule and Barry Brannum. Using flex sensors and wearable arduinos, Amateur triggers sound samples with movement as means of exploring how performance creates a world for its audience on competing perceptual levels.\n\nAmateur has performed at the Wight Gallery, Eastside International, and Glorya Kaufman Dance Theater in Los Angeles, as well as the International Noise Conference in Miami.\n\n</p><div class="side"><h1>Press</h1><li><a href="https://www.youtube.com/watch?v=dnCuq7sOCyk&feature=youtu.be"target="_blank">SFBandVideos</a></li><li><a href="http://www.miaminewtimes.com/slideshow/the-people-of-international-noise-conference-2015-6283467/13"target="_blank">Miami New Times</a></li></div><img src="images/arduino2.png" class="large-image"><p class="description" >A wireless belt is rigged with an Arduino Lilypad, Xbee module, and flex sensors attached to various joints on the body.\n\nData from the flex sensors is used to trigger sound samples, which are selected and updated through a software/midi interface written in processing.\n\nROLES:\n\nSoftware/Sound Design: Samson Klitsner\n\nCostume design: Sarah B. Lunde\n\nChoreography and dance: Dorothy Dubrule and Barry Brannum</p>',
         press:'',
         iframe:'<iframe src="https://player.vimeo.com/video/121414399?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
@@ -281,19 +281,10 @@ $(document).ready(function(){
             if($( ".logo-color" ).length==0 && change==false){
                 scope.$apply(function(){
                     scope.title = 'Samson klitsner'; 
-                    scope.content = 'Design Media Arts Student';  
-                    $('#info').css('color','#eaeaea');
+                    scope.content = 'Design | Media Arts Student';  
+                    $('#info').css('color','#aaa');
                 });
                 
-//                  if($('.info-title').text()==='SAMSON KLITSNER'){
-//                      if(change==false){
-//                $('#logo-container').hover(function(){
-//                $('#info').css('color','#dbdbdb');
-//                },function(){
-//                $('#info').css('color','#eaeaea');
-//                });
-//                      }
-//                  }
     
             }
         });
@@ -339,7 +330,7 @@ $(document).ready(function(){
         $('#projects').show();
         $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
-         $('#info').css('color','#eaeaea');
+         $('#info').css('color','#777');
          $("#about-link").fadeTo(0,.14);
          $('#logo-container').css('background-color','#eaeaea');
         }
@@ -376,25 +367,9 @@ $(document).ready(function(){
     });
     
     $("#about-link").hover(function(){
-    $("#about-link").fadeTo(100,.6);
+    $("#about-link").fadeTo(100,.4);
     },function(){
     $("#about-link").fadeTo(100,.14);
     });   
-    
-    
-    //hover over logo
-
-//    $('#logo-container').hover(function(){
-//        if(change==false){
-//         $('#info').css('color','#dbdbdb');
-//            $('#logo-container').css('background-color','#dbdbdb');
-//                    }
-//    },
-//                              function(){
-//        if(change==false){
-//            $('#logo-container').css('background-color','#eaeaea');
-//             $('#info').css('color','#eaeaea');
-//        }
-//    });
     
 });

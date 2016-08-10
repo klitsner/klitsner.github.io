@@ -96,7 +96,7 @@ nav {
 nav a {
     opacity: .14;
     margin: 0px 0px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: .4px;
     font-weight: 500;
@@ -127,7 +127,7 @@ h3{
 
 
 #info{
-    color:#eaeaea;
+    color:#aaa;
     vertical-align: top;
     height:210px;
     width:600px;
@@ -247,6 +247,13 @@ a{
 
 .side h1{
     color: gray;
+}
+
+.caption{
+    margin-top:5px;
+    margin-bottom:-20px;
+    font-size: 100;
+    color:gray;
 }
 
 #projects{
@@ -410,11 +417,11 @@ b {
 
 
 .collapse{
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     position:absolute;
     height:0;
-    bottom:225px;
+    bottom:228px;
     text-align: left;
     display:none;
     letter-spacing: .5px;
