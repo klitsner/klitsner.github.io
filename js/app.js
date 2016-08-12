@@ -20,7 +20,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
 
     $scope.projects = 
         [
-                {
+        {
             title: 'S.A.D. Shelter',
             medium: 'Installation, Processing, Sound',
         },
@@ -61,17 +61,12 @@ app.controller('InfoController', ['$scope', function ($scope) {
             title: 'LA Hacks 2015',
             medium: 'Identity, Promotional Design',
         }
-
-
     ];
     $scope.info = function(index){
         $scope.title = $scope.projects[index].title;
         $scope.content = $scope.projects[index].medium;
-
     };
-
 }]);
-
 
 var projects = [
     {
@@ -81,7 +76,7 @@ var projects = [
         press:'<div class="side"><h1>Press</h1><li><a href="http://thecreatorsproject.vice.com/blog/ucla-design-media-arts-showcase-amidst-campus-shooting">CREATORS PROJECT</a></li></div>',
         iframe:'<img src="images/shelter5.jpg" class="large-image">'
     }, 
- { 
+    { 
         title: ' Amatuer Dance Collaboration',
         medium: 'dance, arduino, sound, Processing',
         images: '<img src="images/wac1.png" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/MiamiPerformance2.jpg" class="small-image">',
@@ -158,8 +153,6 @@ var projects = [
         iframe:'',
 
     },
-
-
     {
         title: 'LA Hacks',
         medium: '',
@@ -175,7 +168,6 @@ var projects = [
 
 
 
-
 /*Jquery stuff*/
 $(document).ready(function(){
     var scope = angular.element(document.getElementById('controller')).scope()
@@ -187,20 +179,20 @@ $(document).ready(function(){
     var show = false;
     var safe = false;
 
-    
+
     $('#projects').hover(function(){
         $("#about-link").fadeOut(200);
-        
+
     },
-                        function(){
+                         function(){
         if(show!=true){
-        $("#about-link").fadeIn(200);
+            $("#about-link").fadeIn(200);
         }
-                        });
+    });
 
 
     $('.thumbnail').hover(function(){
-        
+
         if(show==false){
             index = $(this).index()
             $(this).find('.thumbnail-color').animate({
@@ -238,16 +230,11 @@ $(document).ready(function(){
                 scope.$apply(function(){
                     scope.title = 'Samson klitsner'; 
                     scope.content = 'Design | Media Arts Student';  
-                    $('#info').css('color','#aaa');
+                    $('#info').css('color','#777');
                 });
-                
-    
             }
         });
-       
     });
-
-
     //selecting a project to view
     $('.thumbnail').click(function(){
         reset();
@@ -261,14 +248,13 @@ $(document).ready(function(){
             scope.info(index);
         });
         //Add title to URL
-        locationHash(scope.title);
+        locationHash(scope.title);       
+        //update the model based on the locationHash
+        updateModel(index);
         //Add content from Angular the wrong way
-        $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/colors.png" id="arrow">');
-        $('.description').css('margin','36px 0');
     });
 
     $('#logo-container').hover(function(){
-
         if(change==true){
             $('.collapse').show().css("color", color);
             $('#logo-container').css( 'cursor', 'pointer' );
@@ -279,9 +265,7 @@ $(document).ready(function(){
         }
     },
                                function(){
-
         $('.collapse').hide();
-
     });
 
     //reset the work page
@@ -289,9 +273,9 @@ $(document).ready(function(){
         $('#projects').show();
         $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
-         $('#info').css('color','#777');
-         $("#about-link").fadeTo(0,.14);
-         $('#logo-container').css('background-color','#eaeaea');
+            $('#info').css('color','#777');
+            $("#about-link").fadeTo(0,.14);
+            $('#logo-container').css('background-color','#eaeaea');
         }
         scope.$apply(function(){
             scope.body= '';
@@ -308,10 +292,10 @@ $(document).ready(function(){
         if(!$("#about").length){
             reset();
             change=false;
-            $('.collapse').hide();}
+            $('.collapse').hide();
+            history.pushState('', document.title, window.location.pathname);
+        }
     });
-
-
 
     //scroll to top
     $('#content').on("click", '#arrow', function(){
@@ -321,23 +305,58 @@ $(document).ready(function(){
             $('.collapse').hide();
         });
 
-
         return false;
     });
-    
+
     $("#about-link").hover(function(){
-    $("#about-link").fadeTo(100,.4);
+        $("#about-link").fadeTo(100,.4);
     },function(){
-    $("#about-link").fadeTo(100,.14);
+        $("#about-link").fadeTo(100,.14);
     });   
+ 
+window.onhashchange = function() {
+   if (window.location.hash) {
+    $(scope.projects).each(function(index){
+       if("#"+this.title.replace(/\s+/g,'')===location.hash){
+                  updateModel(index);
+       }
+    });
+   } else {
+        reset();
+       $('#info').css('color','#777');
+     }
+}
     
+function updateModel(i) {
+        reset();
+            $('.thumbnail').each(function(index){
+            if(index==i){
+                color = $(this).find('.thumbnail-color').css("background-color");
+            }
+        });
+        $('#info').css('color',color);
+        $("#about-link").hide();
+        change = true;
+        show = true;
+        $('#projects').hide();
+        $('#logo-container').css('background-color',color);
+        scope.$apply(function(){
+            scope.body= projects[i].body;
+            scope.info(i);
+        });
+
+$('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/colors.png" id="arrow">');
+        $('.description').css('margin','36px 0');
+}
 });
+
+
 
 function locationHash(scopeTitle) {
     var title = scopeTitle.replace(/\s+/g,'');
     location.hash=title;
 }
 
-function expand() {
-    
-}
+
+
+
