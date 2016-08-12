@@ -114,7 +114,7 @@ var projects = [
         medium: 'Music Video',
         description: '',
         thumbnail:'',
-        body:'<p class="description">A work in progress (password: video)\n\n I started working on this music as the final project for my Video class. The song, "Martini Scorchazio," was produced and recorded by myself along with my art school rap-group <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
+        body:'<p class="description">A work in progress\n\n My final project for DMA 161: Video. The song, "Martini Scorchazio," was produced and recorded by myself along with fellow DMA and Fine Art  <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
         press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
         iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
@@ -260,6 +260,9 @@ $(document).ready(function(){
             scope.body= projects[index].body;
             scope.info(index);
         });
+        //Add title to URL
+        locationHash(scope.title);
+        //Add content from Angular the wrong way
         $('#content').css('margin-top', '60px').prepend(projects[index].iframe).append(projects[index].body, projects[index].press, projects[index].images).append('<img src="images/colors.png" id="arrow">');
         $('.description').css('margin','36px 0');
     });
@@ -329,3 +332,12 @@ $(document).ready(function(){
     });   
     
 });
+
+function locationHash(scopeTitle) {
+    var title = scopeTitle.replace(/\s+/g,'');
+    location.hash=title;
+}
+
+function expand() {
+    
+}
