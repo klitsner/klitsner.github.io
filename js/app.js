@@ -313,28 +313,43 @@ $(document).ready(function(){
     },function(){
         $("#about-link").fadeTo(100,.14);
     });   
- 
-window.onhashchange = function() {
-   if (window.location.hash) {
-    $(scope.projects).each(function(index){
-       if("#"+this.title.replace(/\s+/g,'')===location.hash){
-                  updateModel(index);
-       }
-    });
-   } else {
+
+    window.onhashchange = function() {
+        if (window.location.hash) {
+            $(scope.projects).each(function(index){
+                if("#"+this.title.replace(/\s+/g,'')===location.hash){
+                    updateModel(index);
+                }
+            });
+        } else {
+            reset();
+            $('#info').css('color','#777');
+        }
+    }
+
+    //return the index of the element associated with the location hash
+    function checkHash(){
+        var i;
+        $(scope.projects).each(function(index){
+            if("#"+this.title.replace(/\s+/g,'')===location.hash){
+                i = index;       
+            }else{
+                return -1;
+            }
+        });
+        console.log(i);
+        return i;
+    }
+
+    function updateModel(i) {
         reset();
-       $('#info').css('color','#777');
-     }
-}
-    
-function updateModel(i) {
-        reset();
-            $('.thumbnail').each(function(index){
+        $('.thumbnail').each(function(index){
             if(index==i){
                 color = $(this).find('.thumbnail-color').css("background-color");
             }
         });
         $('#info').css('color',color);
+         $('.collapse').css("color", color);
         $("#about-link").hide();
         change = true;
         show = true;
@@ -344,13 +359,40 @@ function updateModel(i) {
             scope.body= projects[i].body;
             scope.info(i);
         });
-
-$('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/colors.png" id="arrow">');
+        $('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/colors.png" id="arrow">');
         $('.description').css('margin','36px 0');
-}
+        
+        locationHash(scope.title);
+    }
+
+    document.onkeydown = function(e) {
+        e = e || window.event;
+        switch(e.which || e.keyCode) {
+            case 37: // left
+                var check = checkHash();
+                if (check>0&&check<10) {
+                    updateModel(check-1);
+                }
+                break;
+
+            case 38: // up
+                break;
+
+            case 39: // right
+                var check = checkHash();
+                if (check>-1&&check<9) {
+                    updateModel(check+1);
+                }
+                break;
+
+            case 40: // down
+                break;
+
+            default: return; // exit this handler for other keys
+        }
+        e.preventDefault(); // prevent the default action (scroll / move caret)
+    }
 });
-
-
 
 function locationHash(scopeTitle) {
     var title = scopeTitle.replace(/\s+/g,'');
