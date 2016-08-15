@@ -304,7 +304,6 @@ $(document).ready(function(){
             change=false;
             $('.collapse').hide();
         });
-
         return false;
     });
 
@@ -316,18 +315,18 @@ $(document).ready(function(){
 
     window.onhashchange = function() {
         if (window.location.hash) {
-            $(scope.projects).each(function(index){
-                if("#"+this.title.replace(/\s+/g,'')===location.hash){
-                    updateModel(index);
-                }
-            });
+            updateModel(checkHash());
         } else {
             reset();
             $('#info').css('color','#777');
         }
     }
+    
+    $(window).on('load', function(){
+     updateModel(checkHash());
+});
 
-    //return the index of the element associated with the location hash
+    //return the index of the object associated with the location hash
     function checkHash(){
         var i;
         $(scope.projects).each(function(index){
@@ -361,7 +360,6 @@ $(document).ready(function(){
         });
         $('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/x.png" id="arrow">');
         $('.description').css('margin','36px 0');
-        
         locationHash(scope.title);
     }
 
