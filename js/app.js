@@ -321,11 +321,18 @@ $(document).ready(function(){
             $('#info').css('color','#777');
         }
     }
-    
-    $(window).on('load', function(){
-     updateModel(checkHash());
-});
 
+        
+        $(window).on('load', function(){
+            if(window.location.hash) {
+            if(!$("#about").length){
+     updateModel(checkHash());
+            }
+            }
+});
+    
+    
+    
     //return the index of the object associated with the location hash
     function checkHash(){
         var i;
@@ -341,6 +348,9 @@ $(document).ready(function(){
     }
 
     function updateModel(i) {
+        if(i===-1){
+            return 0;
+        }
         reset();
         $('.thumbnail').each(function(index){
             if(index==i){
