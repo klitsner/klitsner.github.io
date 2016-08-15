@@ -337,7 +337,7 @@ $(document).ready(function(){
     function checkHash(){
         var i;
         $(scope.projects).each(function(index){
-            if("#"+this.title.replace(/\s+/g,'')===location.hash){
+            if("#"+this.title.replace(/\s+/g,'').toUpperCase()===location.hash.toUpperCase()){
                 i = index;       
             }else{
                 return -1;
