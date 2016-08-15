@@ -269,7 +269,8 @@ $(document).ready(function(){
     });
 
     //reset the work page
-    var reset = function(){
+     var reset = function(){
+         
         $('#projects').show();
         $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
@@ -285,6 +286,7 @@ $(document).ready(function(){
             show= false;
             change=false;
         });
+          
     }
 
     //reset
@@ -293,7 +295,6 @@ $(document).ready(function(){
             reset();
             change=false;
             $('.collapse').hide();
-            history.pushState('', document.title, window.location.pathname);
         }
     });
 
@@ -301,6 +302,7 @@ $(document).ready(function(){
     $('#content').on("click", '#arrow', function(){
         $("html, body").animate({ scrollTop: 0 }, 400,function(){
             reset();
+            history.pushState('', document.title, window.location.pathname);
             change=false;
             $('.collapse').hide();
         });
@@ -347,6 +349,7 @@ $(document).ready(function(){
         return i;
     }
 
+    //Update page to project corresponding with index i.
     function updateModel(i) {
         if(i===-1){
             return 0;
