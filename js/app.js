@@ -359,7 +359,7 @@ $(document).ready(function(){
             scope.body= projects[i].body;
             scope.info(i);
         });
-        $('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/colors.png" id="arrow">');
+        $('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/x.png" id="arrow">');
         $('.description').css('margin','36px 0');
         
         locationHash(scope.title);

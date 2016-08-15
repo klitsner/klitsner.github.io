@@ -361,6 +361,7 @@ a{
 
 #arrow{
     width:100px;
+    opacity:.6;
     position:relative;
     margin:0 auto;
     display:block;
