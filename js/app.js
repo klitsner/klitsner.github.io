@@ -8,14 +8,14 @@ var app = angular.module("myApp", []);
 
 app.controller('InfoController', ['$scope', function ($scope) { 
     $scope.title = 'samson klitsner'; 
-    $scope.content = 'Design | Media Arts Student';  
+    $scope.content = 'Interaction Designer | Media Artist';  
     $scope.body = '';
     $scope.images = [];
     $scope.iframe = '';
 
     if ($("#about").length){
         $scope.title = 'Samson klitsner'; 
-        $scope.content = 'Design | Media Arts Student';  
+        $scope.content = 'Interaction Designer | Media Artist';  
     }
 
     $scope.projects = 
