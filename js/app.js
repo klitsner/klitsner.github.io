@@ -25,7 +25,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
             medium: 'Installation, Processing, Sound',
         },
         {
-            title: ' Amatuer ',
+            title: ' Amateur ',
             medium: 'Dance, Arduino, Sound, Processing',
         },
         {
@@ -77,7 +77,7 @@ var projects = [
         iframe:'<img src="images/shelter5.jpg" class="large-image">'
     }, 
     { 
-        title: ' Amatuer Dance Collaboration',
+        title: ' Amateur Dance Collaboration',
         medium: 'dance, arduino, sound, Processing',
         images: '<img src="images/wac1.png" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/MiamiPerformance2.jpg" class="small-image">',
         thumbnail:'',
