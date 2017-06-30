@@ -229,7 +229,7 @@ $(document).ready(function(){
             if($( ".logo-color" ).length==0 && change==false){
                 scope.$apply(function(){
                     scope.title = 'Samson klitsner'; 
-                    scope.content = 'Design | Media Arts Student';  
+                    scope.content = 'Interaction Designer | Media Artist';  
                     $('#info').css('color','#777');
                 });
             }
@@ -281,7 +281,7 @@ $(document).ready(function(){
         scope.$apply(function(){
             scope.body= '';
             scope.title = "Samson Klitsner";
-            scope.content = "Design | Media Arts Student";
+            scope.content = "Interaction Designer | Media Artist";
             $('#content').css('margin-top', '0').html('');
             show= false;
             change=false;
