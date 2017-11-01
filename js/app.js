@@ -6,19 +6,19 @@
 var app = angular.module("myApp", []);
 
 
-app.controller('InfoController', ['$scope', function ($scope) { 
-    $scope.title = 'samson klitsner'; 
-    $scope.content = 'Interaction Designer | Media Artist';  
+app.controller('InfoController', ['$scope', function ($scope) {
+    $scope.title = 'samson klitsner';
+    $scope.content = 'Interaction Designer | Media Artist';
     $scope.body = '';
     $scope.images = [];
     $scope.iframe = '';
 
     if ($("#about").length){
-        $scope.title = 'Samson klitsner'; 
-        $scope.content = 'Interaction Designer | Media Artist';  
+        $scope.title = 'Samson klitsner';
+        $scope.content = 'Interaction Designer | Media Artist';
     }
 
-    $scope.projects = 
+    $scope.projects =
         [
         {
             title: 'S.A.D. Shelter',
@@ -75,8 +75,8 @@ var projects = [
         body:'<p class="description">A place of refuge for the overwhelmed patron, the S.A.D. shelter is activated by surrounding exhibition happenings (Please take off shoes before entering).\n\nThe S.A.D. Shelter was created for the S.A.D. Show, UCLA\'s DMA Senior Exhibition. Inspired by the overwhelming nature of gallery openings, the S.A.D. Shelter draws inspiration from a variety of comforts ranging from ASMR videos to primitive lean-to shelters. Viewers enter the shelter through the side and are shielded visually by glsl generated graphics, which in turn are activated by a microphone monitoring room noise or \'activity\'. Through headphones, the visuals are accompanied by calming ASMR audio clips to create a meditative space within the gallery. \n\n\n\n</p>',
         press:'<div class="side"><h1>Press</h1><li><a href="http://thecreatorsproject.vice.com/blog/ucla-design-media-arts-showcase-amidst-campus-shooting">CREATORS PROJECT</a></li></div>',
         iframe:'<img src="images/shelter5.jpg" class="large-image">'
-    }, 
-    { 
+    },
+    {
         title: ' Amateur Dance Collaboration',
         medium: 'dance, arduino, sound, Processing',
         images: '<img src="images/wac1.png" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/MiamiPerformance2.jpg" class="small-image">',
@@ -109,8 +109,7 @@ var projects = [
         medium: 'Music Video',
         description: '',
         thumbnail:'',
-        body:'<p class="description">A work in progress\n\n My final project for DMA 161: Video.  <a href ="https://soundcloud.com/
-        -realm-dice-boys">Click here for more ShadowRealmDiceBoys</a>.\n\n Recording, Director/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
+        body:'<p class="description">A work in progress\n\n My final project for DMA 161: Video.  <a href ="https://soundcloud.com/-realm-dice-boys">Click here for more ShadowRealmDiceBoys</a>.\n\n Recording, Director/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
         press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
         iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
@@ -229,8 +228,8 @@ $(document).ready(function(){
             $(this).remove();
             if($( ".logo-color" ).length==0 && change==false){
                 scope.$apply(function(){
-                    scope.title = 'Samson klitsner'; 
-                    scope.content = 'Interaction Designer | Media Artist';  
+                    scope.title = 'Samson klitsner';
+                    scope.content = 'Interaction Designer | Media Artist';
                     $('#info').css('color','#777');
                 });
             }
@@ -249,7 +248,7 @@ $(document).ready(function(){
             scope.info(index);
         });
         //Add title to URL
-        locationHash(scope.title);       
+        locationHash(scope.title);
         //update the model based on the locationHash
         updateModel(index);
         //Add content from Angular the wrong way
@@ -271,7 +270,7 @@ $(document).ready(function(){
 
     //reset the work page
      var reset = function(){
-         
+
         $('#projects').show();
         $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
@@ -287,7 +286,7 @@ $(document).ready(function(){
             show= false;
             change=false;
         });
-          
+
     }
 
     //reset
@@ -314,7 +313,7 @@ $(document).ready(function(){
         $("#about-link").fadeTo(100,.4);
     },function(){
         $("#about-link").fadeTo(100,.14);
-    });   
+    });
 
     window.onhashchange = function() {
         if (window.location.hash) {
@@ -325,7 +324,7 @@ $(document).ready(function(){
         }
     }
 
-        
+
         $(window).on('load', function(){
             if(window.location.hash) {
             if(!$("#about").length){
@@ -333,15 +332,15 @@ $(document).ready(function(){
             }
             }
 });
-    
-    
-    
+
+
+
     //return the index of the object associated with the location hash
     function checkHash(){
         var i;
         $(scope.projects).each(function(index){
             if("#"+this.title.replace(/\s+/g,'').toUpperCase()===location.hash.toUpperCase()){
-                i = index;       
+                i = index;
             }else{
                 return -1;
             }
