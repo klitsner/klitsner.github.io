@@ -1,5 +1,5 @@
 
-/*QUestions for chandler: 
+/*QUestions for chandler:
 
 with the various containers, should I be alternating between relative and absolute to get them to sit next to eachother? when they are not absolute
 what pushes them to the bottom? (side-bar-container, main-section, content and side-spacer
@@ -28,8 +28,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -40,7 +40,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -82,7 +82,7 @@ table {
 
 
 html {
- font-family: Avenir Next, 'Muli', sans-serif;   
+ font-family: Avenir Next, 'Muli', sans-serif;
 }
 
 nav {
@@ -90,7 +90,7 @@ nav {
     margin-top:36px;
     position: relative;
     text-align: center;
-    
+
 }
 
 nav a {
@@ -280,7 +280,7 @@ a{
     background-color:#eaeaea;
 }
 
-.thumbnail {  
+.thumbnail {
         color:#000;
         -webkit-transition: background 0.3s ease-out;
         -moz-transition: background 0.3s ease-out;
@@ -341,23 +341,23 @@ a{
 }
 
 .pink{
-  background:#6fe09a ;  
+  background:#6fe09a ;
 }
 
 .green{
-    background: #16d3c3;  
+    background: #16d3c3;
 }
 
 .orange{
-    background: #fc5355;  
+    background: #fc5355;
 }
 
 .black{
-    background: #252434;  
+    background: #252434;
 }
 
 .white{
-   background: rgb(255,255,255);   
+   background: rgb(255,255,255);
 }
 
 #arrow{
@@ -368,7 +368,7 @@ a{
     display:block;
     margin-bottom:50px;
     top:0px;
-    
+
     -webkit-transition: 0.1s ease-out;
         -moz-transition:  0.1s ease-out;
         -ms-transition: 0.1s ease-out;
@@ -383,7 +383,7 @@ a{
 }
 
 .darken{
-    
+
 }
 
 #arrow{
@@ -394,7 +394,7 @@ a{
 
 .description{
     margin: 0;
-    width:60%;   
+    width:60%;
     white-space:pre-line;
 }
 
@@ -427,7 +427,11 @@ b {
     text-align: left;
     display:none;
     letter-spacing: .5px;
-    
+
+}
+
+.vp-player-layout{
+    left:0px;
 }
 
 
