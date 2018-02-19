@@ -182,7 +182,6 @@ $(document).ready(function(){
 
     $('#projects').hover(function(){
         $("#about-link").fadeOut(200);
-
     },
     function(){
         if(show!=true){
@@ -201,6 +200,7 @@ $(document).ready(function(){
             });
 
 
+
             color = $(this).find('.thumbnail-color').css( "background-color" );
 
             $('#logo-container').append('<div class="logo-color"></div>');
@@ -213,30 +213,53 @@ $(document).ready(function(){
                     scope.info(index);
                 });
             });
-        }
-    },
-    function(){
-        $('.collapse').hide();
-        $('#info').css('color',curr);
-        $(this).find('.thumbnail-color').stop(true,true).animate({
-            height: 140
-        }, transTime, function() {
-        });
-        $('.logo-color').animate({
-            height: 0
-        }, transTime, function() {
-            $(this).remove();
-            if($( ".logo-color" ).length==0 && change==false){
-                scope.$apply(function(){
-                    scope.title = 'Samson klitsner';
-                    scope.content = 'Interaction Designer | Media Artist';
-                    $('#info').css('color','#777');
-                });
+
+
+            if (isMobileDevice()){
+                setTimeout(
+                  function(){
+                     reset();
+
+                     $("#about-link").hide();
+                     change = true;
+                     show = true;
+                     $('#projects').hide();
+                     $('#logo-container').css('background-color',color);
+                     scope.$apply(function(){
+                        scope.body= projects[index].body;
+                        scope.info(index);
+                    });
+        //Add title to URL
+        locationHash(scope.title);
+    }, 500);}
             }
+
+
+
+        },
+        function(){
+            $('.collapse').hide();
+            $('#info').css('color',curr);
+            $(this).find('.thumbnail-color').stop(true,true).animate({
+                height: 140
+            }, transTime, function() {
+            });
+            $('.logo-color').animate({
+                height: 0
+            }, transTime, function() {
+                $(this).remove();
+                if($( ".logo-color" ).length==0 && change==false){
+                    scope.$apply(function(){
+                        scope.title = 'Samson klitsner';
+                        scope.content = 'Interaction Designer | Media Artist';
+                        $('#info').css('color','#777');
+                    });
+                }
+            });
         });
-    });
     //selecting a project to view
     $('.thumbnail').click(function(){
+
         reset();
         $("#about-link").hide();
         change = true;
@@ -249,20 +272,40 @@ $(document).ready(function(){
         });
         //Add title to URL
         locationHash(scope.title);
+
     });
 
-    $('#logo-container').hover(function(){
-        if(change==true){
-            $('.collapse').show().css("color", color);
-            $('#logo-container').css( 'cursor', 'pointer' );
-        }
-        if(change==false){
-            $('.collapse').hide();
-            $('#logo-container').css( 'cursor', 'default' );
-        }
-    },
-    function(){
+//     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+//         reset();
+//         $("#about-link").hide();
+//         change = true;
+//         show = true;
+//         $('#projects').hide();
+//         $('#logo-container').css('background-color',color);
+//         scope.$apply(function(){
+//             scope.body= projects[index].body;
+//             scope.info(index);
+//         });
+//         //Add title to URL
+//         locationHash(scope.title);
+// }
+
+$('#logo-container').hover(function(){
+    if(change==true){
+        $('.collapse').show().css("color", color);
+        $('#logo-container').css( 'cursor', 'pointer' );
+    }
+    if(change==false){
         $('.collapse').hide();
+        $('#logo-container').css( 'cursor', 'default' );
+    }
+},
+function(){
+    $('.collapse').hide();
+})
+.click(function(){
+        // locationHash("");
+        window.location.href.split('#')[0]
     });
 
     //reset the work page
@@ -330,6 +373,10 @@ $(document).ready(function(){
        }
    });
 
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
 
 
     //return the index of the object associated with the location hash
@@ -374,7 +421,7 @@ $(document).ready(function(){
 
 
         if ($('.vp-player-layout')){
-                    $('.vp-player-layout').css('left','0px');
+            $('.vp-player-layout').css('left','0px');
         }
     }
 
