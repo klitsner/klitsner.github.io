@@ -275,25 +275,18 @@ $(document).ready(function(){
 
     });
 
-//     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-//         reset();
-//         $("#about-link").hide();
-//         change = true;
-//         show = true;
-//         $('#projects').hide();
-//         $('#logo-container').css('background-color',color);
-//         scope.$apply(function(){
-//             scope.body= projects[index].body;
-//             scope.info(index);
-//         });
-//         //Add title to URL
-//         locationHash(scope.title);
-// }
-
 $('#logo-container').hover(function(){
     if(change==true){
         $('.collapse').show().css("color", color);
         $('#logo-container').css( 'cursor', 'pointer' );
+
+if (isMobileDevice()){
+        if(!$("#about").length){
+            reset();
+            change=false;
+            $('.collapse').hide();
+        }}
+
     }
     if(change==false){
         $('.collapse').hide();
@@ -302,6 +295,8 @@ $('#logo-container').hover(function(){
 },
 function(){
     $('.collapse').hide();
+
+
 })
 .click(function(){
         // locationHash("");
