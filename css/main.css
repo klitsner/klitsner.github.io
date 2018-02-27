@@ -155,7 +155,7 @@ h3{
     position:relative;
     height:210px;
     width:210px;
-    background:#eaeaea;
+    background: #eaeaea;
     transition: background .2s linear;
     -webkit-transition: background .2s linear;
     -moz-transition: background .2s linear;
@@ -299,6 +299,7 @@ a{
 .large-image{
     margin-top: 0px;
     margin-bottom: 6px;
+    margin-left: -1px;
     width:100%;
 }
 .small-image{
@@ -430,9 +431,6 @@ b {
 
 }
 
-.vp-player-layout{
-    left:0px;
-}
 
 
 /*test zone*/
