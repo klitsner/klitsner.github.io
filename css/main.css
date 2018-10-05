@@ -361,6 +361,10 @@ a{
    background: rgb(255,255,255);
 }
 
+.slate{
+    background: #A0A0BB;
+}
+
 #arrow{
     width:100px;
     opacity:.6;

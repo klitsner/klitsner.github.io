@@ -21,6 +21,10 @@ app.controller('InfoController', ['$scope', function ($scope) {
     $scope.projects =
     [
     {
+        title: 'Tape Deck',
+        medium: 'RFID Reader, G-Speak',
+    },
+    {
         title: 'S.A.D. Shelter',
         medium: 'Installation, Processing, Sound',
     },
@@ -69,6 +73,13 @@ app.controller('InfoController', ['$scope', function ($scope) {
 }]);
 
 var projects = [
+{
+    images: '<img src="Sponge-keyedLoopSmall.gif" class="large-image">',
+    thumbnail:'',
+    body:'<p class="description"> One of the first projects I worked on at <a href="oblong.com" style="font-weight:bold;">Oblong Industries</a>. \nGet the full story <a style="font-weight:bold; text-decoration:underline;" href="https://www.oblong.com/blog/posts/humor-by-design/">HERE</a>, complete with *multiple* GIFS.  \n\n\n\n</p>',
+    press:'<div class="side"><h1>Blog Post</h1><li><a href="https://www.oblong.com/blog/posts/humor-by-design/">HUMOR BY DESIGN</a></li></div>',
+    iframe:'<img src="images/U&ICassette.png" class="large-image">'
+},
 {
     images: '<img src="images/shelter1.jpg" class="large-image"><img src="images/shelter3.jpg" class="large-image"><img src="images/shelter4.jpg" class="large-image">',
     thumbnail:'',
