@@ -6,31 +6,33 @@
         <title>Samson Klitsner</title>
         <script src="https://use.typekit.net/zhm3ypy.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        
+
         <link rel="stylesheet" href="css/main.css" media="all" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script type="text/javascript" src="js/script.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <!-- use isotope library for dynamic thumbnail sorting -->
         <meta property="og:image" content="images/x.png" />
-    </head> 
+    </head>
     <body  ng-app="myApp">
         <div ng-controller="InfoController" id="controller">
             <div id = "header" >
-
-                <div id = "logo-container">
+              <div id = "logo-container">
                     <nav>
-                        <a href="about.html" id="about-link">ABOUT </a>
+                        <a href="about.html" id="about-link" class="home">ABOUT</a>
+                        <a id="home-link" class="home">HOME</a>
+                        <div id="slider-tab">    </div>
                     </nav>
-                    <div class="collapse">COLLAPSE</div>
+                    <div class="collapse">HOME</div>
                     <img src = "images/whitelogo.png" id="logo">
                 </div>
                 <div id = "info">
-                    <h1 class = "info-title">{{ title | uppercase}}</h1> 
-                    <h3 class = "info-content">{{ content }}</h3> 
+                    <h1 class = "info-title">{{ title | uppercase}}</h1>
+                    <h3 class = "info-content">{{ content }}</h3>
                 </div>
             </div>
             <div id = "content">
@@ -40,6 +42,10 @@
         <div id = "projects" >
             <div class="thumbnail" >
                 <div class="thumbnail-color indigo">
+                </div>
+            </div>
+            <div class="thumbnail" >
+                <div class="thumbnail-color purple">
                 </div>
             </div>
             <div class="thumbnail" >

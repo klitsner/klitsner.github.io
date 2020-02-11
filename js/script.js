@@ -4,14 +4,23 @@
 //want to add a load page so that it loads for a second before displaying
 
 $(document).ready(function () {
+
+          // if(!window.location.hash) {
+          //   $('#logo-container>img').click(function(){
+          //     window.location.href="about.html";
+          //   });
+          // }
+
+
     $(window).scroll(function () {
-        
+
+
         if (100 < $(window).scrollTop() - 50) {
             $('.name').fadeOut('fast');
         } else {
             $('.name').fadeIn('fast');
         }
-        
+
         $('.fade').each(function (i) {
             if ($(this).position().top < $(window).scrollTop() + 150 && $(this).position().top > $(window).scrollTop() - 300) {
               //  $(this).css('opacity', '0');
@@ -22,7 +31,7 @@ $(document).ready(function () {
             }
         });
     });
-    
+
     var roll = $('<h2>}</h2>')
     var rolls = $('<h2>{</h2>');
     $('.main-nav a').hover(function () {

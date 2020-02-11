@@ -1,61 +1,61 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Samson Klitsner Personal Website</title>
-<script src="https://use.typekit.net/zhm3ypy.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <link rel="stylesheet" href="css/main.css" media="all" type="text/css">
+<head>
+  <title>Samson Klitsner Personal Website</title>
+  <script src="https://use.typekit.net/zhm3ypy.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link rel="stylesheet" href="css/main.css" media="all" type="text/css">
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script type="text/javascript" src="js/script.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <!-- use isotope library for dynamic thumbnail sorting -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <!-- use isotope library for dynamic thumbnail sorting -->
 
-    </head> 
-    <!--    Try a version where "samson klitsner" is all caps and only 18 pt
+</head>
+<!--    Try a version where "samson klitsner" is all caps and only 18 pt
 and only visible when at top of page
 
 
 Use javascript to change logo background color at different rate -->
 
 
-    <body  ng-app="myApp" id="about">
+<body  ng-app="myApp" id="about">
 
-        <div ng-controller="InfoController" id="controller">
-            <div id = "header" >
-                <div id = "logo-container">
-                    <nav>
-            <a href="index.html" id="about-link">WORK </a>
+  <div ng-controller="InfoController" id="controller">
+    <div id = "header" >
+      <div id = "logo-container" class="about">
+        <a href="index.html" id="logo-home-link"><img src = "images/whitelogo.png" id="logo"></a>
+        <nav>
+          <a href="index.html" id="home-link" class="about">HOME</a>
+          <a href="about.html" id="about-link" class="about">ABOUT</a>
+          <div id="slider-tab">    </div>
         </nav>
-                    <img src = "images/whitelogo.png" id="logo">
-                </div>
-                
-                <div id = "info">
-                    <h1 class = "info-title">{{ title | uppercase}}</h1> 
-                    <h3 class = "info-content">{{ content }}</h3> 
-                </div>
-            </div>
-            <div id = "content">
-                <img src = "images/BathtubPortrait.png" class="large-image" style="margin:60px 0 36px 0">
-<p> My name is Samson Klitsner, and this is a bathtub I made from free stuff on craigslist. I am a recent graduate from the Design | Media Arts program at UCLA where I focused on creating enjoyable experiences for others through my combined interests of interactive environments, motion/video and sound design. I aim to engage viewers' imaginative and creative sensibilities with a playful multimedia approach that combines design thinking with interactive platforms. 
-<br><br>This is my personal website that I use to showcase my own work and other interesting projects I have participated in. I am always excited to meet other passionate people so if you want to get in touch for any reason, 
-shoot me an email at sklitsner@gmail.com<br><br>
-                <a href="images/ResumeAug2016.pdf">CV</a></p>
-                <div class="side">
-                    <h1>Find me on</h1>
-                    <li><a href="https://soundcloud.com/thugsonklitsner" target="_blank">Soundcloud</a></li>
-                    <li><a href="https://vimeo.com/samklitsner" target="_blank">Vimeo</a></li>
-                    <li><a href="https://github.com/klitsner" target="_blank">Github</a></li>
-                    <li><a href="https://twitter.com/thugsonklitsner" target="_blank">Twitter</a></li>
-                    
-                </div>
-            </div>
-            <div class="spacer"></div>
+      </div>
+
+      <div id = "info">
+        <h1 class = "info-title">{{ title | uppercase}}</h1>
+        <h3 class = "info-content">{{ content }}</h3>
+      </div>
+    </div>
+    <div id = "content">
+      <img src = "images/BathtubPortrait.png" class="large-image" style="margin:60px 0 36px 0">
+      <p> My name is Samson Klitsner, and this is a bathtub I made from free stuff on craigslist. I am a recent graduate from the Design | Media Arts program at UCLA where I focused on creating enjoyable experiences for others through my combined interests of interactive environments, motion/video and sound design. I aim to engage viewers' imaginative and creative sensibilities with a playful multimedia approach that combines design thinking with interactive platforms.
+        <br><br>This is my personal website that I use to showcase my own work and other interesting projects I have participated in. I am always excited to meet other passionate people so if you want to get in touch for any reason,
+        shoot me an email at sklitsner@gmail.com<br><br>
+        <a href="images/ResumeAug2016.pdf">CV</a></p>
+        <div class="side">
+          <h1>Find me on</h1>
+          <li><a href="https://soundcloud.com/thugsonklitsner" target="_blank">Soundcloud</a></li>
+          <li><a href="https://vimeo.com/samklitsner" target="_blank">Vimeo</a></li>
+          <li><a href="https://github.com/klitsner" target="_blank">Github</a></li>
+          <li><a href="https://twitter.com/thugsonklitsner" target="_blank">Twitter</a></li>
+
         </div>
-    </body>
-</html>
-
-
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </body>
+  </html>

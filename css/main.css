@@ -1,5 +1,5 @@
 
-/*QUestions for chandler: 
+/*QUestions for chandler:
 
 with the various containers, should I be alternating between relative and absolute to get them to sit next to eachother? when they are not absolute
 what pushes them to the bottom? (side-bar-container, main-section, content and side-spacer
@@ -28,8 +28,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -40,7 +40,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -82,7 +82,7 @@ table {
 
 
 html {
- font-family: Avenir Next, 'Muli', sans-serif;   
+ font-family: Avenir Next, 'Muli', sans-serif;
 }
 
 nav {
@@ -90,11 +90,11 @@ nav {
     margin-top:36px;
     position: relative;
     text-align: center;
-    
+
 }
 
 nav a {
-    opacity: .14;
+    opacity: 1;
     margin: 0px 0px;
     font-size: 16px;
     font-weight: 500;
@@ -106,7 +106,8 @@ nav a {
 }
 
 nav a:hover {
-     cursor: pointer;
+	opacity: 1;
+  cursor: pointer;
 }
 
 h1{
@@ -156,30 +157,80 @@ h3{
     height:210px;
     width:210px;
     background:#eaeaea;
-    transition: background .2s linear;
-    -webkit-transition: background .2s linear;
-    -moz-transition: background .2s linear;
+		-webkit-transition: background 0.3s ease-out;
+		-moz-transition: background 0.3s ease-out;
+		-ms-transition: background 0.3s ease-out;
+		-o-transition: background 0.3s ease-out;
+		transition: background 0.3s ease-out;
+		cursor: pointer;
+}
+
+.immediate{
+	-webkit-transition: background 0.0s ease-out!important;
+	-moz-transition: background 0.0s ease-out!important;
+	-ms-transition: background 0.0s ease-out!important;
+	-o-transition: background 0.0s ease-out!important;
+	transition: background 0.0s ease-out!important;
+}
+
+#about-link.about, #home-link.home{
+		color:white;
+		cursor:default;
+		padding:3px;
+		bottom:-3px;
+}
+
+#about-link.home, #home-link.about{
+		color:gray;
+		opacity:.7;
+		padding:3px;
+		bottom:-3px;
+			cursor: pointer;
+}
+
+#home-link{
+		opacity:1;
+		right:0;
 }
 
 
-#about-logo{
-    display:inline-block;
-    position:relative;
-    height:210px;
-    width:210px;
-    background:#eaeaea;
-
+#home-link.about:hover ~ #slider-tab, #home-link.home ~ #slider-tab, #logo-home-link:hover + nav #home-link.about ~ #slider-tab{
+	height: 24px;
+	width: 60px;
+	right:0;
+		margin-right:-0px;
+	position: absolute;
+	bottom: -3px;
+	z-index: -1;
+	background-color:#eaeaea;
+	-webkit-transition: all 0.2s ease-out!important;
+	-moz-transition: all 0.2s ease-out!important;
+	-ms-transition: all 0.2s ease-out!important;
+	-o-transition: all 0.2s ease-out!important;
+	transition: all 0.2s ease-out!important;
 }
 
-#about-logo:hover{
-    background:#dbdbdb;
+#about-link.home:hover ~ #slider-tab, #about-link.about ~ #slider-tab{
+	width: 64px;
+	height: 24px;
+	right:100%;
+	margin-right:-64px;
+	position: absolute;
+	bottom: -3px;
+	z-index: -1;
+	background-color:#eaeaea;
+	-webkit-transition: all 0.2s ease-out!important;
+	-moz-transition: all 0.2s ease-out!important;
+	-ms-transition: all 0.2s ease-out!important;
+	-o-transition: all 0.2s ease-out!important;
+	transition: all 0.2s ease-out!important;
 }
 
 #logo{
     z-index: 10;
     height: 190px;
-    margin-top:8px;
-    left: 5%;
+		padding: 10px 8px 10px 11px;
+    left: 0;
     position:absolute;
 }
 
@@ -228,9 +279,9 @@ li a{
     opacity: .3;
 }
 
-li a:hover{
+/* li a:hover{
      opacity: 1;
-}
+} */
 
 a{
     text-decoration: none;
@@ -279,7 +330,7 @@ a{
     background-color:#eaeaea;
 }
 
-.thumbnail {  
+.thumbnail {
         color:#000;
         -webkit-transition: background 0.3s ease-out;
         -moz-transition: background 0.3s ease-out;
@@ -340,23 +391,27 @@ a{
 }
 
 .pink{
-  background:#6fe09a ;  
+  background:#6fe09a ;
+}
+
+.purple{
+background: rgb(120,50,180);
 }
 
 .green{
-    background: #16d3c3;  
+    background: #16d3c3;
 }
 
 .orange{
-    background: #fc5355;  
+    background: #fc5355;
 }
 
 .black{
-    background: #252434;  
+    background: #252434;
 }
 
 .white{
-   background: rgb(255,255,255);   
+   background: rgb(255,255,255);
 }
 
 #arrow{
@@ -367,7 +422,7 @@ a{
     display:block;
     margin-bottom:50px;
     top:0px;
-    
+
     -webkit-transition: 0.1s ease-out;
         -moz-transition:  0.1s ease-out;
         -ms-transition: 0.1s ease-out;
@@ -382,7 +437,7 @@ a{
 }
 
 .darken{
-    
+
 }
 
 #arrow{
@@ -393,7 +448,7 @@ a{
 
 .description{
     margin: 0;
-    width:60%;   
+    width:60%;
     white-space:pre-line;
 }
 
@@ -423,10 +478,10 @@ b {
     position:absolute;
     height:0;
     bottom:228px;
-    text-align: left;
+    right:0;
     display:none;
     letter-spacing: .5px;
-    
+
 }
 
 
@@ -436,10 +491,9 @@ nav {
     font-weight: 100;
     font-size: 18px ;
     word-spacing: 23px;
-    position: absolute;
+    position: relative;
     text-align: left;
-    bottom:0;
-    bottom:214px;
+    bottom:3px;
     margin:0px 0px;
     z-index: 100;
 }
@@ -452,4 +506,3 @@ nav a:hover {
 .spacer{
     height:100px;
 }
-

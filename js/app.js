@@ -6,23 +6,27 @@
 var app = angular.module("myApp", []);
 
 
-app.controller('InfoController', ['$scope', function ($scope) { 
-    $scope.title = 'samson klitsner'; 
-    $scope.content = 'Design | Media Arts Student';  
+app.controller('InfoController', ['$scope', function ($scope) {
+    $scope.title = 'samson klitsner';
+    $scope.content = 'Designer, Artist, Creative Technologist';
     $scope.body = '';
     $scope.images = [];
     $scope.iframe = '';
 
     if ($("#about").length){
-        $scope.title = 'Samson klitsner'; 
-        $scope.content = 'Design | Media Arts Student';  
+        $scope.title = 'Samson klitsner';
+        $scope.content = 'Designer, Artist, Creative Technologist';
     }
 
-    $scope.projects = 
+    $scope.projects =
         [
         {
             title: 'S.A.D. Shelter',
             medium: 'Installation, Processing, Sound',
+        },
+        {
+            title: 'SoSo Internship',
+            medium: 'Research, Sound, Web Development',
         },
         {
             title: ' Amatuer ',
@@ -70,20 +74,30 @@ app.controller('InfoController', ['$scope', function ($scope) {
 
 var projects = [
     {
+        title: 'S.A.D. Shelter',
         images: '<img src="images/shelter1.jpg" class="large-image"><img src="images/shelter3.jpg" class="large-image"><img src="images/shelter4.jpg" class="large-image">',
         thumbnail:'',
         body:'<p class="description">A place of refuge for the overwhelmed patron, the S.A.D. shelter is activated by surrounding exhibition happenings (Please take off shoes before entering).\n\nThe S.A.D. Shelter was created for the S.A.D. Show, UCLA\'s DMA Senior Exhibition. Inspired by the overwhelming nature of gallery openings, the S.A.D. Shelter draws inspiration from a variety of comforts ranging from ASMR videos to primitive lean-to shelters. Viewers enter the shelter through the side and are shielded visually by glsl generated graphics, which in turn are activated by a microphone monitoring room noise or \'activity\'. Through headphones, the visuals are accompanied by calming ASMR audio clips to create a meditative space within the gallery. \n\n\n\n</p>',
         press:'<div class="side"><h1>Press</h1><li><a href="http://thecreatorsproject.vice.com/blog/ucla-design-media-arts-showcase-amidst-campus-shooting">CREATORS PROJECT</a></li></div>',
         iframe:'<img src="images/shelter5.jpg" class="large-image">'
-    }, 
-    { 
+    },
+    {
+        title: 'Soso Internship',
+        medium: 'dance, arduino, sound, Processing',
+        images: '',
+        thumbnail:'',
+        body:'<p class="description">I spent my summer of 2016 in Boston interning for my favorite rockstars-turned-design-studio, SosoLimited. I got to work on some in-house projects (like the bi-coastal message board shown above), experiment with the twitter API for some live data-driven installations, and I was introduced to beurocracy\'s place in the design process via many meetings for a public work that was ultimately shot down by some grumpy neighbors...\n\n Soso rocks, and their Quadrennial <a style="font-weight:900; text-decoration:underline;" href="https://www.sosolimited.com/work/reconstitution-2008">Reconstitution</a> is still one of my favorite projects.</p>',
+        press:'',
+        iframe:'<iframe src="https://player.vimeo.com/video/139732443?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    },
+    {
         title: ' Amatuer Dance Collaboration',
         medium: 'dance, arduino, sound, Processing',
         images: '<img src="images/wac1.png" class="large-image"><img src="images/wac_miami.jpg" class="small-image" style="margin-right:10px"><img src="images/MiamiPerformance2.jpg" class="small-image">',
         thumbnail:'',
         body:'<div class="caption">(video password: what)</div><p class="description" >\n\nFeatured at the International Noise Conference in Miami, Amateur is a collaboration between Samson Klitsner, Dorothy Dubrule and Barry Brannum. Using flex sensors and wearable arduinos, Amateur triggers sound samples with movement as means of exploring how performance creates a world for its audience on competing perceptual levels.\n\nAmateur has performed at the Wight Gallery, Eastside International, and Glorya Kaufman Dance Theater in Los Angeles, as well as the International Noise Conference in Miami.\n\n</p><div class="side"><h1>Press</h1><li><a href="https://www.youtube.com/watch?v=dnCuq7sOCyk&feature=youtu.be"target="_blank">SFBandVideos</a></li><li><a href="http://www.miaminewtimes.com/slideshow/the-people-of-international-noise-conference-2015-6283467/13"target="_blank">Miami New Times</a></li></div><img src="images/arduino2.png" class="large-image"><p class="description" >A wireless belt is rigged with an Arduino Lilypad, Xbee module, and flex sensors attached to various joints on the body.\n\nData from the flex sensors is used to trigger sound samples, which are selected and updated through a software/midi interface written in processing.\n\nROLES:\n\nSoftware/Sound Design: Samson Klitsner\n\nCostume design: Sarah B. Lunde\n\nChoreography and dance: Dorothy Dubrule and Barry Brannum</p>',
         press:'',
-        iframe:'<iframe src="https://player.vimeo.com/video/121414399?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+        iframe:'<iframe src="https://player.vimeo.com/video/256499592?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
     {
         title: ' Choose',
@@ -117,8 +131,8 @@ var projects = [
         title: 'Timeline of the Far Future',
         medium: 'processing',
         thumbnail:'',
-        images:'',
-        body:'<p class="description" >"PowerPoints of the far future, a collaboration between Samson Klitsner and <a href ="http://pohflepp.net/" target="_blank" style="font-weight:500">Sascha Pohflepp</a>, turns the events from Wikipedia\'s <a href =https://en.wikipedia.org/wiki/Timeline_of_the_far_future style="font-weight:500" target="_blank">Timeline of the Far Future</a> - a list of ridiculously far-off cosmological events - into a call-to-action.\n\nEach slide was algorithmically generated with software development by Sam Klitsner through an automated Google image search based on statements from the database of entries. the statement is also randomly constructed as a future, present or modal statement.\n\nBy presenting a series of increasingly distanced events such as ‘In 1000000 years Neil Armstrong’s footprint and those left by all twelve Apollo moonwalkers will have eroded’, the Powerpoint transforms a page of extinction into farce."\n\n-<em>taken from The Photographers\' Gallery</em></p>',
+        images:'<img src="images/PPtotFF/frames3684.png" class="large-image"><img src="images/PPtotFF/PPTotFF 1.027.png" class="large-image"><img src="images/PPtotFF/PPTotFF 1.010.png" class="large-image">',
+        body:'<p class="description" >"PowerPoints of the far future, a collaboration between Samson Klitsner and <a href ="http://pohflepp.net/" target="_blank" style="font-weight:500">Sascha Pohflepp</a>, turns the events from Wikipedia\'s <a href =https://en.wikipedia.org/wiki/Timeline_of_the_far_future style="font-weight:500" target="_blank">Timeline of the Far Future</a> - a list of ridiculously far-off cosmological events - into a call-to-action.\n\nEach slide was algorithmically generated with software development by Sam Klitsner through an automated Google image search based on statements from the database of entries. the statement is also randomly constructed as a future, present or modal statement.\n\nBy presenting a series of increasingly distanced events such as \"In 1000000 years Neil Armstrong\'s footprint and those left by all twelve Apollo moonwalkers will have eroded\", the Powerpoint transforms a page of extinction into farce."\n\n-<em>taken from The Photographers\' Gallery</em></p>',
         press:"<div class='side'><h1>Press</h1><li><a href='http://thephotographersgallery.org.uk/lev-manovich' target='_blank'>Photographers\' Gallery</a></li></div>",
         iframe:'<img src="images/Timeline.png" class="large-image">',
 
@@ -181,12 +195,12 @@ $(document).ready(function(){
 
 
     $('#projects').hover(function(){
-        $("#about-link").fadeOut(200);
+        // $("#about-link").fadeOut(200);
 
     },
                          function(){
         if(show!=true){
-            $("#about-link").fadeIn(200);
+            // $("#about-link").fadeIn(200);
         }
     });
 
@@ -204,7 +218,7 @@ $(document).ready(function(){
             color = $(this).find('.thumbnail-color').css( "background-color" );
 
             $('#logo-container').append('<div class="logo-color"></div>');
-
+//animate the slide up color on logo container
             $( ".logo-color" ).last().css('background-color',color).animate({
                 height: 210
             }, transTime, function() {
@@ -228,8 +242,8 @@ $(document).ready(function(){
             $(this).remove();
             if($( ".logo-color" ).length==0 && change==false){
                 scope.$apply(function(){
-                    scope.title = 'Samson klitsner'; 
-                    scope.content = 'Design | Media Arts Student';  
+                    scope.title = 'Samson klitsner';
+                    scope.content = 'Designer, Artist, Creative Technologist';
                     $('#info').css('color','#777');
                 });
             }
@@ -239,16 +253,17 @@ $(document).ready(function(){
     $('.thumbnail').click(function(){
         reset();
         $("#about-link").hide();
+        $('#home-link').hide();
         change = true;
         show = true;
         $('#projects').hide();
-        $('#logo-container').css('background-color',color);
+        $('#logo-container').addClass('immediate').css('background-color',color);
         scope.$apply(function(){
             scope.body= projects[index].body;
             scope.info(index);
         });
         //Add title to URL
-        locationHash(scope.title);       
+        locationHash(scope.title);
         //update the model based on the locationHash
         updateModel(index);
         //Add content from Angular the wrong way
@@ -270,31 +285,34 @@ $(document).ready(function(){
 
     //reset the work page
      var reset = function(){
-         
-        $('#projects').show();
-        $('#logo-container').css( 'cursor', 'default' );
         if(change==true){
             $('#info').css('color','#777');
-            $("#about-link").fadeTo(0,.14);
-            $('#logo-container').css('background-color','#eaeaea');
+            $("#about-link").fadeTo(0,1);
+            $('#logo-container').removeClass('immediate').css('background-color','#eaeaea');
         }
+
+
         scope.$apply(function(){
             scope.body= '';
             scope.title = "Samson Klitsner";
-            scope.content = "Design | Media Arts Student";
+            scope.content = "Designer, Artist, Creative Technologist";
             $('#content').css('margin-top', '0').html('');
             show= false;
             change=false;
         });
-          
+
     }
 
     //reset
     $('#logo-container').click(function(){
         if(!$("#about").length){
             reset();
+            removeHash();
+            $('#home-link').show();
             change=false;
             $('.collapse').hide();
+            $('#projects').css("display",'hidden');
+            $('#projects').fadeIn();
         }
     });
 
@@ -309,11 +327,6 @@ $(document).ready(function(){
         return false;
     });
 
-    $("#about-link").hover(function(){
-        $("#about-link").fadeTo(100,.4);
-    },function(){
-        $("#about-link").fadeTo(100,.14);
-    });   
 
     window.onhashchange = function() {
         if (window.location.hash) {
@@ -324,7 +337,7 @@ $(document).ready(function(){
         }
     }
 
-        
+
         $(window).on('load', function(){
             if(window.location.hash) {
             if(!$("#about").length){
@@ -332,15 +345,15 @@ $(document).ready(function(){
             }
             }
 });
-    
-    
-    
+
+
+
     //return the index of the object associated with the location hash
     function checkHash(){
         var i;
         $(scope.projects).each(function(index){
             if("#"+this.title.replace(/\s+/g,'').toUpperCase()===location.hash.toUpperCase()){
-                i = index;       
+                i = index;
             }else{
                 return -1;
             }
@@ -362,10 +375,13 @@ $(document).ready(function(){
         });
         $('#info').css('color',color);
          $('.collapse').css("color", color);
-        $("#about-link").hide();
+        // $("#about-link").hide();
         change = true;
         show = true;
+        $('#slider-tab').hide();
         $('#projects').hide();
+
+        //
         $('#logo-container').css('background-color',color);
         scope.$apply(function(){
             scope.body= projects[i].body;
@@ -405,11 +421,12 @@ $(document).ready(function(){
     }
 });
 
+function removeHash() {
+    history.pushState("", document.title, window.location.pathname
+                                                       + window.location.search);
+}
+
 function locationHash(scopeTitle) {
     var title = scopeTitle.replace(/\s+/g,'');
     location.hash=title;
 }
-
-
-
-
