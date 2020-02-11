@@ -4,16 +4,16 @@
 var app = angular.module("myApp", []);
 
 
-app.controller('InfoController', ['$scope', function ($scope) { 
-    $scope.title = 'samson Klitsner'; 
+app.controller('InfoController', ['$scope', function ($scope) {
+    $scope.title = 'samson Klitsner';
     $scope.content = 'Design Media Arts Student';
    $scope.test = function () {
         alert('Hello you are calling angular js method.');
     }
-    $scope.projects = 
+    $scope.projects =
         [
         {
-            title: ' \'Amatuer\' ',
+            title: ' \'Amateur\' ',
             medium: 'dance, arduino, sound, processing',
             description: '',
             thumbnail:'',
@@ -68,7 +68,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
 
 var projects = [
     {
-        title: ' \'Amatuer\' Dance Collaboration',
+        title: ' \'Amateur\' Dance Collaboration',
         medium: 'dance, arduino, sound, processing',
         description: '',
         thumbnail:'',

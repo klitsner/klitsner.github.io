@@ -253,6 +253,7 @@ h3{
     width:814px;
     margin:0 auto 0 auto;
     position:relative;
+    top: 9px;
 }
 
 p{
@@ -349,6 +350,7 @@ a{
 .large-image{
     margin-top: 0px;
     margin-bottom: 6px;
+    margin-left: -1px;
     width:100%;
 }
 .small-image{
@@ -412,6 +414,10 @@ background: rgb(120,50,180);
 
 .white{
    background: rgb(255,255,255);
+}
+
+.slate{
+    background: #A0A0BB;
 }
 
 #arrow{
@@ -483,6 +489,7 @@ b {
     letter-spacing: .5px;
 
 }
+
 
 
 /*test zone*/
