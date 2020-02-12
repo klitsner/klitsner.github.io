@@ -173,11 +173,24 @@ h3{
 	transition: background 0.0s ease-out!important;
 }
 
+.preload{
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
+}
+
 #about-link.about, #home-link.home{
 		color:white;
 		cursor:default;
 		padding:3px;
 		bottom:-3px;
+		-webkit-transition: color 0.2s ease-out;
+		-moz-transition: color 0.2s ease-out;
+		-ms-transition: color 0.2s ease-out;
+		-o-transition: color 0.2s ease-out;
+		transition: color 0.2s ease-out;
 }
 
 #about-link.home, #home-link.about{
@@ -186,6 +199,11 @@ h3{
 		padding:3px;
 		bottom:-3px;
 			cursor: pointer;
+			-webkit-transition: color 0.2s ease-out;
+			-moz-transition: color 0.2s ease-out;
+			-ms-transition: color 0.2s ease-out;
+			-o-transition: color 0.2s ease-out;
+			transition: color 0.2s ease-out;
 }
 
 #home-link{
@@ -201,14 +219,27 @@ h3{
 		margin-right:-0px;
 	position: absolute;
 	bottom: -3px;
-	z-index: -1;
+	z-index: -2;
 	background-color:#eaeaea;
-	-webkit-transition: all 0.2s ease-out!important;
-	-moz-transition: all 0.2s ease-out!important;
-	-ms-transition: all 0.2s ease-out!important;
-	-o-transition: all 0.2s ease-out!important;
-	transition: all 0.2s ease-out!important;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+
 }
+
+#color-slider-tab{
+	height: 24px;
+	width: 60px;
+	right:0;
+		margin-right:-0px;
+	position: absolute;
+	bottom: -3px;
+	z-index: -2;
+	background-color:#eaeaea;
+}
+
 
 #about-link.home:hover ~ #slider-tab, #about-link.about ~ #slider-tab{
 	width: 64px;
@@ -217,13 +248,26 @@ h3{
 	margin-right:-64px;
 	position: absolute;
 	bottom: -3px;
-	z-index: -1;
+	z-index: -2;
 	background-color:#eaeaea;
-	-webkit-transition: all 0.2s ease-out!important;
-	-moz-transition: all 0.2s ease-out!important;
-	-ms-transition: all 0.2s ease-out!important;
-	-o-transition: all 0.2s ease-out!important;
-	transition: all 0.2s ease-out!important;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+
+
+}
+
+#color-slider-tab{
+	opacity:1;
+	height:0 ;
+	width: 60px;
+	right:0;
+	margin-right:0px;
+	position: absolute;
+	bottom: -3px;
+	z-index: -2;
 }
 
 #logo{
@@ -312,9 +356,7 @@ a{
     position:relative;
     display:block;
     width:834px;
-    height:200px;
-    margin-top:45px;
-    padding-top:15px;
+    margin-top:60px;
     margin-left:auto;
     margin-right:auto;
 }

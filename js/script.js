@@ -5,6 +5,9 @@
 
 $(document).ready(function () {
 
+$(window).load(function(){
+    $("body").removeClass("preload");
+});
           // if(!window.location.hash) {
           //   $('#logo-container>img').click(function(){
           //     window.location.href="about.html";

@@ -188,72 +188,96 @@ $(document).ready(function(){
     var index;
     var transTime = 250;
     var color;
-    var curr;
     var change = false;
     var show = false;
     var safe = false;
 
 
-    $('#projects').hover(function(){
-        // $("#about-link").fadeOut(200);
-
-    },
-                         function(){
-        if(show!=true){
-            // $("#about-link").fadeIn(200);
-        }
-    });
-
-
     $('.thumbnail').hover(function(){
 
+//Basically if we are on the home screen
         if(show==false){
             index = $(this).index()
-            $(this).find('.thumbnail-color').animate({
+
+            //Shrink the thumnail color div up
+            $(this).find('.thumbnail-color').stop(true).animate({
                 height: 0
             }, transTime, function() {
             });
 
-
+            //set the color variable to the hovered upon thumbnail's color
             color = $(this).find('.thumbnail-color').css( "background-color" );
 
+            //add a div that is class "logo color" that matches the current hovered swatch
             $('#logo-container').append('<div class="logo-color"></div>');
-//animate the slide up color on logo container
-            $( ".logo-color" ).last().css('background-color',color).animate({
+
+            //animate the slide up color on logo container
+            $( ".logo-color" ).last().css('background-color',color).stop(true).animate({
                 height: 210
             }, transTime, function() {
-                curr = $('#info').css('color',color);
-                scope.$apply(function(){
-                    scope.info(index);
+
+              thisColor = $(this).css('background-color');
+
+              $('#color-slider-tab')
+              .stop(true)
+              .show()
+              .css("backgroundColor", thisColor)
+              .animate({ height:24 },50,'linear',function(){
+              $( ".logo-color" ).not(":last").remove();
+              });
+
+              $('#info').css('color',thisColor);
+              scope.$apply(function(){
+                scope.info(index);
                 });
             });
         }
     },
-                          function(){
-        $('.collapse').hide();
-        $('#info').css('color',curr);
-        $(this).find('.thumbnail-color').stop(true,true).animate({
+    function(){
+
+      //try changing it so that the color slider does not initiate everything,
+      //it just uses delays to
+
+
+      console.log("hovered off");
+        $('#color-slider-tab')
+        .stop(true,false)
+        .animate({ height:0 },50,'linear',function(){
+          if($('.logo-color').length>1){
+            animateColor=$('.logo-color').prevAll('.logo-color');
+          }else{
+            animateColor=$('.logo-color');
+          }
+          animateColor.stop(true).animate({
+              height: 0
+          }, transTime, function() {
+              $(this).remove();
+              if($( ".logo-color" ).length==0 && change==false){
+                  scope.$apply(function(){
+                      scope.title = 'Samson klitsner';
+                      scope.content = 'Designer, Artist, Creative Technologist';
+                      $('#info').css('color','#777');
+                  });
+              }
+          });
+        });
+
+
+        $(this).find('.thumbnail-color').stop(true).animate({
             height: 140
         }, transTime, function() {
         });
-        $('.logo-color').animate({
-            height: 0
-        }, transTime, function() {
-            $(this).remove();
-            if($( ".logo-color" ).length==0 && change==false){
-                scope.$apply(function(){
-                    scope.title = 'Samson klitsner';
-                    scope.content = 'Designer, Artist, Creative Technologist';
-                    $('#info').css('color','#777');
-                });
-            }
-        });
     });
+
+
     //selecting a project to view
     $('.thumbnail').click(function(){
+        $('#slider-tab').animate({ opacity:0 }, 0,function(){
+          $(this).css('height',0);
+          $(this).css('opacity',1);
+        });
         reset();
         $("#about-link").hide();
-        $('#home-link').hide();
         change = true;
         show = true;
         $('#projects').hide();
@@ -265,14 +289,16 @@ $(document).ready(function(){
         //Add title to URL
         locationHash(scope.title);
         //update the model based on the locationHash
-        updateModel(index);
+        // updateModel(index);
         //Add content from Angular the wrong way
     });
 
     $('#logo-container').hover(function(){
         if(change==true){
-            $('.collapse').show().css("color", color);
             $('#logo-container').css( 'cursor', 'pointer' );
+
+            $('#color-slider-tab').show().css("backgroundColor", color);
+            $('#color-slider-tab').animate({ height:24 }, 100,function(){});
         }
         if(change==false){
             $('.collapse').hide();
@@ -280,14 +306,16 @@ $(document).ready(function(){
         }
     },
                                function(){
-        $('.collapse').hide();
+        if(change==true){
+        $('#color-slider-tab').animate({ height:0 }, 100,function(){});
+      }
     });
 
     //reset the work page
      var reset = function(){
         if(change==true){
             $('#info').css('color','#777');
-            $("#about-link").fadeTo(0,1);
+            $("#about-link").fadeTo(0,.7);
             $('#logo-container').removeClass('immediate').css('background-color','#eaeaea');
         }
 
@@ -310,7 +338,11 @@ $(document).ready(function(){
             removeHash();
             $('#home-link').show();
             change=false;
-            $('.collapse').hide();
+            $('#color-slider-tab').fadeOut();
+            $('#slider-tab').animate({
+              opacity:1,
+              height:24
+            }, 0, 0,function(){});
             $('#projects').css("display",'hidden');
             $('#projects').fadeIn();
         }
@@ -358,7 +390,6 @@ $(document).ready(function(){
                 return -1;
             }
         });
-        console.log(i);
         return i;
     }
 
@@ -368,6 +399,7 @@ $(document).ready(function(){
             return 0;
         }
         reset();
+
         $('.thumbnail').each(function(index){
             if(index==i){
                 color = $(this).find('.thumbnail-color').css("background-color");
@@ -378,7 +410,7 @@ $(document).ready(function(){
         // $("#about-link").hide();
         change = true;
         show = true;
-        $('#slider-tab').hide();
+
         $('#projects').hide();
 
         //
