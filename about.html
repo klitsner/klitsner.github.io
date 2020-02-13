@@ -28,12 +28,14 @@ Use javascript to change logo background color at different rate -->
   <div ng-controller="InfoController" id="controller">
     <div id = "header" >
       <div id = "logo-container" class="about">
-        <a href="index.html" id="logo-home-link"><img src = "images/whitelogo.png" id="logo"></a>
+        <a href="index.html" id="logo-home-link"></a>
         <nav>
-          <a href="index.html" id="home-link" class="about">HOME</a>
           <a href="about.html" id="about-link" class="about">ABOUT</a>
-          <div id="slider-tab">    </div>
+          <a href="index.html" id="home-link" class="about">HOME</a>
+          <div id="slider-left">    </div>
+          <div id="slider-right">    </div>
         </nav>
+        <img src = "images/whitelogo.png" id="logo">
       </div>
 
       <div id = "info">

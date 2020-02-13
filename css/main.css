@@ -154,7 +154,7 @@ h3{
 #logo-container{
     display:inline-block;
     position:relative;
-    height:210px;
+    height:234px;
     width:210px;
     background:#eaeaea;
 		-webkit-transition: background 0.3s ease-out;
@@ -181,6 +181,7 @@ h3{
 	transition: none !important;
 }
 
+
 #about-link.about, #home-link.home{
 		color:white;
 		cursor:default;
@@ -198,6 +199,7 @@ h3{
 		opacity:.7;
 		padding:3px;
 		bottom:-3px;
+		z-index: 1;
 			cursor: pointer;
 			-webkit-transition: color 0.2s ease-out;
 			-moz-transition: color 0.2s ease-out;
@@ -211,35 +213,63 @@ h3{
 		right:0;
 }
 
-
-#home-link.about:hover ~ #slider-tab, #home-link.home ~ #slider-tab, #logo-home-link:hover + nav #home-link.about ~ #slider-tab{
+#slider-left, #home-link.about:hover ~ #slider-left, #logo-home-link:hover ~ nav #home-link.about ~ #slider-left{
 	height: 24px;
-	width: 60px;
-	right:0;
-		margin-right:-0px;
+	width: 150px;
 	position: absolute;
-	bottom: -3px;
-	z-index: -2;
-	background-color:#eaeaea;
+	z-index: 0;
+	background-color: white;
+	opacity: 1;
 	-webkit-transition: all 0.2s ease-out;
 	-moz-transition: all 0.2s ease-out;
 	-ms-transition: all 0.2s ease-out;
 	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
-
 }
 
-#color-slider-tab{
+#about-link.home:hover ~ #slider-left, #about-link.about ~ #slider-left{
 	height: 24px;
-	width: 60px;
-	right:0;
-		margin-right:-0px;
+	width: 0px;
 	position: absolute;
-	bottom: -3px;
-	z-index: -2;
-	background-color:#eaeaea;
+	z-index: 0;
+	background-color: white;
+	opacity: 1;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
+
+#about-link.home ~ #slider-right, #home-link.about:hover ~ #slider-right, #logo-home-link:hover ~ nav #home-link.about ~ #slider-right{
+	height: 24px;
+	width: 0px;
+	position: absolute;
+	z-index: 0;
+	right:0;
+	background-color: white;
+	opacity: 1;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+#about-link.home:hover ~ #slider-right, #about-link.about ~ #slider-right{
+	height: 24px;
+	width: 145px;
+	position: absolute;
+	z-index: 0;
+	right:0;
+	background-color: white;
+	opacity: 1;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
 
 #about-link.home:hover ~ #slider-tab, #about-link.about ~ #slider-tab{
 	width: 64px;
@@ -255,19 +285,6 @@ h3{
 	-ms-transition: all 0.2s ease-out;
 	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
-
-
-}
-
-#color-slider-tab{
-	opacity:1;
-	height:0 ;
-	width: 60px;
-	right:0;
-	margin-right:0px;
-	position: absolute;
-	bottom: -3px;
-	z-index: -2;
 }
 
 #logo{
@@ -278,11 +295,23 @@ h3{
     position:absolute;
 }
 
+
+a#logo-home-link{
+	height: 210px;
+	    width: 210px;
+	    position: absolute;
+	    display: block;
+	    margin-top: 24px;
+			z-index: 100;
+}
+
 .logo-color{
     height:0;
     width:100%;
     bottom:0;
     position:absolute;
+		z-index: 0;
+		opacity: .99;
 }
 
 .work-link{
@@ -369,7 +398,7 @@ a{
     position:relative;
 }
 .thumbnail:hover{
-     cursor: pointer;
+    cursor: pointer;
     background-color:#eaeaea;
 }
 
@@ -540,11 +569,12 @@ nav {
     font-weight: 100;
     font-size: 18px ;
     word-spacing: 23px;
-    position: relative;
+    height: 24px;
     text-align: left;
     bottom:3px;
     margin:0px 0px;
-    z-index: 100;
+    /* z-index: 0; */
+		/* opacity: .99; */
 }
 
 
