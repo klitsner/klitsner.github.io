@@ -220,32 +220,32 @@ $(document).ready(function(){
     });
   }
 
-  function logoColorIn(color){
-      console.log("Logo Color In");
+  function logoColorIn(color, height){
     length = $('.logo-color').length;
     if(length>=1){
       clearLogoColor();
     }
     //check that logo-color does not already exist before creating another one
     if(!($('#logo-container').find('.logo-color').css("background-color")==color)){
-      console.log("append!");
       $logoColor = $('<div class="logo-color"></div>').css("background-color",color);
       $('#logo-container').prepend($logoColor);
     };
 
-    if(!($logoColor.height()==234)){
+    if(!($logoColor.height()==height)){
       $logoColor
       .stop()
-      .animate({height:234},transTime,function(){
+      .animate({height:height},transTime,function(){
       });
     }
   }
+
+
+
   function logoColorOut(c, thisThumbnail){
           clearLogoColor(c);
   }
 
   function colorSlideIn(c){
-      console.log("color slide in start");
     $('#color-slider-tab')
     .stop()
     .css("background-color",c)
@@ -261,7 +261,7 @@ $(document).ready(function(){
   $('.thumbnail').hover(function(){
     index = $(this).index();
     thumbnailOut(this);
-    logoColorIn(getThumbnailColor(this));
+    logoColorIn(getThumbnailColor(this), 234);
     projectTitleDisplay(getThumbnailColor(this));
 
   },function(){
@@ -269,7 +269,10 @@ $(document).ready(function(){
     if(show==false){
       clearLogoColor(getThumbnailColor(this));
     }
+    if(show==false){
     restingTitle();
+  }
+
   });
 
   function projectTitleDisplay(color){
@@ -287,24 +290,21 @@ $(document).ready(function(){
       });
   }
 
-  // $('#about-link').click(function(){
-  //   $(this).addClass('about');
-  // });
 
   //selecting a project to view
   $('.thumbnail').click(function(){
+
+    $('#about-link').addClass('hidden').removeClass('home');
     $('#slider-tab').animate({ opacity:0 }, 0,function(){
       $(this).css('height',0);
       $(this).css('opacity',1);
     });
 
-    $('.logo-color').animate({ height:210 }, 100,function(){});
+    $('.logo-color').animate({ height:213 }, 100,function(){});
     // reset();
-    $("#about-link").hide();
     change = true;
     show = true;
     $('#projects').hide();
-    $('#logo-container').addClass('immediate').css('background-color',color);
     scope.$apply(function(){
       scope.body= projects[index].body;
       scope.info(index);
@@ -320,13 +320,12 @@ $(document).ready(function(){
       $('.logo-color').animate({ height:234 }, 100,function(){});
     }
     if(change==false){
-      $('.collapse').hide();
       $('#logo-container').css( 'cursor', 'default' );
     }
   },
   function(){
     if(change==true){
-      $('.logo-color').animate({ height:210 }, 100,function(){});
+      $('.logo-color').animate({ height:213 }, 100,function(){});
     }
   });
 
@@ -335,7 +334,8 @@ $(document).ready(function(){
     if(change==true){
       $('#info').css('color','#777');
       $("#about-link").fadeTo(0,.7);
-      $('#logo-container').removeClass('immediate').css('background-color','#eaeaea');
+      $('#about-link').removeClass('hidden');
+      // $('#logo-container').removeClass('immediate').css('background-color','#eaeaea');
     }
 
     scope.$apply(function(){
@@ -353,15 +353,11 @@ $(document).ready(function(){
     if(!$("#about").length){
       reset();
       removeHash();
-      $('#home-link').show();
+      $('#about-link').removeClass('hidden').addClass('home');
       change=false;
       $('.logo-color').fadeOut(function(){
         this.remove();
       });
-      $('#slider-tab').animate({
-        opacity:1,
-        height:24
-      }, 0, 0,function(){});
       $('#projects').css("display",'hidden');
       $('#projects').fadeIn();
     }
@@ -371,11 +367,17 @@ $(document).ready(function(){
   $('#content').on("click", '#arrow', function(){
     $("html, body").animate({ scrollTop: 0 }, 400,function(){
       reset();
+      removeHash();
+      $('#about-link').removeClass('hidden').addClass('home');
+      change=false;
+      $('.logo-color').fadeOut(function(){
+        this.remove();
+      });
       history.pushState('', document.title, window.location.pathname);
       change=false;
-      $('.collapse').hide();
     });
-    return false;
+    $('#projects').css("display",'hidden');
+    $('#projects').fadeIn();
   });
 
   window.onhashchange = function() {
@@ -418,10 +420,11 @@ $(document).ready(function(){
     $('.thumbnail').each(function(index){
       if(index==i){
         color = $(this).find('.thumbnail-color').css("background-color");
+        logoColorIn(color, 213);
+      $('#about-link').addClass('hidden').removeClass('home');
       }
     });
     $('#info').css('color',color);
-    $('.collapse').css("color", color);
     // $("#about-link").hide();
     change = true;
     show = true;
@@ -429,7 +432,7 @@ $(document).ready(function(){
     $('#projects').hide();
 
     //
-    $('#logo-container').css('background-color',color);
+    // $('#logo-container').css('background-color',color);
     scope.$apply(function(){
       scope.body= projects[i].body;
       scope.info(i);

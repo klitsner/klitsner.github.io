@@ -287,6 +287,10 @@ h3{
 	transition: all 0.2s ease-out;
 }
 
+#about-link.hidden{
+opacity:0!important;
+}
+
 #logo{
     z-index: 10;
     height: 190px;
