@@ -495,37 +495,38 @@ background: rgb(120,50,180);
     background: #A0A0BB;
 }
 
-#arrow{
-    width:100px;
-    opacity:.6;
-    position:relative;
-    margin:0 auto;
-    display:block;
-    margin-bottom:50px;
-    top:0px;
 
-    -webkit-transition: 0.1s ease-out;
-        -moz-transition:  0.1s ease-out;
-        -ms-transition: 0.1s ease-out;
-        -o-transition:  0.1s ease-out;
-        transition:  0.1s ease-out;
+
+#arrow {
+			background: white;
+	    width: 100px;
+	    height: 100px;
+	    position: relative;
+	    margin: 2em auto 3em auto;
+			cursor: pointer;
+	}
+
+#arrow .line1 {
+    width: 100px;
+    height: 3px;
+	background: red;
+    -webkit-transform:
+        rotate(45deg);
+    position: absolute;
+    top: 50px;
+}
+#arrow .line2 {
+	width: 100px;
+	height: 3px;
+	background: red;
+    -webkit-transform:
+        rotate(-45deg);
+    position: absolute;
+    top: 50px;
 }
 
-#arrow:hover{
-    width:130px;
-    top:-4px;
 
-}
 
-.darken{
-
-}
-
-#arrow{
-    cursor:pointer;
-    margin-top:100px;
-    margin-bottom:100px;
-}
 
 .description{
     margin: 0;

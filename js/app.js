@@ -125,7 +125,7 @@ var projects = [
     thumbnail:'',
     body:'<p class="description">A work in progress\n\n My final project for DMA 161: Video. The song, "Martini Scorchazio," was produced and recorded by myself along with fellow DMA and Fine Art  <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
     press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
-    iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="100%" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
   },
   {
     title: 'Timeline of the Far Future',
@@ -437,9 +437,16 @@ $(document).ready(function(){
       scope.body= projects[i].body;
       scope.info(i);
     });
-    $('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<img src="images/x.png" id="arrow">');
+    $('#content').css('margin-top', '60px').prepend(projects[i].iframe).append(projects[i].body, projects[i].press, projects[i].images).append('<div id="arrow"><div class="line1"></div><div class="line2"></div></div>');
     $('.description').css('margin','36px 0');
     locationHash(scope.title);
+    colorize();
+  }
+
+  function colorize(){
+    $('.large-image, iframe').css("border", "3px "+color+" solid").css("box-sizing","content-box");
+    $('.small-image').css("border", "3px "+color+" solid").css("box-sizing","border-box")
+    $('#arrow *').css("background", color);
   }
 
   document.onkeydown = function(e) {
