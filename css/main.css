@@ -63,26 +63,12 @@ table {
 	border-spacing: 0;
 }
 
-@font-face{
-  font-family: 'AvenirNext';
-  src: local("AvenirNext-UltraLight"),
-       url('fonts/AvenirNext-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/AvenirNext-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-      url('AvenirNext-Regular.eot');
-}
 
-@font-face{
-  font-family: 'AvenirLight';
- src: local("AvenirNext-UltraLight"),
-       url('fonts/AvenirNext-UltraLight.woff') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/AvenirNext-UltraLight.woff2') format('woff2'), /* super Modern Browsers */
-       url('fonts/AvenirNext-UltraLight.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
+@import url(https://fonts.googleapis.com/css?family=Work+Sans&display=swap);
 
 
 html {
- font-family: Avenir Next, 'Muli', sans-serif;
+ font-family: 'Work Sans', sans-serif;
 }
 
 nav {
@@ -112,6 +98,7 @@ nav a:hover {
 
 h1{
      font-size:42px;
+		 /* font-family: 'worksans'; */
 }
 
 h3{
@@ -341,7 +328,7 @@ p{
     margin-top: 36px;
     letter-spacing: .4px;
     display:inline-block;
-    font-family:"pt-serif",'avenirlight', sans-serif;
+    font-family:'work-sans', sans-serif;
     color:#545454;
 }
 
@@ -355,6 +342,10 @@ li{
 li a{
     font-weight: 100;
     opacity: .3;
+}
+li a:hover{
+    font-weight: 100;
+    opacity: .5;
 }
 
 /* li a:hover{
