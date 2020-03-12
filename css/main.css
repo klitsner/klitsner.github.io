@@ -63,9 +63,7 @@ table {
 	border-spacing: 0;
 }
 
-
 @import url(https://fonts.googleapis.com/css?family=Work+Sans&display=swap);
-
 
 html {
  font-family: 'Work Sans', sans-serif;
@@ -76,7 +74,6 @@ nav {
     margin-top:36px;
     position: relative;
     text-align: center;
-
 }
 
 nav a {
@@ -88,7 +85,6 @@ nav a {
     font-weight: 500;
     position:absolute;
     bottom:-1px;
-
 }
 
 nav a:hover {
@@ -431,7 +427,7 @@ a{
 }
 
 .red{
-    background: #fd9a33;
+    background: #FF9A62;
 }
 
 .turqoise{

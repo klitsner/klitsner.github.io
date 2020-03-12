@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<html>
+<head>
+	<title>demo module</title>
+</head>
+<!--  body  -->
+<body>
+	<div class="interactive-demo-container">
+
+		<div class ="black-box-container">
+			<div class="black-box">
+				<div class= "box-container">
+					<div class="first-position">
+					</div>
+				</div>
+				<div class= "box-container">
+					<div class="second-position">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="interactive-demo">
+			<div class="boston-container">
+				<div class="border">
+					<canvas id="boston-canvas"></canvas>
+				</div>
+			</div>
+			<div class="sf-container">
+				<div class="border">
+					<canvas id="sf-canvas"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div id="adder-row">
+			<div id=adder-container>
+				<div id="shape-adder" class="noselect">
+					<div class="shapes">
+						<img id="circle-image" src="images/oval.png">
+						<img id="triangle-image" src="images/triangle.png">
+						<img id="rect-image" src="images/rectangle.png">
+					</div>
+					<img class="plus" src="images/plus.png">
+				</div>
+			</div>
+			<div id="adder-spacer-right">
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.1/fabric.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+// Create canvas objects
+var bostonCanvas = new fabric.Canvas('boston-canvas',{
+	height:240,
+	width:420,
+	preserveObjectStacking: true,
+	selection: false,
+}),
+sfCanvas = new fabric.Canvas('sf-canvas',{
+	height:240,
+	width:420,
+	preserveObjectStacking: true,
+	selection: false,
+});
+// tracks number of shapes on canvas
+var shapeCounter = 0;
+
+// fabric custom settings
+fabric.Object.prototype.transparentCorners = false;
+fabric.Object.prototype.setControlsVisibility({
+	tl:false, //top-left
+	mt:false, // middle-top
+	tr:false, //top-right
+	ml:false, //middle-left
+	mr:false, //middle-right
+	bl:false, // bottom-left
+	mb:false, //middle-bottom
+	br:true //bottom-right
+})
+
+// function to add a triangle, square or circle to fabric canvas
+function add(the_canvas, numOfShapes) {
+	if (numOfShapes==0){
+		var red = new fabric.Rect({
+			top: 40,
+			left: 80,
+			width: 80,
+			height: 80,
+			fill: '#FF775A',
+			lockRotation: true,
+			hasBorders: false,
+			hasControls: true,
+			hasRotatingPoint: false,
+			lockScalingFlip: true,
+			minScaleLimit: .3,
+			borderOpacityWhenMoving: 1,
+			cornerColor:'#DADADA',
+		});
+		the_canvas.add(red);
+		$('#rect-image').remove();
+	}
+	if (numOfShapes==1){
+		var blue = new fabric.Triangle({
+			top: 110,
+			left: 170,
+			width: 80,
+			height: 80,
+			fill: '#1C41DB',
+			lockRotation: true,
+			hasBorders: false,
+			hasControls: true,
+			hasRotatingPoint: false,
+			lockScalingFlip: true,
+			minScaleLimit: .3,
+			borderOpacityWhenMoving: 1,
+			cornerColor:'#DADADA',
+		});
+		the_canvas.add(blue);
+		$('#triangle-image').remove();
+	}
+	if (numOfShapes==2){
+		var green = new fabric.Circle({
+			top: 40,
+			left: 255,
+			radius: 40,
+			fill: '#15D6A6',
+			lockRotation: true,
+			hasBorders: false,
+			hasControls: true,
+			hasRotatingPoint: false,
+			lockScalingFlip: true,
+			minScaleLimit: .3,
+			borderOpacityWhenMoving: 1,
+			cornerColor:'#DADADA',
+		});
+		the_canvas.add(green);
+		$('#circle-image').remove();
+		$('#shape-adder').addClass("inactive");
+	}
+}
+
+$('#shape-adder').click(function(){
+	if (shapeCounter<3){
+		add(sfCanvas, shapeCounter);
+		add(bostonCanvas, shapeCounter);
+		shapeCounter += 1;
+	}
+});
+
+//If interacting with Boston Canvas, update SF canvas
+bostonCanvas.on({
+	'touch:drag': function() {
+		var text = document.createTextNode(' Dragging ');
+	},
+	'object:moving': onBostonChange,
+	'object:scaling': onBostonChange,
+});
+function onBostonChange(options) {
+	for (var i = sfCanvas.getObjects().length - 1; i >= 0; i--) {
+		var object = bostonCanvas.getObjects()[i];
+		sfCanvas.getObjects()[i].set({
+			'left': bostonCanvas.getObjects()[i].left,
+			'top':bostonCanvas.getObjects()[i].top,
+			'scaleX':bostonCanvas.getObjects()[i].scaleX,
+			'scaleY':bostonCanvas.getObjects()[i].scaleY
+		});
+	}
+	sfCanvas.calcOffset();
+	sfCanvas.renderAll();
+}
+
+//Flip position of active canvas when hovering over differnet sides of the window
+$(".second-position").hover(function(){
+	console.log($(".interactive-demo").innerWidth());
+	$(".interactive-demo").css("flex-direction", "row");
+},function(){
+	$(".interactive-demo").css("flex-direction", "row-reverse");
+});
+
+</script>

@@ -22,7 +22,11 @@ app.controller('InfoController', ['$scope', function ($scope) {
   [
     {
       title: 'IBM Watson Experience',
-      medium: 'Frontend development, Interaction Design',
+      medium: 'Frontend Developer, Interaction Designer',
+    },
+    {
+      title: 'Oblong Industries',
+      medium: 'Creative Technologist, Interaction Designer',
     },
     {
       title: 'S.A.D. Shelter',
@@ -53,10 +57,10 @@ app.controller('InfoController', ['$scope', function ($scope) {
       title: 'Timeline of the Far Future',
       medium: 'Processing',
     },
-    {
-      title: 'Dro0Oo00ol',
-      medium: 'Exhibition',
-    },
+    // {
+    //   title: 'Dro0Oo00ol',
+    //   medium: 'Exhibition',
+    // },
     {
       title: '25 words 25 works',
       medium: 'Graphic Design, Bookmaking, Design Research',
@@ -82,9 +86,17 @@ var projects = [
   title: 'IBM Watson Experience',
   images: '<img src="images/immersionroom.jpeg" class="large-image"><img src="images/oblong-5.jpg" class="large-image">',
   thumbnail:'',
-  body:'<p class="description">Working with IBM and Local Projects, the Oblong Industries developed a series of branded interactive experiences for IBM Watson\'s Client Experience Center. Built upon Oblong\'s proprietary software platform, g-speak, these rooms use interactive storytelling to showcase the power of custom AI solutions in various enterprise scenarios.\n\nMy role as an Interaction Designer was to work between the designers at Local Projects and the engineers at Oblong to implement visual designs and prototype interactions for room-scale environments.\n\nI also worked as the Sound Designer for a number of the experiences, from crafting accents for micro-interactions in UI to composing for the cinematic moments of the disaster-relief themed scenario.</p>',
+  body:'<p class="description">Working with IBM and Local Projects, the Oblong Industries developed a series of branded interactive experiences for IBM Watson\'s Executive Experience Center. Built upon Oblong\'s proprietary software platform, g-speak, these rooms use interactive storytelling to showcase the power of custom AI solutions in various enterprise scenarios.\n\nMy role as an Interaction Designer was to work between the designers at Local Projects and the engineers at Oblong to implement visual designs and prototype interactions for room-scale environments.\n\nI also worked as the Sound Designer for a number of the experiences, from crafting accents for micro-interactions in UI to composing for the cinematic moments of the disaster-relief themed scenario.</p>',
   press:'<div class="side"><h1>Press</h1><li><a href="https://ux-design-awards.com/en/product/ibm-watson-experience-centers/">UX DESIGN AWARDS</a></li></div>',
   iframe:'<iframe src="https://player.vimeo.com/video/341664847" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+},
+{
+  title: 'Oblong Industries',
+  // images: '<img src="images/oblong-internal-docs.png" class="small-image"> <img src="images/oblong-internal-docs1.png" class="small-image"> <img src="images/oblong-internal-docs2.png" class="small-image"> <img src="images/oblong-internal-docs4.png" class="small-image">',
+  thumbnail:'',
+  body:'<p class="description"></p>',
+  press:'',
+  iframe:'<img src="images/oblong-logo.png" class="large-image"><p class="description">While working for Oblong Industries, about half of my time was dedicated to internal projects. This work ranged from R&D, protoyping new interfaces, and developing custom tools for the Solutions team, to creating clear documentation of client-work and supporting marketing endeavors.\n\n From things for smaller screens, like this interactive widget to demonstrate a shared digital workspace: </p><div class="side"><h1>Press</h1><li><a href="https://www.ted.com/talks/john_underkoffler_pointing_to_the_future_of_ui?language=en">Future of UI</a></li></div><iframe seamless class="noFrame" src="marketing-demo-module/index.html" width="814px" height="380px" frameborder="0"></iframe><p class="description">To collaborating with the rest of the Solutions team on software for many larger screens, running across multiple systems. This is a demo that showcases the multi-machine capabilities of \nG-speak, Oblong\'s spatial computing platform: </p><iframe src="https://player.vimeo.com/video/397090314" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe><p class=description> The G-speak operating system uses a coordinate system that is based in realworld millimeters, with an origin point in the center of the room. What that means is that even without an AR/VR headset, multiple users can interact with the nearby surfaces and connected devices. In the video below I show a spatial hit-area demo built with Oblong\'s Busby library and some Arduino light-strip fun.</p><iframe src="https://player.vimeo.com/video/397100885" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
 },
   {
     title: 'S.A.D. Shelter',
@@ -150,16 +162,15 @@ var projects = [
     iframe:'<img src="images/Timeline.png" class="large-image">',
 
   },
-  {
-    title: 'drool',
-    medium: '',
-    thumbnail:'',
-    images:'<img src="images/drool.jpg" class="large-image">',
-    body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14 - 28, 2016</p>',
-    press:"",
-    iframe:'<img src="images/droolBanner.jpg" class="large-image">',
-
-  },
+  // {
+  //   title: 'drool',
+  //   medium: '',
+  //   thumbnail:'',
+  //   images:'<img src="images/drool.jpg" class="large-image">',
+  //   body:'<p class="description" >Submerged in a media-saturated world, “content” has become something that is acknowledged but seldom processed — a bead of drool is the reward for the uncompromisingly absorbed viewer. In that same breath, we introduce ‘DroOoo0l’, the 2016 multimedia exhibition curated by Sam Klitsner / Echo Theohar / Claire Couch, and which is hosted by the UCLA Department of Design Media Arts to showcase the work of their undergraduates.\n\n Organized into different sights of consumption, “Dro0Oo00OL” guides its viewer through every avenue of media absorption; from the library to the junkyard. As the culture around new media continues to ask for more: harder graphics, riskier statements, blasted colors, and immersive environments, the students at DMA attempt to satiate these demands through their own experimentation in the practice of design. Full of mistakes, speculations, and successes, ‘Dro0Oo0OL’ offers a contemporary insight into the aspirations of young media artists to capture the legendary bead of mouth-sweat which eludes us all.\n\nEXHIBITION CURATORS\nSamson Klitsner, Echo Theohar, Claire Couch\n\nDATES\nJanuary 14 - 28, 2016</p>',
+  //   press:"",
+  //   iframe:'<img src="images/droolBanner.jpg" class="large-image">',
+  // },
   {
     title: '25 Words 25 works',
     medium: '',
@@ -460,6 +471,7 @@ $(document).ready(function(){
     $('.large-image, iframe').css("border", "3px "+color+" solid").css("box-sizing","content-box");
     $('.small-image').css("border", "3px "+color+" solid").css("box-sizing","border-box")
     $('#arrow *').css("background", color);
+    $('.noFrame').css("border", "none");
   }
 
   document.onkeydown = function(e) {
