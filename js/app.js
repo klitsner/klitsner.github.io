@@ -49,14 +49,14 @@ app.controller('InfoController', ['$scope', function ($scope) {
       medium: 'Unity, Installation, Sound',
       iframe:"https://player.vimeo.com/video/157377653"
     },
-    {
-      title: 'Martini Scorchazio',
-      medium: 'Music Video',
-    },
-    {
-      title: 'Timeline of the Far Future',
-      medium: 'Processing',
-    },
+    // {
+    //   title: 'Martini Scorchazio',
+    //   medium: 'Music Video',
+    // },
+    // {
+    //   title: 'Timeline of the Far Future',
+    //   medium: 'Processing',
+    // },
     // {
     //   title: 'Dro0Oo00ol',
     //   medium: 'Exhibition',
@@ -143,25 +143,25 @@ var projects = [
     press:"<div class='side'><h1>Press</h1><li><a href='http://games.ucla.edu/game/alexander-doggus-2/' target='_blank'>Game Lab</a></li></div>",
     iframe:'<iframe src="https://player.vimeo.com/video/157377653" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
   },
-  {
-    title: 'Martini Scorchazio',
-    medium: 'Music Video',
-    description: '',
-    thumbnail:'',
-    body:'<p class="description">A work in progress\n\n My final project for DMA 161: Video. The song, "Martini Scorchazio," was produced and recorded by myself along with fellow DMA and Fine Art  <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
-    press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
-    iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="100%" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-  },
-  {
-    title: 'Timeline of the Far Future',
-    medium: 'processing',
-    thumbnail:'',
-    images:'<img src="images/PPtotFF/frames3684.png" class="large-image"><img src="images/PPtotFF/PPTotFF 1.027.png" class="large-image"><img src="images/PPtotFF/PPTotFF 1.010.png" class="large-image">',
-    body:'<p class="description" >"PowerPoints of the far future, a collaboration between Samson Klitsner and <a href ="http://pohflepp.net/" target="_blank" style="font-weight:500">Sascha Pohflepp</a>, turns the events from Wikipedia\'s <a href =https://en.wikipedia.org/wiki/Timeline_of_the_far_future style="font-weight:500" target="_blank">Timeline of the Far Future</a> - a list of ridiculously far-off cosmological events - into a call-to-action.\n\nEach slide was algorithmically generated with software development by Sam Klitsner through an automated Google image search based on statements from the database of entries. the statement is also randomly constructed as a future, present or modal statement.\n\nBy presenting a series of increasingly distanced events such as \"In 1000000 years Neil Armstrong\'s footprint and those left by all twelve Apollo moonwalkers will have eroded\", the Powerpoint transforms a page of extinction into farce."\n\n-<em>taken from The Photographers\' Gallery</em></p>',
-    press:"<div class='side'><h1>Press</h1><li><a href='http://thephotographersgallery.org.uk/lev-manovich' target='_blank'>Photographers\' Gallery</a></li></div>",
-    iframe:'<img src="images/Timeline.png" class="large-image">',
-
-  },
+  // {
+  //   title: 'Martini Scorchazio',
+  //   medium: 'Music Video',
+  //   description: '',
+  //   thumbnail:'',
+  //   body:'<p class="description">A work in progress\n\n My final project for DMA 161: Video. The song, "Martini Scorchazio," was produced and recorded by myself along with fellow DMA and Fine Art  <a href ="https://soundcloud.com/shadow-realm-dice-boys">ShadowRealmDiceBoys</a>.\n\nDirector/Editor: Sam Klitsner\nDP: Ky Newman\nSong "Martini Scorchazio" by ShadowRealmDiceBoys</p>',
+  //   press:'<div class="side"><h1>Find me on</h1><li><a href="https://soundcloud.com/shadow-realm-dice-boys" target="_blank">Soundcloud</a></li></div>',
+  //   iframe:'<iframe src="https://player.vimeo.com/video/158510257?title=0&byline=0&portrait=0" width="100%" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+  // },
+  // {
+  //   title: 'Timeline of the Far Future',
+  //   medium: 'processing',
+  //   thumbnail:'',
+  //   images:'<img src="images/PPtotFF/frames3684.png" class="large-image"><img src="images/PPtotFF/PPTotFF 1.027.png" class="large-image"><img src="images/PPtotFF/PPTotFF 1.010.png" class="large-image">',
+  //   body:'<p class="description" >"PowerPoints of the far future, a collaboration between Samson Klitsner and <a href ="http://pohflepp.net/" target="_blank" style="font-weight:500">Sascha Pohflepp</a>, turns the events from Wikipedia\'s <a href =https://en.wikipedia.org/wiki/Timeline_of_the_far_future style="font-weight:500" target="_blank">Timeline of the Far Future</a> - a list of ridiculously far-off cosmological events - into a call-to-action.\n\nEach slide was algorithmically generated with software development by Sam Klitsner through an automated Google image search based on statements from the database of entries. the statement is also randomly constructed as a future, present or modal statement.\n\nBy presenting a series of increasingly distanced events such as \"In 1000000 years Neil Armstrong\'s footprint and those left by all twelve Apollo moonwalkers will have eroded\", the Powerpoint transforms a page of extinction into farce."\n\n-<em>taken from The Photographers\' Gallery</em></p>',
+  //   press:"<div class='side'><h1>Press</h1><li><a href='http://thephotographersgallery.org.uk/lev-manovich' target='_blank'>Photographers\' Gallery</a></li></div>",
+  //   iframe:'<img src="images/Timeline.png" class="large-image">',
+  //
+  // },
   // {
   //   title: 'drool',
   //   medium: '',
