@@ -66,7 +66,7 @@ app.controller('InfoController', ['$scope', function ($scope) {
       medium: 'Graphic Design, Bookmaking, Design Research',
     },
     {
-      title: 'Illustrations / Graphics',
+      title: 'Illustrations & Graphics',
       medium: 'Ink, Digital',
     },
     {
@@ -182,7 +182,7 @@ var projects = [
 
   },
   {
-    title: 'Illustrations / Graphics',
+    title: 'Illustrations & Graphics',
     medium: '',
     thumbnail:'',
     images:'<img src="images/DMA160Poster.png" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_1_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_2_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_3_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_4_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_5_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_6_670.jpg" class="large-image"><img src="https://pbs.twimg.com/media/CMDHZNfUAAAe8Gm.jpg:large" class="large-image">',
@@ -375,17 +375,21 @@ $(document).ready(function(){
   //reset
   $('#logo-container').click(function(){
     if(!$("#about").length){
-      reset();
-      removeHash();
-      $('#about-link').removeClass('hidden').addClass('home');
-      change=false;
-      $('.logo-color').fadeOut(function(){
-        this.remove();
-      });
-      $('#projects').css("display",'hidden');
-      $('#projects').fadeIn();
+      goHome();
     }
   });
+
+  function goHome(){
+    reset();
+    removeHash();
+    $('#about-link').removeClass('hidden').addClass('home');
+    change=false;
+    $('.logo-color').fadeOut(function(){
+      this.remove();
+    });
+    $('#projects').css("display",'hidden');
+    $('#projects').fadeIn();
+  }
 
   //scroll to top
   $('#content').on("click", '#arrow', function(){
@@ -405,11 +409,11 @@ $(document).ready(function(){
   });
 
   window.onhashchange = function() {
+
     if (window.location.hash) {
       updateModel(checkHash());
     } else {
-      reset();
-      $('#info').css('color','#777');
+      goHome();
     }
   }
 
@@ -506,6 +510,7 @@ $(document).ready(function(){
 function removeHash() {
   history.pushState("", document.title, window.location.pathname
   + window.location.search);
+
 }
 
 function locationHash(scopeTitle) {
