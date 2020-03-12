@@ -382,12 +382,31 @@ a{
 }
 
 .thumbnail{
-    display:inline-block;
+    display:inline-flex;
     height:140px;
     width:17%;
     margin:9px 9px;
     position:relative;
+
 }
+
+.thumbnail-image-container{
+  display:inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.thumbnail-image-container img{
+	max-width: 110px;
+	max-height: 140px;
+	opacity:.8;
+	mix-blend-mode: multiply;
+	align-self: center;
+}
+
 .thumbnail:hover{
     cursor: pointer;
     background-color:#eaeaea;
@@ -407,6 +426,11 @@ a{
     height:100%;
     width:100%;
     position:absolute;
+		mix-blend-mode: multiply;
+}
+
+#SEO{
+	display:hidden;
 }
 
 .large-image{
@@ -459,11 +483,11 @@ a{
 }
 
 .purple{
-background: rgb(120,50,180);
+background: rgb(107, 64, 144);
 }
 
 .green{
-    background: #16d3c3;
+    background: #4c8fdf;
 }
 
 .orange{
