@@ -421,6 +421,8 @@ transition:  0.1s ease-out;
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	z-index: 1;
+	mix-blend-mode: multiply;
 }
 
 
@@ -428,7 +430,6 @@ transition:  0.1s ease-out;
 	max-width: 90px;
 	max-height: 90px;
 	opacity:.8;
-	mix-blend-mode: multiply;
 	align-self: center;
 }
 
@@ -436,7 +437,6 @@ transition:  0.1s ease-out;
 	max-width: 140px;
 	max-height: 140px;
 	opacity:.8;
-	mix-blend-mode: multiply;
 	align-self: center;
 }
 
@@ -461,7 +461,7 @@ transition:  0.1s ease-out;
     height:100%;
     width:100%;
     position:absolute;
-		mix-blend-mode: multiply;
+		/* mix-blend-mode: multiply; */
 }
 
 .difference{
