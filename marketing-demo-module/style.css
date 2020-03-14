@@ -122,6 +122,16 @@ h1{
 	display: flex;
 }
 
+#overlay{
+	position: absolute;
+	z-index: 1;
+	bottom: 52px;
+	left: 340px;
+	/* transform: rotate(-10deg); */
+	font-size:14px;
+	opacity: .7;
+}
+
 #shape-adder{
 	transform:scale(.85);
 	background-color:#FFFFFF;

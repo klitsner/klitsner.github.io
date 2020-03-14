@@ -97,8 +97,16 @@ h1{
 		 /* font-family: 'worksans'; */
 }
 
+
 h3{
      font-size:16px;
+}
+
+h4{
+	font-size: 1.5em;
+text-align: center;
+margin: 10px;
+padding-top: 50px;
 }
 
 
@@ -489,8 +497,8 @@ transition:  0.1s ease-out;
     background: #FF9A62;
 }
 
-.turqoise{
-    background: #A3DADC;
+.turquoise{
+    background: #5cebff;
 }
 
 .blue{

@@ -10,6 +10,7 @@
 </head>
 <!--  body  -->
 <body>
+	<div id="overlay">Press the ‘+’ <br>to get started!</div>
 	<div class="interactive-demo-container">
 		<div class="header">
 						<h1>LOCAL SCREEN</h1>
@@ -141,6 +142,7 @@ function add(the_canvas, numOfShapes) {
 
 
 $('#shape-adder').click(function(){
+	$('#overlay').hide();
   if (shapeCounter<3){
     add(sfCanvas, shapeCounter);
     add(bostonCanvas, shapeCounter);
