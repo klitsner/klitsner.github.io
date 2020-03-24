@@ -339,12 +339,13 @@ p{
 li{
     list-style-type: none;
  text-transform: uppercase;
-    font-size:24px;
+    font-size:16px;
     margin-top: 5px;
 }
 
 li a{
     font-weight: 100;
+		font-size: 24px;
     opacity: .3;
 }
 li a:hover{
@@ -359,6 +360,23 @@ li a:hover{
 a{
     text-decoration: none;
      color:black;
+}
+
+strong{
+
+}
+
+i{
+	font-style: italic;
+}
+
+.roles{
+	font-size: .8em;
+	font-style: italic;
+	opacity: .5;
+	margin: 12px 0px;
+	letter-spacing: 1px;
+	text-transform: none;
 }
 
 .side{
