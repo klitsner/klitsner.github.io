@@ -142,7 +142,7 @@ var projects = [
     thumbnail:'',
     images:'<img src="images/AlexanderDoggusMain.png" class="large-image"><img src="images/DoggusSam.jpg" class="large-image">',
     body:'<p class="description" >Alexander Doggus is a wheelchair-bound old-timer who used to be the world\'s greatest show dog. Jaded by his exuberant past, Alexander now cares only about his favorite tennis ball.\n\n  The player guides Alexander through the world using a trackball to roll his in-game tennis ball, Alexander always following close behind. Complete with an original soundtrack, Alexander Doggus carefully combines 2D and 3D elements to create a richly textured world. \n\nCreated for Eddo Stern\'s 171 Worldbuilding class.</p>',
-    press:"<div class='side'><h1>Press</h1><li><a href='http://games.ucla.edu/game/alexander-doggus-2/' target='_blank'>Game Lab</a></li></div>",
+    press:"<div class='side'><h1>Press</h1><li><a href='http://games.ucla.edu/game/alexander-doggus-2/' target='_blank'>Game Lab</a></li><li><a href='https://hamburg.playfestival.de/play16/2016/09/27/alexander-doggus/' target='_blank'>Play Festival</a></li></div>", 
     iframe:'<iframe src="https://player.vimeo.com/video/157377653" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
   },
   // {
