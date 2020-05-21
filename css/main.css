@@ -321,7 +321,11 @@ a#logo-home-link{
     width:814px;
     margin:0 auto 0 auto;
     position:relative;
-    top: 9px;
+    top: 70px;
+}
+
+#controller{
+	width:100vw;
 }
 
 p{
@@ -353,9 +357,6 @@ li a:hover{
     opacity: .5;
 }
 
-/* li a:hover{
-     opacity: 1;
-} */
 
 a{
     text-decoration: none;
@@ -506,7 +507,7 @@ transition:  0.1s ease-out;
     margin-top: 0px;
     margin-bottom: 6px;
     margin-left: -1px;
-    width:100%;
+    width:814px;
 }
 .small-image{
     margin-bottom: 6px;
