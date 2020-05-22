@@ -66,8 +66,8 @@ app.controller('InfoController', ['$scope', function ($scope) {
       medium: 'Graphic Design, Bookmaking, Design Research',
     },
     {
-      title: 'Illustrations & Graphics',
-      medium: 'Ink, Digital',
+      title: 'Illustration & \nGraphic Design',
+      medium: '',
     },
     {
       title: 'LA Hacks 2015',
@@ -142,7 +142,7 @@ var projects = [
     thumbnail:'',
     images:'<img src="images/AlexanderDoggusMain.png" class="large-image"><img src="images/DoggusSam.jpg" class="large-image">',
     body:'<p class="description" >Alexander Doggus is a wheelchair-bound old-timer who used to be the world\'s greatest show dog. Jaded by his exuberant past, Alexander now cares only about his favorite tennis ball.\n\n  The player guides Alexander through the world using a trackball to roll his in-game tennis ball, Alexander always following close behind. Complete with an original soundtrack, Alexander Doggus carefully combines 2D and 3D elements to create a richly textured world. \n\nCreated for Eddo Stern\'s 171 Worldbuilding class.</p>',
-    press:"<div class='side'><h1>Press</h1><li><a href='http://games.ucla.edu/game/alexander-doggus-2/' target='_blank'>Game Lab</a></li><li><a href='https://hamburg.playfestival.de/play16/2016/09/27/alexander-doggus/' target='_blank'>Play Festival</a></li></div>", 
+    press:"<div class='side'><h1>Press</h1><li><a href='http://games.ucla.edu/game/alexander-doggus-2/' target='_blank'>Game Lab</a></li><li><a href='https://hamburg.playfestival.de/play16/2016/09/27/alexander-doggus/' target='_blank'>Play Festival</a></li></div>",
     iframe:'<iframe src="https://player.vimeo.com/video/157377653" width="814" height="453" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
   },
   // {
@@ -184,10 +184,18 @@ var projects = [
 
   },
   {
-    title: 'Illustrations & Graphics',
+    title: 'Illustration & Graphic Design',
     medium: '',
     thumbnail:'',
-    images:'<img src="images/buttsniffers.jpg" class="large-image" style="border=none;"><img src="images/pink-dog.png" class="large-image" style="border=none;"><h4> Illustration series for monthly NTS show "The Food and Liquor" </h4><img src="images/NTS-Honey-Bun-no-text.png" class="large-image"><h4>Zine<br> With excerpts from "Men Explain Things to Me" by Rebeca Solnit</h4><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_1_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_2_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_3_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_4_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_5_670.jpg" class="large-image"><img src="http://payload316.cargocollective.com/1/2/75168/8637089/sam_6_670.jpg" class="large-image"><h4>Dog</h4><img src="https://pbs.twimg.com/media/CMDHZNfUAAAe8Gm.jpg:large" class="large-image">',
+    images:'<img src="images/buttsniffers.jpg" class="large-image" style="border=none;">\
+    <img src="images/NTS-Flyers.png" class="full-width-image" class="full-width-image">\
+    <img src="images/CEC-flyer.png" class="full-width-image" class="full-width-image">\
+    <img src="images/banana-peel.png" class="full-width-image" class="full-width-image">\
+    <img src="images/gooeyDog.png" class="full-width-image">\
+    <img src="images/U&I.png" class="full-width-image" class="full-width-image">\
+    <img src="images/MenExplain2.png" class="full-width-image" class="full-width-image">\
+    <img src="images/Trump.png" class="full-width-image" class="full-width-image">\
+    <img src="images/pink-dog.png" class="full-width-image" style="border=none;">',
     body:'',
     press:"",
     iframe:'',
@@ -424,6 +432,8 @@ $(document).ready(function(){
       if(!$("#about").length){
         updateModel(checkHash());
       }
+    }else{
+      $('#projects').fadeIn();
     }
   });
 
