@@ -319,7 +319,7 @@ $(document).ready(function(){
     //callback funtion to change back to resting state
       scope.$apply(function(){
         scope.title = 'Samson klitsner';
-        scope.content = 'Designer, Artist, Creative Technologist';
+        scope.content = 'Designer, Artist, Developer';
         $('#info').css('color','#777');
       });
   }
