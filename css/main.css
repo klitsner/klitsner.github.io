@@ -283,6 +283,16 @@ padding-top: 50px;
 opacity:0!important;
 }
 
+.about-image{
+display:block;
+margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    width: 700px;
+    display: block;
+
+}
+
 #logo{
     z-index: 10;
     height: 190px;
