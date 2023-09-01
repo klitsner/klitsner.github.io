@@ -375,7 +375,7 @@ $(document).ready(function(){
     scope.$apply(function(){
       scope.body= '';
       scope.title = "Samson Klitsner";
-      scope.content = "Designer, Artist, Creative Technologist";
+      scope.content = "Designer, Artist, Developer";
       $('#content').css('margin-top', '0').html('');
       show= false;
       change=false;
