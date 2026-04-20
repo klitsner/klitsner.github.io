@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "title": " Choose",
+    "medium": "Processing, Teensy"
+  },
+  "detail": {
+    "title": " Choose",
+    "medium": "processing, teensy",
+    "description": "",
+    "thumbnail": "",
+    "body": "<p class=\"description\">Choose is an interactive color and sound installation that was featured in the DMA 2015 undergraduate exhibition.\n\nUsing Teensy, Processing, and projection mapping, colored dots are randomly mapped to an all-white 16 button MIDI controller so that each button is colorized to a different hue. Each button pressed changes the background to the button's corresponding color, altering the contrast relationship for remaining buttons.</p>",
+    "press": "",
+    "images": "<img src=\"images/choose.png\" class=\"large-image\"><img src=\"images/choose.jpg\" class=\"large-image\">",
+    "iframe": "<iframe src=\"https://player.vimeo.com/video/119825927\" width=\"814\" height=\"453\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/small-button.png",
+    "colorClass": "orange"
+  }
+}
