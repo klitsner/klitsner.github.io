@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "title": "SoSo Internship",
+    "medium": "Research, Sound, Web Development"
+  },
+  "detail": {
+    "title": "Soso Internship",
+    "medium": "dance, arduino, sound, Processing",
+    "thumbnail": "",
+    "body": "<p class=\"description\">I spent my summer of 2016 in Boston interning for my favorite rockstars-turned-design-studio, SosoLimited. I got to work on some in-house projects (like the bi-coastal message board shown above), experiment with the twitter API for some live data-driven installations, and I was introduced to beurocracy's place in the design process via many meetings for a public work that was ultimately shot down by some grumpy neighbors...\n\n Soso rocks, and their Quadrennial <a style=\"font-weight:900; text-decoration:underline;\" href=\"https://www.sosolimited.com/work/reconstitution-2008\">Reconstitution</a> is still one of my favorite projects.</p>",
+    "press": "",
+    "images": "",
+    "iframe": "<iframe src=\"https://player.vimeo.com/video/139732443?title=0&byline=0&portrait=0\" width=\"814\" height=\"453\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/soso-logo.png",
+    "colorClass": "purple",
+    "imageClass": "full"
+  }
+}
