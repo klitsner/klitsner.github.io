@@ -1,10 +1,6 @@
 /*global angular */
 
-//add functionality where if you scroll past the bottom of the page, the content collapses
-
-
 var app = angular.module("myApp", []);
-
 
 app.controller('InfoController', ['$scope', function ($scope) {
   $scope.title = 'samson klitsner';
@@ -12,48 +8,80 @@ app.controller('InfoController', ['$scope', function ($scope) {
   $scope.body = '';
   $scope.images = [];
   $scope.iframe = '';
+  $scope.projects = [];
 
   if ($("#about").length){
     $scope.title = 'Samson klitsner';
     $scope.content = 'Designer, Artist, Developer';
   }
 
-  $scope.projects = (window.portfolioProjects || []).map(function (projectFile) {
-    return projectFile.summary;
-  });
-
   $scope.info = function(index){
+    if (!$scope.projects[index]) {
+      return;
+    }
     $scope.title = $scope.projects[index].title;
     $scope.content = $scope.projects[index].medium;
   };
 }]);
 
-var projects = (window.portfolioProjects || []).map(function (projectFile) {
-  return projectFile.detail;
-});
-
 /*Jquery stuff*/
 $(document).ready(function(){
-  var scope = angular.element(document.getElementById('controller')).scope()
+  var scope = angular.element(document.getElementById('controller')).scope();
+  var projects = [];
   var index;
   var transTime = 250;
   var color;
   var change = false;
   var show = false;
-  var safe = false;
+
+  function safeApply(fn) {
+    if (scope.$$phase) {
+      fn();
+      return;
+    }
+    scope.$apply(fn);
+  }
+
+  function loadProjects() {
+    return fetch('projects/manifest.json')
+      .then(function (response) { return response.json(); })
+      .then(function (manifest) {
+        return Promise.all((manifest.projects || []).map(function (filename) {
+          return fetch('projects/' + filename).then(function (response) {
+            return response.json();
+          });
+        }));
+      });
+  }
+
+  function thumbnailMarkup(projectConfig, projectIndex) {
+    var image = projectConfig.thumbnail && projectConfig.thumbnail.image;
+    var imageClass = projectConfig.thumbnail && projectConfig.thumbnail.imageClass ? projectConfig.thumbnail.imageClass : '';
+    var imageStyle = projectConfig.thumbnail && projectConfig.thumbnail.imageStyle ? ' style="' + projectConfig.thumbnail.imageStyle + '"' : '';
+    var colorClass = projectConfig.thumbnail && projectConfig.thumbnail.colorClass ? projectConfig.thumbnail.colorClass : '';
+
+    var imageMarkup = image ? '<div class="thumbnail-image-container"><img src="' + image + '" class="' + imageClass + '"' + imageStyle + '></div>' : '';
+    return '<div class="thumbnail" data-index="' + projectIndex + '">' + imageMarkup + '<div class="thumbnail-color ' + colorClass + '"></div></div>';
+  }
+
+  function renderThumbnails(projectConfigs) {
+    var html = projectConfigs.map(function (projectConfig, projectIndex) {
+      return thumbnailMarkup(projectConfig, projectIndex);
+    }).join('');
+
+    $('#projects').html(html).fadeIn();
+  }
 
   function thumbnailOut(thumbnail){
     $(thumbnail).find('.thumbnail-color')
     .stop(true,false)
-    .animate({height:0},transTime,function(){
-
-    });
+    .animate({height:0},transTime,function(){});
   }
+
   function thumbnailIn(thumbnail){
     $(thumbnail).find('.thumbnail-color')
     .stop(true,false)
-    .animate({height:140},transTime,function(){
-    });
+    .animate({height:140},transTime,function(){});
   }
 
   function getThumbnailColor(thumbnail){
@@ -62,7 +90,7 @@ $(document).ready(function(){
 
   function clearLogoColor(c){
     $('.logo-color').each(function(){
-      if($(this).css('background-color')==c){
+      if(!c || $(this).css('background-color')==c){
         $(this)
         .stop(true)
         .animate({height:0},transTime,function(){
@@ -72,79 +100,60 @@ $(document).ready(function(){
     });
   }
 
-  function logoColorIn(color, height){
-    length = $('.logo-color').length;
-    if(length>=1){
+  function logoColorIn(nextColor, height){
+    var length = $('.logo-color').length;
+    var logoColor;
+
+    if(length >= 1){
       clearLogoColor();
     }
-    //check that logo-color does not already exist before creating another one
-    if(!($('#logo-container').find('.logo-color').css("background-color")==color)){
-      $logoColor = $('<div class="logo-color"></div>').css("background-color",color);
-      $('#logo-container').prepend($logoColor);
-    };
 
-    if(!($logoColor.height()==height)){
-      $logoColor
+    if(!($('#logo-container').find('.logo-color').css("background-color") === nextColor)){
+      logoColor = $('<div class="logo-color"></div>').css("background-color",nextColor);
+      $('#logo-container').prepend(logoColor);
+    } else {
+      logoColor = $('#logo-container').find('.logo-color');
+    }
+
+    if(logoColor && !(logoColor.height() === height)){
+      logoColor
       .stop()
-      .animate({height:height},transTime,function(){
-      });
+      .animate({height:height},transTime,function(){});
     }
   }
 
-
-
-  function logoColorOut(c, thisThumbnail){
-          clearLogoColor(c);
-  }
-
-  function colorSlideIn(c){
-    $('#color-slider-tab')
-    .stop()
-    .css("background-color",c)
-    .animate({height:24},20,function(){
-      console.log("color slide in finished");
+  function projectTitleDisplay(nextColor){
+    $('#info').css('color',nextColor);
+    safeApply(function(){
+      scope.info(index);
     });
   }
 
-  function colorSlideOut(colorLogoCallback){
-    colorLogoCallback();
+  function restingTitle(){
+    safeApply(function(){
+      scope.title = 'Samson klitsner';
+      scope.content = 'Designer, Artist, Developer';
+      $('#info').css('color','#777');
+    });
   }
 
-  $('.thumbnail').hover(function(){
-    index = $(this).index();
+  $('#projects').on('mouseenter', '.thumbnail', function(){
+    index = Number($(this).attr('data-index'));
     thumbnailOut(this);
     logoColorIn(getThumbnailColor(this), 234);
     projectTitleDisplay(getThumbnailColor(this));
-
-  },function(){
-    thumbnailIn(this);
-    if(show==false){
-      clearLogoColor(getThumbnailColor(this));
-    }
-    if(show==false){
-    restingTitle();
-  }
-
   });
 
-  function projectTitleDisplay(color){
-  $('#info').css('color',color);
-  scope.$apply(function(){
-    scope.info(index);
-    });
-  }
-  function restingTitle(){
-    //callback funtion to change back to resting state
-      scope.$apply(function(){
-        scope.title = 'Samson klitsner';
-        scope.content = 'Designer, Artist, Developer';
-        $('#info').css('color','#777');
-      });
-  }
+  $('#projects').on('mouseleave', '.thumbnail', function(){
+    thumbnailIn(this);
+    if(show===false){
+      clearLogoColor(getThumbnailColor(this));
+      restingTitle();
+    }
+  });
 
-
-  //selecting a project to view
-  $('.thumbnail').click(function(){
+  $('#projects').on('click', '.thumbnail', function(){
+    index = Number($(this).attr('data-index'));
 
     $('#about-link').addClass('hidden').removeClass('home');
     $('#slider-tab').animate({ opacity:0 }, 0,function(){
@@ -153,56 +162,52 @@ $(document).ready(function(){
     });
 
     $('.logo-color').animate({ height:213 }, 100,function(){});
-    // reset();
     change = true;
     show = true;
     $('#projects').hide();
-    scope.$apply(function(){
+
+    safeApply(function(){
       scope.body= projects[index].body;
       scope.info(index);
     });
-    //Add title to URL
+
     locationHash(scope.title);
   });
 
   $('#logo-container').hover(function(){
-    if(change==true){
+    if(change===true){
       $('#logo-container').css( 'cursor', 'pointer' );
-
       $('.logo-color').animate({ height:234 }, 100,function(){});
     }
-    if(change==false){
+    if(change===false){
       $('#logo-container').css( 'cursor', 'default' );
     }
   },
   function(){
-    if(change==true){
+    if(change===true){
       $('.logo-color').animate({ height:213 }, 100,function(){});
     }
   });
 
-  //reset the work page
   var reset = function(){
-    if(change==true){
+    if(change===true){
       $('#info').css('color','#777');
-      $("#about-link").fadeTo(0,.7);
+      $('#about-link').fadeTo(0,.7);
       $('#about-link').removeClass('hidden');
-      // $('#logo-container').removeClass('immediate').css('background-color','#eaeaea');
     }
 
-    scope.$apply(function(){
+    safeApply(function(){
       scope.body= '';
-      scope.title = "Samson Klitsner";
-      scope.content = "Designer, Artist, Developer";
+      scope.title = 'Samson Klitsner';
+      scope.content = 'Designer, Artist, Developer';
       $('#content').css('margin-top', '0').html('');
       show= false;
       change=false;
     });
-  }
+  };
 
-  //reset
   $('#logo-container').click(function(){
-    if(!$("#about").length){
+    if(!$('#about').length){
       goHome();
     }
   });
@@ -215,13 +220,12 @@ $(document).ready(function(){
     $('.logo-color').fadeOut(function(){
       this.remove();
     });
-    $('#projects').css("display",'hidden');
+    $('#projects').css('display','hidden');
     $('#projects').fadeIn();
   }
 
-  //scroll to top
-  $('#content').on("click", '#arrow', function(){
-    $("html, body").animate({ scrollTop: 0 }, 400,function(){
+  $('#content').on('click', '#arrow', function(){
+    $('html, body').animate({ scrollTop: 0 }, 400,function(){
       reset();
       removeHash();
       $('#about-link').removeClass('hidden').addClass('home');
@@ -232,66 +236,47 @@ $(document).ready(function(){
       history.pushState('', document.title, window.location.pathname);
       change=false;
     });
-    $('#projects').css("display",'hidden');
+    $('#projects').css('display','hidden');
     $('#projects').fadeIn();
   });
 
-  window.onhashchange = function() {
-
-    if (window.location.hash) {
-      updateModel(checkHash());
-    } else {
-      goHome();
-    }
-  }
-
-  $(window).on('load', function(){
-    if(window.location.hash) {
-      if(!$("#about").length){
-        updateModel(checkHash());
-      }
-    }else{
-      $('#projects').fadeIn();
-    }
-  });
-
-  //return the index of the object associated with the location hash
   function checkHash(){
-    var i;
-    $(scope.projects).each(function(index){
-      if("#"+this.title.replace(/\s+/g,'').toUpperCase()===location.hash.toUpperCase()){
-        i = index;
-      }else{
-        return -1;
+    var i = -1;
+    $(scope.projects).each(function(projectIndex){
+      if('#' + this.title.replace(/\s+/g,'').toUpperCase()===location.hash.toUpperCase()){
+        i = projectIndex;
       }
     });
     return i;
   }
 
-  //Update page to project corresponding with index i.
+  function colorize(){
+    $('#arrow *').css('background', color);
+    $('.noFrame').css('border', 'none');
+  }
+
   function updateModel(i) {
-    if(i===-1){
-      return 0;
+    if(i===-1 || !projects[i]){
+      return;
     }
+
     reset();
 
-    $('.thumbnail').each(function(index){
-      if(index==i){
-        color = $(this).find('.thumbnail-color').css("background-color");
+    $('.thumbnail').each(function(){
+      if(Number($(this).attr('data-index'))===i){
+        color = $(this).find('.thumbnail-color').css('background-color');
         logoColorIn(color, 213);
-      $('#about-link').addClass('hidden').removeClass('home');
+        $('#about-link').addClass('hidden').removeClass('home');
       }
     });
+
     $('#info').css('color',color);
-    // $("#about-link").hide();
     change = true;
     show = true;
 
     $('#projects').hide();
 
-    //
-    // $('#logo-container').css('background-color',color);
-    scope.$apply(function(){
+    safeApply(function(){
       scope.body= projects[i].body;
       scope.info(i);
     });
@@ -307,46 +292,68 @@ $(document).ready(function(){
     colorize();
   }
 
-  function colorize(){
-    // $('.large-image, iframe').css("border", "3px "+color+" solid").css("box-sizing","content-box");
-    // $('.small-image').css("border", "3px "+color+" solid").css("box-sizing","border-box");
-    $('#arrow *').css("background", color);
-    $('.noFrame').css("border", "none");
-  }
-
   document.onkeydown = function(e) {
     e = e || window.event;
     switch(e.which || e.keyCode) {
-      case 37: // left
-      var check = checkHash();
-      if (check > 0) {
-        updateModel(check-1);
+      case 37:
+      var leftCheck = checkHash();
+      if (leftCheck > 0) {
+        updateModel(leftCheck-1);
       }
       break;
 
-      case 38: // up
-      break;
-
-      case 39: // right
-      var check = checkHash();
-      if (check > -1 && check < (scope.projects.length - 1)) {
-        updateModel(check+1);
+      case 39:
+      var rightCheck = checkHash();
+      if (rightCheck > -1 && rightCheck < (scope.projects.length - 1)) {
+        updateModel(rightCheck+1);
       }
       break;
 
-      case 40: // down
-      break;
-
-      default: return; // exit this handler for other keys
+      default: return;
     }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
+    e.preventDefault();
+  };
+
+  function bindRouting() {
+    window.onhashchange = function() {
+      if (window.location.hash) {
+        updateModel(checkHash());
+      } else {
+        goHome();
+      }
+    };
+
+    if(window.location.hash) {
+      if(!$('#about').length){
+        updateModel(checkHash());
+      }
+    } else {
+      $('#projects').fadeIn();
+    }
+  }
+
+  if (!$('#about').length) {
+    loadProjects().then(function (projectConfigs) {
+      projects = projectConfigs.map(function (projectConfig) {
+        return projectConfig.detail;
+      });
+
+      safeApply(function () {
+        scope.projects = projectConfigs.map(function (projectConfig) {
+          return projectConfig.summary;
+        });
+      });
+
+      renderThumbnails(projectConfigs);
+      bindRouting();
+    }).catch(function (error) {
+      console.error('Failed to load projects CMS data.', error);
+    });
   }
 });
 
 function removeHash() {
-  history.pushState("", document.title, window.location.pathname
-  + window.location.search);
-
+  history.pushState('', document.title, window.location.pathname + window.location.search);
 }
 
 function locationHash(scopeTitle) {

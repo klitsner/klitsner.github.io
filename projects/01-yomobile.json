@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "title": "Yomobile",
+    "medium": "Frontend Web Development"
+  },
+  "detail": {
+    "title": "Yomobile",
+    "thumbnail": "images/thumbnails/yomobilemx_thumbnail.png",
+    "body": "<p class=\"description\">Led web development during the early launch phase of YO Mobile, a cross-border telecom and super-app platform operating between Mexico and the U.S., working across both customer-facing and internal platforms. I collaborated closely with stakeholders, designers, and a Ukraine-based backend and data team to build and maintain the public website as well as an investor portal for analytics and company updates. \n\n My work spanned frontend development, and data-driven interfaces, including custom email templates, analytics integrations, and internal dashboards used for business intelligence and executive reporting.</p>",
+    "press": "<div class=\"side\"><h1>Info</h1><li><a href=\"https://www.yondermediamobile.com/\">YMM</a></li><br><br><h1>Team</h1><li class=\"roles\">Design Director: Annie Zeng</li><li class=\"roles\">Graphic Design: Kathleen Wang</li><li class=\"roles\">Frontend Development: Samson Klitsner</li></div>",
+    "images": "<img src=\"images/yo-hero.webp\" class=\"large-image\">",
+    "iframe": "<iframe src=\"https://player.vimeo.com/video/1184962223\" width=\"814\" height=\"533\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/yomobilemx_thumbnail.png",
+    "colorClass": "yogreen"
+  }
+}

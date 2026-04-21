@@ -1,4 +1,4 @@
-registerPortfolioProject({
+{
   "summary": {
     "title": "LA Hacks 2015",
     "medium": "Identity, Promotional Design"
@@ -11,5 +11,10 @@ registerPortfolioProject({
     "press": "<div class='side'><h1>Press</h1><li><a href='http://articles.latimes.com/2014/apr/13/business/la-fi-tn-la-hacks-hackathon-20140412'>LA Times</a></li><li><a href='http://www.laweekly.com/news/ucla-hosts-biggest-hackathon-in-history-4581816'>LA Weekly</a></li><li><a href='http://dailybruin.com/2014/04/14/la-hacks-gathers-about-1300-participants-at-ucla-for-hackathon/'>Daily Bruin</a></li><li><a href='http://techzulu.com/la-hacks-making-la-tech-hub-world/'>TeckZulu</a></li></div>",
     "images": "<img src=\"images/hackarena.png\" class=\"large-image\"><img src=\"images/LAHacksShirt.jpg\" class=\"large-image\"><img src=\"images/LAhacks-process3.png\" class=\"large-image\"><img src=\"images/LAhacks-process4.png\" class=\"large-image\"><img src=\"images/LAhacks-process5.png\" class=\"large-image\"><img src=\"images/LAhacks-process7.png\" class=\"large-image\">",
     "iframe": "<iframe width=\"814\" height=\"453\" src=\"https://www.youtube.com/embed/n_PT7W2zxAs\" frameborder=\"0\" allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/la-hacks-logo.png",
+    "colorClass": "black",
+    "imageClass": "full"
   }
-});
+}

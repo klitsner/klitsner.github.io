@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "title": "Oblong Industries",
+    "medium": "Creative Technologist, Interaction Designer"
+  },
+  "detail": {
+    "title": "Oblong Industries",
+    "thumbnail": "",
+    "body": "<p class=\"description\"></p>",
+    "press": "",
+    "images": "",
+    "iframe": "<img src=\"images/oblong-logo.png\" class=\"large-image\"><p class=\"description\">While working for Oblong Industries, about half of my time was dedicated to internal projects. This work ranged from R&D, protoyping new interfaces, and developing custom tools for the Solutions team, to creating clear documentation of client-work and supporting marketing endeavors.\n\n From things for smaller screens, like this interactive widget to demonstrate a shared digital workspace: </p><div class=\"side\"><h1>Press</h1><li><a href=\"https://www.ted.com/talks/john_underkoffler_pointing_to_the_future_of_ui?language=en\">Future of UI</a></li></div><iframe seamless class=\"noFrame\" src=\"marketing-demo-module/index.html\" width=\"814px\" height=\"380px\" frameborder=\"0\"></iframe><p class=\"description\">To collaborating with the rest of the Solutions team on software for many larger screens, running across multiple systems. This is a demo that showcases the multi-machine capabilities of \nG-speak, Oblong's spatial computing platform: </p><iframe src=\"https://player.vimeo.com/video/397090314\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe><p class=description> The G-speak operating system uses a coordinate system that is based in realworld millimeters, with an origin point in the center of the room. What that means is that even without an AR/VR headset, multiple users can interact with the nearby surfaces and connected devices. In the video below I show a spatial hit-area demo built with Oblong's Busby library and some Arduino light-strip fun.</p><iframe src=\"https://player.vimeo.com/video/397100885\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/oblong-logo-small.png",
+    "colorClass": "indigo",
+    "imageStyle": "padding-top:10px; max-width:130px; max-height:130px"
+  }
+}
