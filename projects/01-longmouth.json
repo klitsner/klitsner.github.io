@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "title": "Longmouth",
+    "medium": "Web Development, Smootify, Shopify"
+  },
+  "detail": {
+    "title": "Longmouth",
+    "thumbnail": "images/thumbnails/longmouth-logo.png",
+    "body": "<p class=\"description\">Longmouth is a company started by some friends in Denmark/SF, whose journey I am privileged to be a part of. I have worked closely with the founders to bring their vision to life, creating a very custom single-page web experience for their Magic The Gathering apparel store. </p>",
+    "press": "<div class=\"side\"><h1>Store</h1><li><a href=\"https://www.longmouth.world/\">Longmouth.world</a></li><br><br></div>",
+    "images": "<img src=\"images/longmouth-image-1.webp\" class=\"large-image\">",
+    "iframe": "<iframe src=\"https://player.vimeo.com/video/1185280300\" width=\"814\" height=\"533\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/longmouth-logo.png",
+    "colorClass": "webdevcolor"
+  }
+}

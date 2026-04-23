@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "title": "Net Instructor",
+    "medium": "Teaching, Creative Coding, Web-based tools, p5.js"
+  },
+  "detail": {
+    "title": "UCLA DMA Summer Institute — Net Course",
+    "thumbnail": "images/thumbnails/ucla-dma-si-thumbnail.png",
+    "body": "<p class=\"description\">Among all the tools, platforms and services, the internet is a canvas for expression.\n\nOf data\n\nIdeas\n\nand feelings. \n\nAs the instructor for the “Net” course at UCLA’s Design Media Arts Summer Institute (2024–2025), I developed and led an intensive, one-week curriculum introducing students to creative web practices. The course explored the web as both a technical and expressive medium, combining coding fundamentals with design experimentation.\n\nWorking with students from a wide range of backgrounds, I structured the class to move quickly from foundational concepts into hands-on making. Students created interactive sketches using p5.js and developed personal portfolio websites, often encountering code for the first time and leaving with fully realized, self-directed projects.\n\nThe course emphasized exploration, iteration, and individual voice—encouraging students to treat the web not just as a tool, but as a space for creative practice. Across both in-person and remote sessions, the result was a diverse body of work that reflected each student’s unique approach to interaction, storytelling, and form.</p>",
+    "press": "<div class=\"side\"><h1>Syllabus</h1><li><a href=\"/images/DMA SI 25_Syllabus_Net.docx.pdf\">PDF</a></li><br><br><h1>Students</h1><li><a href=\"https://classes.dma.ucla.edu/si/24/gallery\">2024</a></li><li><a href=\"https://classes.dma.ucla.edu/si/25/gallery-a/\">2025</a></li><br><br><h1>Select Projects</h1><li><a href=\"https://https://akaera.hotglue.me/?net\">Vir</a></li><li><a href=\"https://tiffanyhuang.mmm.page/net\">Tiffany</a></li><li><a href=\"https://alexcai.hotglue.me/\">Tiffany</a></li><li><a href=\"https://treesaa.mmm.page/pick-a-book\">Teresa</a></li><li><a href=\"https://aliceamorim.hotglue.me/\">Alice</a></li><li><a href=\"https://kayla8.mmm.page/\">Kayla</a></li></div>", 
+    "images": "<img src=\"images/dma-si-1.webp\" class=\"large-image\"><img src=\"images/DMI_SUMMER_INSTITUTE-71.jpg\" class=\"large-image\"><img src=\"images/dma-si-2.webp\" class=\"large-image\">",
+    "iframe": "<img src=\"images/DMA SI 24_NET.webp\" class=\"large-image\">"
+  },
+  "thumbnail": {
+    "image": "images/thumbnails/ucla-dma-si-thumbnail.png",
+    "colorClass": "teachingcolor"
+  }
+}

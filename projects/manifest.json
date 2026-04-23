@@ -1,5 +1,7 @@
 {
   "projects": [
+    "01-Teaching.json",
+    "01-longmouth.json",
     "01-yomobile.json",
     "01-ibm-watson-eec.json",
     "02-oblong-industries.json",

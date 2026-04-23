@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "title": "Freelance Projects",
+    "medium": "Custom Web Design/Development, Shopify, Webflow"
+  },
+  "detail": {
+    "title": "Freelance Projects",
+    "thumbnail": "images/whitelogo-small.png",
+    "body": "<p class=\"description\">Since 2020 I have been contracted for various freelance web development projects, specializing in custom integrations for Shopify and Webflow. I've always enjoyed the challenge of creating unique solutions for clients, and each project has been an opportunity to learn and broaden my skillset. Here is a gallery of some of my favorite projects I have been a part of.</p>",
+    "press": "<div class=\"side\"><h1>Info</h1><li><a href=\"https://www.yondermediamobile.com/\">YMM</a></li><br><br><h1>Team</h1><li class=\"roles\">Design Director: Annie Zeng</li><li class=\"roles\">Graphic Design: Kathleen Wang</li><li class=\"roles\">Frontend Development: Samson Klitsner</li></div>",
+    "images": "<img src=\"images/yo-hero.webp\" class=\"large-image\">",
+    "iframe": "<iframe src=\"https://player.vimeo.com/video/1185280300\" width=\"814\" height=\"533\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+  },
+  "thumbnail": {
+    "image": "images/whitelogo-small.png",
+    "colorClass": "webdevcolor"
+  }
+}
