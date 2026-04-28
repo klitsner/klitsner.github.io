@@ -6,9 +6,9 @@
   "detail": {
     "title": "Longmouth",
     "thumbnail": "images/thumbnails/longmouth-logo.png",
-    "body": "<p class=\"description\">Longmouth is a company started by some friends in Denmark/SF, whose journey I am privileged to be a part of. I have worked closely with the founders to bring their vision to life, creating a very custom single-page web experience for their Magic The Gathering apparel store. </p>",
-    "press": "<div class=\"side\"><h1>Store</h1><li><a href=\"https://www.longmouth.world/\">Longmouth.world</a></li><br><br></div>",
-    "images": "<img src=\"images/longmouth-image-1.webp\" class=\"large-image\">",
+    "body": "<p class=\"description\">Longmouth is a company started by some friends in Denmark/SF, whose journey I am privileged to be a part of. I have worked closely with the founders to bring their vision to life, creating a very custom single-page web experience for their Magic The Gathering apparel store.\n\nThe customer-facing site is built in Webflow, using Smootify to integrate with Shopify for its inventory management and e-commerce tools. The decision to build the site in this manner came from a desire to quickly launch a fully functional online store while maintaining a high level of design customization. While the goal is to eventually migrate the entire site to Shopify, this approach has allowed us to iterate on the design and functionality rapidly.</p>",
+    "press": "<div class=\"side\"><h1>Store</h1><li><a href=\"https://www.longmouth.world/\">Longmouth.world</a></li><br><br><h1>Team</h1><li class=\"roles\">CEO: Emil Sannino</li><li class=\"roles\">Web Design & Development: Samson Klitsner</li><li class=\"roles\">Design: Nick Lamkin</li></div>",
+    "images": "<img src=\"images/longmouth-screensnap.webp\" class=\"large-image\" style=\"border: 1px solid black;\"><img src=\"images/longmouth-image-1.webp\" class=\"large-image\">",
     "iframe": "<iframe src=\"https://player.vimeo.com/video/1185280300\" width=\"814\" height=\"533\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
   },
   "thumbnail": {
